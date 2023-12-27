@@ -62,10 +62,11 @@ const Country_Selector = ({ country, setCountry }) => {
   const handleChange = (event) => {
     const inputValue = event.target.value;
     setCountry(inputValue);
-
+  
     const filtered = countries.filter((country) =>
-      country.name.toLowerCase().includes(inputValue.toLowerCase())
+      country.countryName && country.countryName.toLowerCase().includes(inputValue.toLowerCase())
     );
+    
     setFilteredCountries(filtered);
   };
 
