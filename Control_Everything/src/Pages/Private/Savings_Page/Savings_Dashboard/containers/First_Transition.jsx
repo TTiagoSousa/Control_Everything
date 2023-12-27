@@ -10,9 +10,7 @@ const First_Transition = ({ setTotalTransitions, date, setDate, hour, setHour, a
     const success = await createFirstSavingTransaction();
     if (success) {
       setTotalTransitions(1)
-    } else {
-      console.log('Falha na transação');
-    }
+    } 
   }
 
   return (

@@ -25,9 +25,15 @@ const useCreateFirstSavingTransition = () => {
         message: "All fields must be filled",
         type: 'error'
       });
+
+      return;
     }
 
     const token = sessionStorage.getItem('token');
+
+    console.log(date, hour, amount, platform, transitiontype);~
+    console.log('token', token);
+    console.log(BASE_URL)
 
     try {
       const response = await axios.post(
@@ -60,14 +66,15 @@ const useCreateFirstSavingTransition = () => {
       console.error(error);
       if (error.response && error.response.status === 400) {
         const errorMessage = error.response.data.message;
-        if (errorMessage === 'Invalid value for type of transaction') {
-          const errorMessage = error.response.data.message;
+     
+          
+          console.error(errorMessage);
           setAlert({
             open: true,
             message: errorMessage,
             type: 'error'
           });
-        }
+        
       }
     }
 
