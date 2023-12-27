@@ -1,0 +1,18 @@
+@import '../../../Styles/Global.scss';
+
+.CE_Section {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: right;
+
+  .Container{
+    width: calc(100% - 250px);
+    margin-top: 5px;
+    height: auto;
+    transition: 0.3s all;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px 0px 10px;
+  }
+}

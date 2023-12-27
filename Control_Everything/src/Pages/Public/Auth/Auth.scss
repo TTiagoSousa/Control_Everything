@@ -1,0 +1,395 @@
+@import '../../../Styles/Global.scss';
+
+.Auth {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .Alert{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 44;
+  }
+
+  .image {
+    width: 100%;
+    transition: transform 1.1s ease-in-out;
+    transition-delay: 0.4s;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 2000px;
+    width: 2000px;
+    top: -10%;
+    right: 48%;
+    transform: translateY(-50%);
+    background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
+    transition: 1.8s ease-in-out;
+    border-radius: 50%;
+    z-index: 6;
+  }
+
+  .Forms_Container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    .Signin_Signup {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: 75%;
+      width: 50%;
+      transition: 1s 0.7s ease-in-out;
+      display: grid;
+      grid-template-columns: 1fr;
+      z-index: 5;
+
+      form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0rem 5rem;
+        transition: all 0.2s 0.7s;
+        overflow: hidden;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+
+        h1{
+          font-size: 30px;
+          letter-spacing: 2px;
+          font-family: $font_family_poppins;
+        }
+
+        .Input_Field {
+          max-width: 380px;
+          width: 100%;
+          margin: 5px 0;
+          height: 35px;
+          display: grid;
+          padding: 0 0.4rem;
+          position: relative;
+        }
+      }
+
+      .Sign_Up_Form {
+        opacity: 0;
+        z-index: 1;
+      }
+      
+      .Sign_In_Form {
+        z-index: 2;
+      }
+    }
+  }
+
+  .Panels_Container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .Panel {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-around;
+      text-align: center;
+      z-index: 6;
+
+      .Content {
+        color: #fff;
+        transition: transform 0.9s ease-in-out;
+        transition-delay: 0.6s;
+
+        h1 {
+          font-weight: 600;
+          font-family: $font_family_poppins;
+          line-height: 1;
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 0.95rem;
+          padding: 0.7rem 0;
+          font-family: $font_family_open_sans;
+        }
+        
+        button{
+          background: none;
+          padding: 5px 15px 5px 15px;
+          border: 2px solid white;
+          border-radius: 10px;
+          font-family: $font_family_open_sans;
+          color: white;
+          cursor: pointer;
+        }
+      }
+      
+    }
+
+    .Left_Panel {
+      pointer-events: all;
+      padding: 3rem 17% 2rem 12%;
+    }
+
+    .Right_Panel {
+      pointer-events: none;
+      padding: 3rem 12% 2rem 17%;
+
+      .Content {
+        transform: translateX(800px);
+      }
+
+      .image {
+        transform: translateX(800px);
+      }
+    }
+  }
+
+  &.sign-up-mode{
+    
+    &::before{
+      transform: translate(100%, -50%);
+      right: 52%;
+    }
+
+    .Panels_Container{
+
+      .Left_Panel{
+        pointer-events: none;
+
+        .image{
+          transform: translateX(-800px);
+        }
+
+        .Content {
+          transform: translateX(-800px);
+        }
+      }
+
+      .Right_Panel{
+        pointer-events: all;
+        
+        .image{
+
+          transform: translateX(0%);
+        }
+
+        .Content{
+          transform: translateX(0%);
+        }
+      }
+    }
+
+    .Signin_Signup {
+      left: 25%;
+
+      .Sign_Up_Form {
+        opacity: 1;
+        z-index: 2;
+      }
+
+      .Sign_In_Form {
+        opacity: 0;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 870px) {
+  .Auth {
+    min-height: 800px;
+    height: 100vh;
+
+    .image {
+      width: 200px;
+      transition: transform 0.9s ease-in-out;
+      transition-delay: 0.6s;
+    }
+
+    .Forms_Container{
+
+      .Signin_Signup{
+        width: 100%;
+        top: 95%;
+        transform: translate(-50%, -100%);
+        transition: 1s 0.8s ease-in-out;
+        left: 50%;
+      }
+    }
+
+    .Panels_Container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 2fr 1fr;
+
+      .Panel {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2.5rem 8%;
+        grid-column: 1 / 2;
+
+        .Content {
+          padding-right: 15%;
+          transition: transform 0.9s ease-in-out;
+          transition-delay: 0.8s;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        p {
+          font-size: 0.7rem;
+          padding: 0.5rem 0;
+        }
+      }
+
+      .Right_Panel {
+        grid-row: 3 / 4;
+
+        .image{
+          transform: translateY(300px);
+        }
+
+        .Content{
+          transform: translateY(300px);
+        }
+      }
+
+      .Left_Panel {
+        grid-row: 1 / 2;
+      }
+    }
+
+    &.sign-up-mode{
+
+      .Signin_Signup {
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, 0);
+      }
+
+      &::before{
+        transform: translate(-50%, 100%);
+        bottom: 32%;
+        right: initial;
+      }
+
+      .Panels_Container{
+
+        .Left_Panel{
+
+          .image{
+            transform: translateY(-3000px);
+          }
+
+          .Content{
+            transform: translateY(-3000px);
+          }
+        }
+
+        .Right_Panel{
+
+          .image{
+            transform: translateY(0px);
+          }
+
+          .Content{
+            transform: translateY(0px);
+          }
+        }
+      }
+    }
+
+    &::before{
+      width: 1500px;
+      height: 1500px;
+      transform: translateX(-50%);
+      left: 30%;
+      bottom: 68%;
+      right: initial;
+      top: initial;
+      transition: 2s ease-in-out;
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  .Auth{
+    padding: 1.5rem;
+
+    .Forms_Container{
+
+      .Signin_Signup{
+
+        form{
+          padding: 0 1.5rem;
+        }
+      }
+    }
+
+    .Panels_Container{
+
+      .Panel{
+
+        .Content{
+
+          padding: 0.2rem 1rem;
+        }
+      }
+
+      .Left_Panel{
+
+        .image{
+          display: none;
+        }
+      }
+
+      .Right_Panel{
+
+        .image{
+          display: none;
+        }
+      }
+    }
+
+    &::before{
+      bottom: 72%;
+      left: 50%;
+    }
+
+    &.sign-up-mode::before{
+      bottom: 28%;
+      left: 50%;
+    }
+  }
+}
+
+// Colors
+  .Dark_Mode .Auth{
+    background-color: $secundery_color_dark;
+  }
+
+  .Dark_Mode .Auth .Forms_Container .Signin_Signup form h1{
+    color: $gray;
+  }
+  
+  .Light_Mode .Auth .Forms_Container .Signin_Signup form h1{
+    color: $gray_dark;
+  }
+// COlors

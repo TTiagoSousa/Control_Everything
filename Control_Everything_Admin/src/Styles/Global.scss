@@ -1,0 +1,90 @@
+/* Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* Fonts */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+@mixin father_default {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin Pages_Configs{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px 0px 10px;
+}
+
+// Background Colors
+  $primary_color_dark: #0b1727;
+  $primary_color_light: #edf2f9;
+
+  $secundery_color_dark: #162231;
+  $secundery_color_light: #ffffff;
+// Background Colors
+
+// colors
+  $blue: #4695ff;
+  $blue_darker: #2c7be5;
+
+  $gray : #9da9bb;
+  $gray_dark : #5d6064;
+
+  $white: #ffff;
+
+  $green: #00d27a;
+
+  $red: #e63757;
+  $red_light: #fbdbe1;
+
+  $yellow: #fcc029;
+// colors
+
+// Fonts
+  $font_family_poppins: 'Poppins', sans-serif;
+  $font_family_open_sans: 'Open Sans', sans-serif;
+// Fonts
+
+// Cards Styles
+  $box_shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+  $border_radius: 10px;
+// Cards Styles
+
+/* Scroll */
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+  width: 2px;
+  height: 4px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #2c7be5;
+}
+/* Scroll */
+
+.Dark_Mode main{
+  background-color: $primary_color_dark;
+}
+
+.Light_Mode main{
+  background-color: $primary_color_light;
+}

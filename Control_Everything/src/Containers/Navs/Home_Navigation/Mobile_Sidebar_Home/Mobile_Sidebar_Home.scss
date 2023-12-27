@@ -1,0 +1,220 @@
+@import '../../../../Styles/Global.scss';
+
+.Mobile_Sidebar_Home{
+  position: fixed;
+  width: 300px;
+  height: 100vh;      
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  top: 0;
+  left: -100%;
+  transition: 850ms; 
+  z-index: 4;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 44;
+
+  &.active{
+    left: 0;
+    transition: 350ms;
+  }
+
+  .Button{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    button{
+      width: auto;
+      height: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+
+      div{
+        background-color: $blue;
+        width: 20px;
+        height: 2px;
+      }
+    }
+  }
+
+  .Links_Section{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+
+    .Wrap_Menu{
+      position: relative;
+      width: 300px;
+      height: auto;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .Hyper_Link{
+        width: 290px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        margin-top: 2.5px;
+        margin-bottom: 2.5px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+
+        &:hover{
+          background-color: rgba(207, 203, 203, 0.148);
+        }
+
+        .Informations_Link{
+          width: 100%;
+          display: flex;
+          align-items: center;
+
+          .Icon{
+            width: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 12.5px;
+
+            div{
+              position: relative;
+              width: 18px;
+              height: 18px;
+            }
+          }
+
+          span{
+            font-size: 13px;
+            margin-left: 5px;
+          }
+        }
+      }
+
+      .Icon_Arrow{
+        width: auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 5px;
+
+        .Arrow{
+          position: relative;
+          width: 13px;
+          height: 13px;
+          transform: rotate(90deg);
+          transition: all 0.3s;
+
+          &.active{
+            transform: rotate(60deg);
+          }
+        }
+      }
+
+      .Div_SubMenu{
+        display: none;
+
+        &.active{
+          height: auto;
+          position: relative;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .Line{
+            position: relative;
+            width: 40px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            div{
+              position: relative;
+              width: 1px;
+              height: 95%;
+              margin-left: 2.5px;
+              background-color: $blue;
+            }
+          }
+
+          .Nav_Link_Group{
+            width: 250px;
+
+            .Hyper_Link{
+              width: 250px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+
+  .Mobile_Sidebar_Home {
+    width: 100%;
+
+    .Button{
+      width: 98%;
+    }
+
+    .Links_Section{
+
+      .Wrap_Menu{
+        width: 98%;
+
+        .Hyper_Link{
+          width: 95%;
+        }
+
+        .Div_SubMenu{
+          
+          &.active{
+            width: 98%;
+
+            .Nav_Link_Group{
+              width: 90%;
+
+              .Hyper_Link{
+                width: 100%;
+              }
+            }
+
+            .Line{
+              width: 55px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Colors
+  .Dark_Mode .Mobile_Sidebar_Home{
+    background-color: $secundery_color_dark;
+  }
+      
+  .Light_Mode .Mobile_Sidebar_Home{
+    background-color: $secundery_color_light;
+  }
+// COlors

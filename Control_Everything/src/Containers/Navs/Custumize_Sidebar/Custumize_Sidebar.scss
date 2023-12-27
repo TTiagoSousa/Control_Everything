@@ -1,0 +1,523 @@
+@import '../../../Styles/Global.scss';
+
+.Custumize_Sidebar{
+  position: fixed;
+  width: 350px;
+  height: 100vh;      
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  top: 0;
+  right: -350px;
+  transition: 300ms;
+  z-index: 5;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &.active {
+    right: 0;
+    transition: 300ms;
+  }
+
+  .Diviser {
+    position: relative;
+    width: 95%;
+    height: 1px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: #5e6e824b;
+  }
+
+  header{
+    position: relative;
+    width: 100%;
+    height: 8vh;
+    background-color: $blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .Circle_N1 {
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      top: -70%;
+      right: -16%;
+      border-radius: 100%;
+      background-color: $blue_darker;
+    }
+    
+    .Circle_N2 {
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      bottom: -100%;
+      right: 25%;
+      border-radius: 100%;
+      background-color: $blue_darker;
+    }
+
+    .Container{
+      width: 100%;
+      height: 100%;
+      background-color: $blue;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+
+      .Top{
+        width: 95%;
+        height: 60%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .Left{
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .Icon{
+            height: 16px;
+            margin-bottom: 1px;
+          }
+        
+          h1{
+            font-size: 16px;
+            color: white;
+            margin-left: 10px;
+            font-family: $font_family_poppins;
+          }
+
+          button{
+            position: relative;
+            height: 16px;
+            margin-left: 10px;
+            border-radius: $border_radius;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: $blue;
+            border: 1px solid white;
+            padding-right: 10px;
+            padding-left: 10px;
+            cursor: pointer;
+
+            div{
+              position: relative;
+              width: auto;
+              height: 80%;
+            }
+
+            span{
+              font-weight: 600;
+              color: white;
+              margin-left: 10px;
+              height: 100%;
+            }
+          }
+        }
+
+        .Right{
+          width: auto;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 55;
+
+          .Close_Icon {
+            height: 100%;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+
+            .Line_N1{
+              width: 2px;
+              height: 20px;
+              transform: rotate(45deg);
+              background-color: white;
+            }
+
+            .Line_N2{
+              width: 2px;
+              height: 20px;
+              transform: rotate(-45deg);
+              background-color: white;
+            }
+
+            &:hover {
+              div {
+                cursor: pointer;
+                opacity: 0.70;
+                transition: 0.3s;
+              }
+            }
+          }
+        }
+      }
+
+      .Bottom{
+        width: 95%;
+        height: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+
+        span{
+          font-size: 14px;
+          letter-spacing: 1px;
+          opacity: 0.70;
+          font-family: 'Open Sans', sans-serif;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .Settings_Container{
+    position: relative;
+    height: 92vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .Toggle_Theme{
+      width: 95%;
+      margin-top: 5px;
+
+      .Text{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        h1{
+          font-family: $font_family_open_sans;
+          font-size: 15px;
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
+
+        span{
+          font-family: $font_family_open_sans;
+          font-size: 14px;
+        }
+      }
+
+      .Type_Of_Modes{
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        gap: 7px;
+
+        div{
+          width: 98%;
+          border-radius: $border_radius;
+          height: 30px;
+          border: 3px solid rgba(255, 255, 255, 0);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 15px;
+          letter-spacing: 3px;
+
+          span{
+            font-family: $font_family_poppins;
+            color: $blue_darker;
+          }
+        }
+
+        .Dark{
+          background-color: $secundery_color_dark;
+        }
+
+        .Ligth{
+          background-color: $secundery_color_light;
+        }
+
+        .Auto{
+          background-color: $blue;
+
+          span{
+            color: white;
+          }
+        }
+
+        .GreenBoxShadow {
+          border: 3px solid #00d27a !important;
+        }
+      }
+    }
+
+    .Choose_Color{
+      width: 95%;
+      margin-top: 5px;
+
+      .Text{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        h1{
+          font-family: $font_family_open_sans;
+          font-size: 15px;
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
+
+        span{
+          font-family: $font_family_open_sans;
+          font-size: 15px;
+        }
+      }
+
+      .Choose_Type_Color{
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        border-radius: $border_radius;
+        align-items: center;
+        cursor: pointer;
+        
+        div {
+
+          span{
+            font-family: $font_family_poppins;
+            font-size: 13px;
+            color: $blue;
+            margin-left: 10px;
+          }
+        }
+
+        .Icon{
+          width: auto;
+          height: 100%;
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          div{
+            width: 13px;
+            height: 13px;
+            transform: rotate(90deg);
+            margin-bottom: 2.5px;
+            transition: 0.5s;
+
+            &.active{
+              transform: rotate(60deg);
+            }
+          }
+        }
+      }
+
+      .Colors_Options {
+        position: relative;
+        border-radius: $border_radius;
+        margin-top: 5px;
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+
+        div{
+          height: 25px;
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          span{
+            font-family: $font_family_poppins;
+            font-size: 13px;
+            text-decoration: none;
+          }
+        }
+
+        .Dark{
+          background-color: $secundery_color_dark;
+
+          span{
+            color: $blue;
+          }
+        }
+
+        .Blue{
+          background-color: $blue;
+
+          span{
+
+            color: $white;
+          }
+        }
+      }
+
+      .Colors_Options.active{
+        opacity: 1;
+      }
+    
+      .Colors_Options.inactive{
+        height: 0px;
+        display: none;
+        opacity: 0;
+      }
+    }
+
+    .Type_Of_Navigations{
+      width: 95%;
+      margin-top: 5px;
+
+      .Text{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        h1{
+          font-family: $font_family_open_sans;
+          font-size: 15px;
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
+
+        span{
+          font-family: $font_family_open_sans;
+          font-size: 15px;
+        }
+      }
+
+      .Choose_The_Type{
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        border-radius: $border_radius;
+        align-items: center;
+        cursor: pointer;
+
+        div {
+
+          span{
+            font-family: $font_family_poppins;
+            font-size: 13px;
+            color: $blue;
+            margin-left: 10px;
+          }
+        }
+
+        .Icon{
+          width: auto;
+          height: 100%;
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          div{
+            width: 13px;
+            height: 13px;
+            transform: rotate(90deg);
+            margin-bottom: 2.5px;
+            transition: 0.5s;
+
+            &.active{
+              transform: rotate(60deg);
+            }
+          }
+        }
+      }
+
+      .Navigation_Options{
+        position: relative;
+        border-radius: $border_radius;
+        margin-top: 5px;
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+
+        div{
+          border-radius: 5px;
+          height: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          span{
+            font-family: $font_family_poppins;
+            font-size: 13px;
+            text-decoration: none;
+            color: $blue;
+          }
+        }
+      }
+
+      .Navigation_Options.active{
+        opacity: 1;
+      }
+    
+      .Navigation_Options.inactive{
+        height: 0px;
+        display: none;
+        opacity: 0;
+      }
+    }
+  }
+
+}
+
+// Colors
+  .Dark_Mode .Custumize_Sidebar .Settings_Container,
+  .Dark_Mode .Custumize_Sidebar{
+    background-color: $primary_color_dark;
+  }
+      
+  .Light_Mode .Custumize_Sidebar .Settings_Container,
+  .Light_Mode .Custumize_Sidebar{
+    background-color: $primary_color_light;
+  }
+  
+  .Dark_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Navigation_Options div,
+  .Dark_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Choose_The_Type,
+  .Dark_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Choose_Type_Color{
+    background-color: $secundery_color_dark;
+  }
+
+  .Light_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Navigation_Options div,
+  .Light_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Choose_The_Type,
+  .Light_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Choose_Type_Color{
+    background-color: $secundery_color_light;
+  }
+
+  .Dark_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Text h1,
+  .Dark_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Text span,
+  .Dark_Mode .Custumize_Sidebar .Type_Of_Navigations .Text  div h1,
+  .Dark_Mode .Custumize_Sidebar .Type_Of_Navigations .Text span,
+  .Dark_Mode .Custumize_Sidebar .Toggle_Theme .Text span,
+  .Dark_Mode .Custumize_Sidebar .Toggle_Theme .Text h1,
+  .Dark_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Text h1,
+  .Dark_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Text span{
+    color: $gray;
+  }
+
+  .Light_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Text h1,
+  .Light_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Text span,
+  .Light_Mode .Custumize_Sidebar .Toggle_Theme .Text span,
+  .Light_Mode .Custumize_Sidebar .Toggle_Theme .Text h1,
+  .Light_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Text h1,
+  .Light_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Text span {
+    color: $gray_dark;
+  }
+// Colors

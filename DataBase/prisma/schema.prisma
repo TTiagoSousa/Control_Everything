@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+model User {
+  id                String              @id @unique @default(uuid())
+  isActive          Boolean             @default(false)
+  createdAt         DateTime            @default(now())
+  fullName          String
+  country           String
+  email             String              @unique
+  hashedPassword    String
+  dateOfBirth       String
+  gender            String?             @default("unknown")
+  role              Role                @default(USER)
+  SavingTransitions SavingTransitions[] @relation("CreatedBy")
+}
+
+model Country {
+  id                   Int       @id @default(autoincrement())
+  countryName         String     @unique   
+  CoutryFlag          String
+}
+
+model SavingTransitions {
+  id             String @id @default(uuid())
+  transitionID   String
+  transitiontype String
+  data           String
+  hour           String
+  platform       String
+  amount         Int
+  currencyType   String
+  createdById    String
+  isActive       Boolean
+  createdBy      User   @relation("CreatedBy", fields: [createdById], references: [id])
+}
+
+model Currency {
+  id            String @id @default(uuid())
+  name          String
+  symbol        String
+  code          String @unique
+  rate          String
+}

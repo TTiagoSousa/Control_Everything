@@ -1,0 +1,19 @@
+@import '../../../Styles/Global.scss';
+
+.Header_Home{
+  position: relative;
+  width: calc(100% - 250px);
+  height: 5vh;
+  float: right;
+  padding: 0px 10px 0px 10px;
+}
+
+// Colors
+.Dark_Mode .Header_Home{
+  background-color: $primary_color_dark;
+}
+
+.Light_Mode .Header_Home{
+  background-color: $primary_color_light;
+}
+// Colors

@@ -1,0 +1,33 @@
+@import '../../../Styles/Global.scss';
+
+.Decumentations{
+  width: 100%;
+  height: 100vh;
+
+  .Links{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    div{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      span{
+        font-family: $font_family_poppins;
+      }
+    }
+  }
+}
+
+// Colors
+  .Dark_Mode .Decumentations .Links div span{
+    color: $gray;
+  }
+
+  .Ligth_Mode .Decumentations .Links div span{
+    color: $gray_dark;
+  }
+// Colors

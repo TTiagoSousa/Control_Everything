@@ -1,0 +1,136 @@
+@import '../../../Styles/Global.scss';
+
+.Change_Theme{
+  position: relative;
+  height: 100%;
+  width: 100%;    
+
+  button{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none; 
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .Icon {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .Theme_Options.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.4s ease;
+  }
+
+  .Theme_Options.inactive{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.4s ease;
+  }
+
+  .Theme_Options{
+    position: absolute;
+    top: 160%;
+    right: 3px;
+    width: 200px;
+    box-shadow: $box_shadow;
+    border-radius: 10px 0px 10px 10px;
+
+    .Arrow{
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: -5px;
+      right: 2.5px;
+      transform: (rotate(45deg));
+    }
+
+    ul{
+      width: 100%;
+      height: 100%;
+      list-style: none;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px 0px 10px 10px;
+
+      li{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        .Text_Icon{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 5px;
+
+          .Icon{
+            width: 15px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+          }
+
+          span{
+            margin-left: 10px;
+            font-family: $font_family_open_sans;
+            font-weight: 600;
+          
+            &:hover{
+              color: $blue;
+            }
+          }
+        }
+      }
+
+      .Check_Icon{
+
+        .Icon{
+          width: 15px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+// Colors
+  .Dark_Mode .Theme_Options .Arrow,
+  .Dark_Mode .Theme_Options ul,
+  .Dark_Mode .Theme_Options{
+    background-color: $secundery_color_dark;
+  }
+
+  .Light_Mode .Theme_Options .Arrow,
+  .Light_Mode .Theme_Options ul,
+  .Light_Mode .Theme_Options{
+    background-color: $secundery_color_light;
+  }
+
+  .Dark_Mode .Theme_Options ul li span{
+    color: $gray;
+  }
+
+  .Light_Mode .Theme_Options ul li span{
+    color: $gray_dark;
+  }
+// Colors
