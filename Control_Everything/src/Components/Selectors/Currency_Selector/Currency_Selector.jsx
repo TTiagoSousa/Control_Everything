@@ -59,15 +59,27 @@ const Currency_Selector = ({ currency, setCurrency }) => {
     }
   };
 
-  const handleChange = (event) => {
-    const inputValue = event.target.value;
-    setCountry(inputValue);
+  // const handleChange = (event) => {
+  //   const inputValue = event.target.value;
+  //   setCountry(inputValue);
 
-    const filtered = countries.filter((currency) =>
-    currency.name.toLowerCase().includes(inputValue.toLowerCase())
+  //   const filtered = countries.filter((currency) =>
+  //   currency.name.toLowerCase().includes(inputValue.toLowerCase())
+  //   );
+  //   setFilteredCurrencies(filtered);
+  // };
+
+  const handleChange = (event) => {
+    const inputValue = event.target.value.toLowerCase();
+    setCurrency(inputValue);
+  
+    const filtered = currencies.filter((currency) =>
+      (currency.code && currency.code.toLowerCase().includes(inputValue)) ||
+      (currency.name && currency.name.toLowerCase().includes(inputValue))
     );
     setFilteredCurrencies(filtered);
   };
+
 
   return (
     <div className='Currency_Selector'>
