@@ -18,6 +18,18 @@
       span{
         font-family: $font_family_poppins;
       }
+
+      a {
+        cursor: pointer;
+        
+        button{
+          background: none;
+          border: none;
+          color: $blue;
+          font-family: $font_family_poppins;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
@@ -27,7 +39,7 @@
     color: $gray;
   }
 
-  .Ligth_Mode .Decumentations .Links div span{
+  .Light_Mode .Decumentations .Links div span{
     color: $gray_dark;
   }
 // Colors
