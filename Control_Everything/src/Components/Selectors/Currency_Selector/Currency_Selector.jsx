@@ -14,7 +14,7 @@ const Currency_Selector = ({ currency, setCurrency }) => {
   useEffect(() => {
     const fetchCurrencies = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/currency/all`);
+        const response = await axios.get(`${BASE_URL}/currency/get-all-currencies`);
         const currenciesData = response.data.currencies; // Renamed to avoid variable name conflict
         setCurrencies(currenciesData);
         setFilteredCurrencies(currenciesData);
