@@ -14,7 +14,7 @@ const useFetchTotalTransitions = () => {
     const fetchTotalTransitions = async () => {
       try {
         const token = sessionStorage.getItem('token');
-        const response = await axios.get(`${BASE_URL}/saving-transitions/${userId}/total`, {
+        const response = await axios.get(`${BASE_URL}/saving-transitions/${userId}/total-of-savnig-transitions`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
