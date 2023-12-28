@@ -20,3 +20,7 @@
   export { default as Country_Selector } from '../Components/Selectors/Country_Selector/Country_Selector';
   export { default as Currency_Selector } from '../Components/Selectors/Currency_Selector/Currency_Selector';
 // Selectors
+
+// Pagination
+  export { default as Pagination } from '../Components/Pagination/Pagination';
+// Pagination

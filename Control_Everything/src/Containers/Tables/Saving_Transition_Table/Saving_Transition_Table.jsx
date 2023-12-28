@@ -5,6 +5,7 @@ import useFetchTotalTransitions from '../../../Hooks/Saving_Transitions/useFetch
 import LinearProgress from '@mui/material/LinearProgress';
 import * as Icon from '../../../Imports/icons';
 import * as Color from '../../../Styles/Colors';
+import * as Component from '../../../Imports/components'
 
 const Saving_Transition_Table = () => {
 
@@ -47,6 +48,15 @@ const Saving_Transition_Table = () => {
 
   return (
     <div className='Saving_Transition_Table'>
+      <div className="Filters">
+        <div>
+          <Component.Pagination 
+            currentPage={currentPage} // Usar currentPage ao invés de page
+            totalPages={Math.ceil( totalTransitions / perPage)}
+            onPageChange={paginate}
+          />
+        </div>
+      </div>
       <div className='Table_Wrapper'>
         <table>
           <thead>
@@ -140,6 +150,15 @@ const Saving_Transition_Table = () => {
           </tbody>
         </table>
       </div>    
+      <div className="Filters">
+        <div>
+          <Component.Pagination 
+            currentPage={currentPage} // Usar currentPage ao invés de page
+            totalPages={Math.ceil( totalTransitions / perPage)}
+            onPageChange={paginate}
+          />
+        </div>
+      </div>
     </div>
   )
 };

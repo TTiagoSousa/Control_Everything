@@ -107,6 +107,17 @@
       }
     }
   }
+
+  .Filters {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+    transition: 0.3s;
+    padding: 5px 0px 5px 0px;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -372,10 +383,12 @@
 
 
 // Colors
+  .Dark_Mode .Saving_Transition_Table .Filters,
   .Dark_Mode .Saving_Transition_Table .Table_Wrapper table thead {
     background-color: $secundery_color_dark;
   }
         
+  .Light_Mode .Saving_Transition_Table .Filters,
   .Light_Mode .Saving_Transition_Table .Table_Wrapper table thead{
     background-color: $secundery_color_light;
   }
