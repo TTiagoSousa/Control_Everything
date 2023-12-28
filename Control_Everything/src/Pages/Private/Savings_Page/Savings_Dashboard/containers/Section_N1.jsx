@@ -14,10 +14,12 @@ const Section_N1 = () => {
         createSavingTransitionForm={createSavingTransitionForm}
         setCreateSavingTransitionForm={setCreateSavingTransitionForm}
       />
-      <Component.Global_Button 
-        Text="Create New Transition"
-        onClick={showCreateSavingTransitionForm}
-      />
+      <div className="Button_Field">
+        <Component.Global_Button 
+          Text="Create New Transition"
+          onClick={showCreateSavingTransitionForm}
+        />
+      </div>
     </div>
   )
 };

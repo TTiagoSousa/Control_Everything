@@ -103,6 +103,11 @@
     height: 25px;
     display: flex;
     flex-direction: column;
+
+    .Button_Field{
+      width: 100%;
+      height: 30px;
+    }
   }
 }
 
