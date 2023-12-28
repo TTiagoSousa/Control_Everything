@@ -1,4 +1,4 @@
-import { Controller, UseGuards, Post, Body, Req, Get, Param, Query } from '@nestjs/common';
+import { Controller, UseGuards, Post, Body, Req, Get, Param, Query, Delete } from '@nestjs/common';
 import { SavingTransitionsService } from './saving_transitions.service';
 import { JwtAuthGuard } from 'src/auth/jwt.guard';
 import { Request } from 'express';
@@ -29,5 +29,14 @@ export class SavingTransitionsController {
     @Query('page') page?: number,
   ) {
     return this.savingTransitionsService.getSavingTransitions(userId, perPage, page);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Delete(':userId/:transitionId/disable-savings-transition')
+  async disableSavingTransition(
+    @Param('userId') userId: string,
+    @Param('transitionId') transitionId: string,
+  ) {
+    return this.savingTransitionsService.disableSavingTransition(userId, transitionId);
   }
 }

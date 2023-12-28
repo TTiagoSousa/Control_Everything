@@ -48,5 +48,29 @@ export class PrismaSavingsTransitionsRepository implements SavingsTransitionRepo
     });
 
     return transitions;
-}
+  }
+
+  async save(userId: string, data: Prisma.SavingTransitionsUpdateInput){
+    const transitionID = data.id?.toString();
+    
+    const Transition = await prisma.savingTransitions.update({
+      where: {
+        id: transitionID,
+        createdById: userId,
+      },
+      data,
+    });
+
+    return Transition;
+  }
+
+  async findByTransitionId(transitionId: string): Promise<SavingTransitions | null> {
+    const transition = await prisma.savingTransitions.findUnique({
+      where: {
+        id: transitionId,
+      },
+    });
+  
+    return transition;
+  }
 }

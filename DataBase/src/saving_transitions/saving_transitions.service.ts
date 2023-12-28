@@ -3,6 +3,7 @@ import { createSavingTransition_dto } from './dto/create.savings.transition.dto'
 import { CreateSavingTransition } from './helpers/create.saving.transition';
 import { getTotalTransitionsByUserId } from './helpers/get.total.transitions.by.user';
 import { getSavingTransitions } from './helpers/get.saavings.transitions';
+import { disableSavingTransition } from './helpers/disable.saving.transition';
 
 @Injectable()
 export class SavingTransitionsService {
@@ -20,5 +21,11 @@ export class SavingTransitionsService {
   async getSavingTransitions(userId: string, perPage?: number, page?: number) {
     const result = await getSavingTransitions(userId, perPage, page);
     return result;
+  }
+
+  async disableSavingTransition(userId: string,transitionId: string){
+    const result = await disableSavingTransition(userId,transitionId);
+
+    return result
   }
 }
