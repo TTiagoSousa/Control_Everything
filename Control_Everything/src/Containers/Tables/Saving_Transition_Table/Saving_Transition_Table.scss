@@ -1,0 +1,355 @@
+@import '../../../Styles/Global.scss';
+
+.Saving_Transition_Table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .Table_Wrapper{
+    box-shadow: $box_shadow;
+    border-radius: $border_radius;
+    width: 100%;
+    position: relative;
+
+    table{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      thead {
+        width: 100%;
+        position: sticky;
+        top: 5vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 10px 10px 0px 0px;
+        padding: 5px 0px 5px 0px;
+
+        tr{
+          width: 100%;
+          display: flex;
+
+          th {
+            width: 12.5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+              font-weight: 650;
+              color: $blue;
+              font-family: $font_family_poppins;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+
+      tbody {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        tr{
+          width: 100%;
+          height: 35px;
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+}
+
+/* Table */
+
+  .Saving_Transition_Table .Table_Wrapper table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .Saving_Transition_Table .Table_Wrapper table tbody tr td {
+    width: 12.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Saving_Transition_Table .Table_Wrapper table tbody tr td span {
+    font-weight: 650;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+  }
+
+  .Dark_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Currency span,
+  .Dark_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Platform span,
+  .Dark_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Hour span,
+  .Dark_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Data span,
+  .Dark_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Transition_ID span {
+    color: $gray;
+  }
+      
+  .Light_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Currency span,
+  .Light_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Platform span,
+  .Light_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Hour span,
+  .Light_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Data span,
+  .Light_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Transition_ID span  {
+    color: $gray_dark;
+  }
+
+  .Saving_Transition_Table .Table_Wrapper table tbody tr .Modify {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .Saving_Transition_Table .Table_Wrapper table tbody tr .Modify button {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    padding: 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .Saving_Transition_Table .Table_Wrapper table tbody tr .Modify button div {
+    height: 18px;
+  }
+
+  .Saving_Transition_Table .Table_Wrapper table tbody tr .Cut_Line {
+    position: absolute;
+    width: 90%;
+    margin-top: 15px;
+    left: 0%;
+    height: 2px;
+    background-color: rgba(242, 19, 19, 0.515);
+  }
+/* Table */
+
+/* Pagination */
+  .Saving_Transition_Table .Filters {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+    transition: 0.3s;
+    padding: 5px 0px 5px 0px;
+  }
+
+  .Dark_Mode .Saving_Transition_Table .Filters {
+    background-color: #162231;
+  }
+        
+  .Light_Mode .Saving_Transition_Table .Filters{
+    background-color: #f9fafd;
+  }
+
+  .Saving_Transition_Table .Filters:hover {
+    box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 12px;
+  }
+
+  .Saving_Transition_Table .Filters .Selector {
+    position: relative;
+    width: 300px;
+    height: 25px;
+  }
+/* Pagination */
+
+@media (max-width: 1100px) {
+  /* Table */
+    .Saving_Transition_Table .Table_Wrapper {
+      overflow-y: auto; 
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table {
+      width: 120%;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table thead{
+      position: relative; 
+      top: 0;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table thead tr .Transition_ID,
+    .Saving_Transition_Table .Table_Wrapper table tbody tr .Transition_ID {
+      position: sticky;
+      left: 0%;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table thead tr .Buy_or_Sell,
+    .Saving_Transition_Table .Table_Wrapper table tbody tr .Buy_or_Sell {
+      position: sticky;
+      left: 15%;
+    }
+
+    .Dark_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Transition_ID,
+    .Dark_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Buy_or_Sell {
+      background-color: #0b1727;
+    }
+       
+    .Light_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Transition_ID,
+    .Light_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr .Buy_or_Sell{
+      background-color: #f9fafd;
+    }
+
+    .Dark_Mode .Saving_Transition_Table .Table_Wrapper table thead tr .Buy_or_Sell,
+    .Dark_Mode .Saving_Transition_Table .Table_Wrapper table thead tr .Transition_ID {
+      background-color: #162231;
+    }
+        
+    .Light_Mode .Saving_Transition_Table .Table_Wrapper table thead tr .Buy_or_Sell
+    .Light_Mode .Saving_Transition_Table .Table_Wrapper table thead tr .Transition_ID{
+      background-color: #f9fafd;
+    }
+  /* Table */
+}
+
+@media (max-width: 1000px) {
+  /* Table */
+    .Saving_Transition_Table .Table_Wrapper table {
+      width: 140%;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table thead tr th span {
+      font-size: 17px;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table thead tr .Buy_or_Sell,
+    .Saving_Transition_Table .Table_Wrapper table tbody tr .Buy_or_Sell {
+      position: sticky;
+      left: 17.5%;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table tbody tr .Cut_Line{
+      width: 125%;
+    }
+  /* Table */
+}
+
+@media (max-width: 900px) {
+  /* Table */
+    .Saving_Transition_Table .Table_Wrapper table {
+      width: 160%;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table thead tr .Buy_or_Sell,
+    .Saving_Transition_Table .Table_Wrapper table tbody tr .Buy_or_Sell {
+      position: sticky;
+      left: 20%;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table tbody tr .Cut_Line{
+      width: 140%;
+    }
+  /* Table */
+}
+
+@media (max-width: 800px) {
+  /* Table */
+    .Saving_Transition_Table .Table_Wrapper table {
+      width: 180%;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table thead tr th span {
+      font-size: 16px;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table thead tr .Buy_or_Sell,
+    .Saving_Transition_Table .Table_Wrapper table tbody tr .Buy_or_Sell {
+      position: sticky;
+      left: 22.5%;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table tbody tr .Cut_Line{
+      width: 160%;
+    }
+  /* Table */
+}
+
+@media (max-width: 600px) {
+  /* Table */
+    .Saving_Transition_Table .Table_Wrapper table {
+      width: 200%;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table thead tr th span {
+      font-size: 15px;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table tbody tr{
+      height: 30px;
+      padding: 4px 0px 4px 0px;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table thead tr .Buy_or_Sell,
+    .Saving_Transition_Table .Table_Wrapper table tbody tr .Buy_or_Sell {
+      position: sticky;
+      left: 25%;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table tbody tr .Cut_Line{
+      width: 175%;
+      margin-top: 10px;
+    }
+  /* Table */
+}
+
+@media (max-width: 500px) {
+  /* Table */
+    .Saving_Transition_Table .Table_Wrapper table {
+      width: 200%;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table tbody tr{
+      height: 30px;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table thead tr th span {
+      font-size: 15px;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table thead tr .Buy_or_Sell,
+    .Saving_Transition_Table .Table_Wrapper table tbody tr .Buy_or_Sell {
+      position: sticky;
+      left: 25%;
+    }
+
+    .Saving_Transition_Table .Table_Wrapper table tbody tr .Cut_Line{
+      width: 178%;
+      margin-top: 10px;
+    }
+  /* Table */
+
+  /* Filters */
+    .Saving_Transition_Table .Filters{
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .Saving_Transition_Table .Filters .Selector{
+      width: 97%;
+    }
+  /* Filters */
+}
+
+
+// Colors
+  .Dark_Mode .Saving_Transition_Table .Table_Wrapper table thead {
+    background-color: $secundery_color_dark;
+  }
+        
+  .Light_Mode .Saving_Transition_Table .Table_Wrapper table thead{
+    background-color: $secundery_color_light;
+  }
+
+  .Dark_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr {
+    border-bottom: 3px solid #162231;
+  }
+    
+  .Light_Mode .Saving_Transition_Table .Table_Wrapper table tbody tr {
+    border-bottom: 3px solid #f9fafd;
+  }
+// Colors

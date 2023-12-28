@@ -12,3 +12,7 @@
   export { default as Mobile_Sidebar_Home } from '../Containers/Navs/Home_Navigation/Mobile_Sidebar_Home/Mobile_Sidebar_Home';
   export { default as Sidebar_Home } from '../Containers/Navs/Home_Navigation/Sidebar_Home/Sidebar_Home';
 // Navs
+
+// Tables
+  export { default as Saving_Transition_Table } from '../Containers/Tables/Saving_Transition_Table/Saving_Transition_Table';
+// Tables

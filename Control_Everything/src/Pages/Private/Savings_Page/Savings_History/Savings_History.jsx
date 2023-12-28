@@ -1,15 +1,12 @@
 import React from 'react';
 import './Savings_History.scss';
-import useFetchSavingsTransitions from '../../../../Hooks/Saving_Transitions/useFetchSavingsTransitions';
+import Section_N1 from './Containers/Section_N1';
 
 const Savings_History = () => {
 
-  const {savingTransitionsList} = useFetchSavingsTransitions()
-  console.log(savingTransitionsList)
-
   return (
     <div className='Savings_History'>
-
+      <Section_N1 />
     </div>
   )
 };

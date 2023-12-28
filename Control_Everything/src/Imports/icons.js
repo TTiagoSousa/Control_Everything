@@ -32,12 +32,18 @@
 // Painting
 
 // Settings
+  export { default as Settings } from '../Assets/Icons/Settings/Settings'
   export { default as Settings_With_Two_Arrows } from '../Assets/Icons/Settings/Settings_With_Two_Arrows';
 // Settings
 
 // Sun
   export { default as Sun_N1 } from '../Assets/Icons/Sun/Sun_N1';
 // Sun
+
+// Trash
+  export { default as Trash } from '../Assets/Icons/Trash/Trash';
+  export { default as Trash_Restore } from '../Assets/Icons/Trash/Trash_Restore';
+// Trash
 
 // Triangle
   export { default as Simple_Triangle } from '../Assets/Icons/Triangle/Simple_Triangle'

@@ -32,7 +32,11 @@ const useFetchSavingsTransitions = () => {
     fetchTotalTransitions();
   }, [authenticated, userId, page, perPage]); // Dependências do efeito
 
-  return {savingTransitionsList, setSavingTransitionsList};
+  return {
+    savingTransitionsList, setSavingTransitionsList,
+    perPage, setPerPage,
+    page, setPage
+  };
 }
 
 export default useFetchSavingsTransitions;
