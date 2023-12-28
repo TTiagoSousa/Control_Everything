@@ -20,6 +20,12 @@ const Section_N1 = () => {
           onClick={showCreateSavingTransitionForm}
         />
       </div>
+      <div className="Button_Field">
+        <Component.Global_Button 
+          Text="View All Transitions"
+          to="Savings_History"
+        />
+      </div>
     </div>
   )
 };

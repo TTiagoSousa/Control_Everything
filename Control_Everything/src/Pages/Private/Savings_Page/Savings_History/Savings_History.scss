@@ -1,0 +1,6 @@
+@import '../../../../Styles/Global.scss';
+
+.Savings_History{
+  @include Pages_Configs;
+  height: 95vh;
+}
