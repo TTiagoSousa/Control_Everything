@@ -4,7 +4,7 @@ import axios from "axios";
 import { BASE_URL } from "../../config/urls";
 import useFetchTotalTransitions from "./useFetchTotalTransitions";
 
-const useCreateFirstSavingTransition = () => {
+const useCreateSavingTransition = () => {
 
   const { setAlert, alert } = NavsState();
 
@@ -17,7 +17,7 @@ const useCreateFirstSavingTransition = () => {
 
   const {totalTransitions, setTotalTransitions} = useFetchTotalTransitions();
 
-  const createFirstSavingTransaction = async () => {
+  const createSavingTransaction = async () => {
 
     if (!date || !hour || !amount || !platform || !transitiontype) {
       setAlert({
@@ -30,10 +30,6 @@ const useCreateFirstSavingTransition = () => {
     }
 
     const token = sessionStorage.getItem('token');
-
-    console.log(date, hour, amount, platform, transitiontype);~
-    console.log('token', token);
-    console.log(BASE_URL)
 
     try {
       const response = await axios.post(
@@ -62,6 +58,8 @@ const useCreateFirstSavingTransition = () => {
 
       setTotalTransitions(1);
 
+      return true;
+
     } catch (error) {
       console.error(error);
       if (error.response && error.response.status === 400) {
@@ -81,7 +79,7 @@ const useCreateFirstSavingTransition = () => {
   }
 
   return {
-    createFirstSavingTransaction,    
+    createSavingTransaction,    
     date, setDate,
     hour, setHour,
     amount, setAmount,
@@ -92,4 +90,4 @@ const useCreateFirstSavingTransition = () => {
   }
 }
 
-export default useCreateFirstSavingTransition;
+export default useCreateSavingTransition;

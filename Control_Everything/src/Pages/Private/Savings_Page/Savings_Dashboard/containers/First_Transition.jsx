@@ -2,12 +2,12 @@ import React from 'react';
 import '../Savings_Dashboard.scss';
 import * as Component from '../../../../../Imports/components';
 
-const First_Transition = ({ setTotalTransitions, date, setDate, hour, setHour, amount, setAmount, platform, setPlatform, currencyType, setCurrencyType, createFirstSavingTransaction }) => {
+const First_Transition = ({ setTotalTransitions, date, setDate, hour, setHour, amount, setAmount, platform, setPlatform, currencyType, setCurrencyType, createSavingTransaction }) => {
 
   async function handleSubmit(e) {
     e.preventDefault();
     
-    const success = await createFirstSavingTransaction();
+    const success = await createSavingTransaction();
     if (success) {
       setTotalTransitions(1)
     } 

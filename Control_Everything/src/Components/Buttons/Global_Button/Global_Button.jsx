@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Global_Button.scss';
 
-const Global_Button = ({ Text, to, id, style, onClick }) => {
+const Global_Button = ({ Text, to, id, style, onClick, disabled  }) => {
   
   return (
     <>
@@ -14,6 +14,7 @@ const Global_Button = ({ Text, to, id, style, onClick }) => {
           id={id}
           style={style}
           onClick={onClick}
+          disabled={disabled}
         >
           <span>{Text}</span>
           </button>

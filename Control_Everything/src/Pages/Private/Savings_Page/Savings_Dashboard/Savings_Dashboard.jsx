@@ -1,23 +1,23 @@
 import React from 'react';
 import './Savings_Dashboard.scss'
 import First_Transition from './containers/First_Transition';
-import useCreateFirstSavingTransition from '../../../../Hooks/Saving_Transitions/useCreateFirstSavingTransition';
+import useCreateSavingTransition from '../../../../Hooks/Saving_Transitions/useCreateSavingTransition';
 import Section_N1 from './containers/Section_N1';
 
 const Savings_Dashboard = () => {
 
   const { 
-    createFirstSavingTransaction,    
+    createSavingTransaction,    
     date, setDate,
     hour, setHour,
     amount, setAmount,
     platform, setPlatform,
     currencyType, setCurrencyType,
     totalTransitions
-  } = useCreateFirstSavingTransition(null);
+  } = useCreateSavingTransition(null);
 
   const firstTransitionProps = {
-    createFirstSavingTransaction,    
+    createSavingTransaction,    
     date, setDate,
     hour, setHour,
     amount, setAmount,
@@ -25,6 +25,7 @@ const Savings_Dashboard = () => {
     currencyType, setCurrencyType,
     totalTransitions
   };
+
 
   return (
     <div className='Savings_Dashboard'>
