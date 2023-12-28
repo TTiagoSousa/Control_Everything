@@ -1,4 +1,4 @@
-import { Controller, UseGuards, Post, Body, Req, Get, Param } from '@nestjs/common';
+import { Controller, UseGuards, Post, Body, Req, Get, Param, Query } from '@nestjs/common';
 import { SavingTransitionsService } from './saving_transitions.service';
 import { JwtAuthGuard } from 'src/auth/jwt.guard';
 import { Request } from 'express';
@@ -19,5 +19,15 @@ export class SavingTransitionsController {
   @Get(':userId/total-of-savnig-transitions')
   async getTotalTransitionsByUserId(@Param('userId') userId: string) {
     return this.savingTransitionsService.getTotalTransitionsByUserId(userId);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get(':userId/get-savings-transitions')
+  async getSavingTransitionsByUserId(
+    @Param('userId') userId: string,
+    @Query('perPage') perPage?: number,
+    @Query('page') page?: number,
+  ) {
+    return this.savingTransitionsService.getSavingTransitions(userId, perPage, page);
   }
 }

@@ -34,4 +34,19 @@ export class PrismaSavingsTransitionsRepository implements SavingsTransitionRepo
 
     return totalCount;
   }
+  
+  async getByUserIdWithPagination(userId: string, take: number, skip: number): Promise<SavingTransitions[]> {
+    const transitions = await prisma.savingTransitions.findMany({
+      where: {
+        createdById: userId,
+      },
+      orderBy: {
+        transitionID: 'asc',
+      },
+      take,
+      skip,
+    });
+
+    return transitions;
+}
 }
