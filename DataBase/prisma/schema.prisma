@@ -53,3 +53,9 @@ model Currency {
   code          String @unique
   rate          String
 }
+
+model UserSettings{
+  id             String   @id @default(uuid())
+  userId         String   @unique
+  currency       String   @default("USD")
+}
