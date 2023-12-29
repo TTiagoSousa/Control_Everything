@@ -8,6 +8,12 @@ export const Navigation_Map = [
     link: '/CE/Dashboard',
   },
 
+  {
+    title: 'Savings',
+    icon: <SVG.Settings />,
+    link: '/CE/Settings/Settings_Dashboard',
+  }
+
   // {
   //   title: 'Assets',
   //   icon: <SVG.Dashboard_Cubes/>,
