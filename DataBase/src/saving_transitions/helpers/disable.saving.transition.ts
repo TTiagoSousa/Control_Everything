@@ -6,7 +6,7 @@ export async function disableSavingTransition(userId: string,transitionId: strin
 
   const existingTransition = await SavingsTransitionRepository.findByTransitionId(transitionId);
 
-  await SavingsTransitionRepository.save(userId, {
+  await SavingsTransitionRepository.save(userId,{
     ...existingTransition,
     isActive: false,
   });

@@ -18,7 +18,8 @@ const Saving_Transition_Table = () => {
 
   const { totalTransitions } = useFetchTotalTransitions();
   
-  const { disableSavingTransition } = useDisableOrEnableSavingTransition(setSavingTransitionsList);
+  const { disableSavingTransition, enableSavingTransition } = useDisableOrEnableSavingTransition(setSavingTransitionsList);
+
 
   const [currentPage, setCurrentPage] = useState(page);
   const paginate = (pageNumber) => {
@@ -130,8 +131,8 @@ const Saving_Transition_Table = () => {
                       ) : (
                         // Render the enable button if the transition is inactive
                         <button>
-                          <div className="Delete_Icon" >
-                            <Icon.Trash Global_Color={Color.red}/>
+                          <div className="Delete_Icon" onClick={() => enableSavingTransition(transition.id)}>
+                            <Icon.Trash_Restore Global_Color={Color.red}/>
                           </div>
                         </button>
                       )}
