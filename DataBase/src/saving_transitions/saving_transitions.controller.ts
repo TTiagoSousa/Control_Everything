@@ -39,4 +39,13 @@ export class SavingTransitionsController {
   ) {
     return this.savingTransitionsService.disableSavingTransition(userId, transitionId);
   }
+
+  @UseGuards(JwtAuthGuard)
+  @Post(':userId/:transitionId/enable-savings-transition')
+  async enableSavingTransition(
+    @Param('userId') userId: string,
+    @Param('transitionId') transitionId: string,
+  ) {
+    return this.savingTransitionsService.enableSavingTransition(userId, transitionId);
+  }
 }

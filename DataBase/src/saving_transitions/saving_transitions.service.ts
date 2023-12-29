@@ -4,6 +4,7 @@ import { CreateSavingTransition } from './helpers/create.saving.transition';
 import { getTotalTransitionsByUserId } from './helpers/get.total.transitions.by.user';
 import { getSavingTransitions } from './helpers/get.saavings.transitions';
 import { disableSavingTransition } from './helpers/disable.saving.transition';
+import { enableSavingTransition } from './helpers/enable.saving.transition';
 
 @Injectable()
 export class SavingTransitionsService {
@@ -25,6 +26,12 @@ export class SavingTransitionsService {
 
   async disableSavingTransition(userId: string,transitionId: string){
     const result = await disableSavingTransition(userId,transitionId);
+
+    return result
+  }
+
+  async enableSavingTransition(userId: string,transitionId: string){
+    const result = await enableSavingTransition(userId,transitionId);
 
     return result
   }
