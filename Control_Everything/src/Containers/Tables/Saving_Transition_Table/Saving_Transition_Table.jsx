@@ -6,16 +6,19 @@ import LinearProgress from '@mui/material/LinearProgress';
 import * as Icon from '../../../Imports/icons';
 import * as Color from '../../../Styles/Colors';
 import * as Component from '../../../Imports/components'
+import useDisableOrEnableSavingTransition from '../../../Hooks/Saving_Transitions/useDisableOrEnableSavingTransition';
 
 const Saving_Transition_Table = () => {
 
   const {
     savingTransitionsList, setSavingTransitionsList,
     perPage, setPerPage,
-    page, setPage
+    page, setPage,
   } = useFetchSavingsTransitions();
 
   const { totalTransitions } = useFetchTotalTransitions();
+  
+  const { disableSavingTransition } = useDisableOrEnableSavingTransition(setSavingTransitionsList);
 
   const [currentPage, setCurrentPage] = useState(page);
   const paginate = (pageNumber) => {
@@ -120,7 +123,7 @@ const Saving_Transition_Table = () => {
                       {transition.isActive ? (
                         // Render the disable button if the transition is active
                         <button>
-                          <div className="Delete_Icon" >
+                          <div className="Delete_Icon" onClick={() => disableSavingTransition(transition.id)}>
                             <Icon.Trash Global_Color={Color.red}/>
                           </div>
                         </button>
