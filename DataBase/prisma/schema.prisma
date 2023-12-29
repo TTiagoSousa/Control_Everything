@@ -24,6 +24,7 @@ model User {
   gender            String?             @default("unknown")
   role              Role                @default(USER)
   SavingTransitions SavingTransitions[] @relation("CreatedBy")
+  UserSettings      UserSettings[]
 }
 
 model Country {
@@ -55,7 +56,8 @@ model Currency {
 }
 
 model UserSettings{
-  id             String   @id @default(uuid())
-  userId         String   @unique
-  currency       String   @default("USD")
+  id                String   @id @default(uuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id])   
+  currency          String   @default("USD")
 }
