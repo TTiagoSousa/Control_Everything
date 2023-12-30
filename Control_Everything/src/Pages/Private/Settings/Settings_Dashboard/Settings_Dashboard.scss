@@ -1,4 +1,52 @@
+@import '../../../../Styles//Global.scss';
+
 .Settings_Dashboard{
   width: 100%;
+  @include Pages_Configs;
   height: 95vh;
+
+  .Section_N1{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    .Settings_Field{
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+
+      .Title{
+
+        h1{
+          font-family: $font_family_poppins;
+          color: $blue;
+          font-size: 16px;
+          letter-spacing: 3px;
+        }
+      }
+
+      .Selector{
+        position: relative;
+        width: 400px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
 }
+
+// Colors
+  .Dark_Mode .Settings_Dashboard .Section_N1 .Settings_Field{
+    border-bottom: 2px solid $secundery_color_dark;
+  }
+
+  .Light_Mode .Settings_Dashboard .Section_N1 .Settings_Field{
+    border-bottom: 2px solid $secundery_color_light;
+  }
+// Colors
