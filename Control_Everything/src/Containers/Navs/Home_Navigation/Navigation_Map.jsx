@@ -9,11 +9,17 @@ export const Navigation_Map = [
   },
 
   {
+    title: 'Academy',
+    icon: <SVG.Academic_Hat />,
+    link: '/CE/Academy',
+  },
+
+  {
     title: 'Savings',
     icon: <SVG.Settings />,
     link: '/CE/Settings/Settings_Dashboard',
   }
-
+  
   // {
   //   title: 'Assets',
   //   icon: <SVG.Dashboard_Cubes/>,

@@ -1,3 +1,7 @@
+// Academy
+  export { default as Academic_Hat } from '../Assets/Icons/Academy/Academic_Hat';
+// Academy
+
 // Arrow
   export { default as Back_Square } from '../Assets/Icons/Arrow/Back_Square';
 // Arrow
