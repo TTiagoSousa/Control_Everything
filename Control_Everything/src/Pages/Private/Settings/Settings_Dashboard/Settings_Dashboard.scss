@@ -31,11 +31,34 @@
 
       .Selector{
         position: relative;
-        width: 400px;
+        width: 350px;
         height: 25px;
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Settings_Dashboard{
+
+    .Section_N1{
+
+      .Settings_Field{
+
+        .Title{
+
+          h1{
+            letter-spacing: 1px;
+          }
+        }
+
+        .Selector{
+          width: 250px;
+          height: 23px;
+        }
       }
     }
   }

@@ -17,7 +17,7 @@
     background-color: $blue_darker;
     font-family: $font_family_open_sans;
     color: white;
-    font-size: 14px;
+    font-size: 13px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,7 +30,7 @@
     height: 100%;
     border-radius: 0px 10px 10px 0px;
     color: #9da9bb;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
     transition: 0.5s;
     text-align: center;
@@ -76,6 +76,7 @@
         border-radius: 5px;
         transition: 300ms;
         cursor: pointer;
+        font-size: 13px;
 
         span {
           color: $gray;
