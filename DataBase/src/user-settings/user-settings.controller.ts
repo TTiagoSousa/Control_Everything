@@ -7,7 +7,7 @@ export class UserSettingsController {
   constructor(private readonly userSettingsService: UserSettingsService) {}
 
   @UseGuards(JwtAuthGuard)
-  @Get(':userId/get')
+  @Get(':userId/get-user-settings')
   async getTotalTransitionsByUserId(@Param('userId') userId: string) {
     return this.userSettingsService.getUserSettings(userId);
   }

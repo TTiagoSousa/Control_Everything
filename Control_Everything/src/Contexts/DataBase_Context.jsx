@@ -161,13 +161,21 @@ const DataBaseContext = ({ children }) => {
         password: password,
       });
 
-      const { token, id } = response.data;
+      const { token } = response.data;
       if (token) {
         sessionStorage.setItem('token', token);
         var decoded = jwt_decode.jwtDecode(token);
         Cookies.set('Control_Everthing', token);
         Cookies.set('Control_Everthing_ID', decoded.id);
       }
+
+      const userSettings = await axios.get(`${BASE_URL}/user-settings/${decoded.id}/get-user-settings/`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      sessionStorage.setItem('userSettings', JSON.stringify(userSettings.data));
 
       setAlert({
         open: true,
