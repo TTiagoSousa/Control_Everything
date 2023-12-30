@@ -59,16 +59,6 @@ const Currency_Selector = ({ currency, setCurrency }) => {
     }
   };
 
-  // const handleChange = (event) => {
-  //   const inputValue = event.target.value;
-  //   setCountry(inputValue);
-
-  //   const filtered = countries.filter((currency) =>
-  //   currency.name.toLowerCase().includes(inputValue.toLowerCase())
-  //   );
-  //   setFilteredCurrencies(filtered);
-  // };
-
   const handleChange = (event) => {
     const inputValue = event.target.value.toLowerCase();
     setCurrency(inputValue);
@@ -84,7 +74,7 @@ const Currency_Selector = ({ currency, setCurrency }) => {
   return (
     <div className='Currency_Selector'>
       <div className='Currency_Selector_Label'>
-        <span>Countrie</span>
+        <span>Currency</span>
       </div>
       <input
         type='text'
