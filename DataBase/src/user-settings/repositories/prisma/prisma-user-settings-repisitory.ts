@@ -12,4 +12,13 @@ export class PrismaUsersSettingsRepository implements PrismaUsersSettingsReposit
     return userSettings
   }
 
+  async findFirst(userId: string): Promise<UserSettings | null> {
+    const userSettings = await prisma.userSettings.findMany({
+      where: {
+        userId: userId,
+      },
+    });
+  
+    return userSettings[0];
+  }
 }

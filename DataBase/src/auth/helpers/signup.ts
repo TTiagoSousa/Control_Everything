@@ -89,4 +89,4 @@ export async function Signup (
     userSettings,
     message: "User created successfully"
   };
-}
+} 
