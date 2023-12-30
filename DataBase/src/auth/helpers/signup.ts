@@ -12,11 +12,14 @@ import {
   isStrongPassword 
 } from "src/utils/all.utilis";
 import { sendActivationEmail } from "./send.activation.email";
+import { UserSettingsService } from "src/user-settings/user-settings.service";
+import { createUserSettings } from "src/user-settings/helpers/create.user.settings";
 
 export async function Signup (
   dto: signup_dto,
   jwt: JwtService,
-  emailService: EmailService
+  emailService: EmailService,
+  userSettingsService: UserSettingsService,
 ) {
 
   const usersRepository = new PrismaUsersRepository();
@@ -68,14 +71,22 @@ export async function Signup (
 
   await sendActivationEmail(email, activationToken, fullName, emailService);
 
-  const user = usersRepository.create({
+  const creationResult = await usersRepository.create({
     email: email,
     fullName: capitalizedFullName,
     dateOfBirth,
     country: requestedCountry.countryName,
     hashedPassword: hashedPassword,
     gender,
-  })
+  });
 
-  return {user,  message: "User created successfully"} 
+  const userId = creationResult.id;
+
+  const userSettings = await createUserSettings(userId);
+
+  return {
+    user: creationResult,
+    userSettings,
+    message: "User created successfully"
+  };
 }

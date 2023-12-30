@@ -8,10 +8,13 @@ import { JwtModule } from '@nestjs/jwt';
 import { jwtSecret } from 'src/utils/constants';
 import { EmailService } from 'src/email/email.service';
 import { UserService } from 'src/user/user.service';
+import { UserSettingsModule } from 'src/user-settings/user-settings.module';
+import { UserSettingsService } from 'src/user-settings/user-settings.service';
 
 @Module({
   imports: [
     CountriesModule,
+    UserSettingsModule,
     PassportModule,
     JwtModule.register({
       secret: jwtSecret, // Replace with your actual secret key
@@ -19,6 +22,6 @@ import { UserService } from 'src/user/user.service';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, CountriesService, EmailService, UserService],
+  providers: [AuthService, CountriesService, EmailService, UserService, UserSettingsService],
 })
 export class AuthModule {}
