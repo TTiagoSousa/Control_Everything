@@ -39,6 +39,7 @@ export class PrismaSavingsTransitionsRepository implements SavingsTransitionRepo
     const transitions = await prisma.savingTransitions.findMany({
       where: {
         createdById: userId,
+        isActive: true,
       },
       orderBy: {
         transitionID: 'asc',
@@ -72,5 +73,16 @@ export class PrismaSavingsTransitionsRepository implements SavingsTransitionRepo
     });
   
     return transition;
+  }
+
+  async findMany(userId: string): Promise<SavingTransitions[]> {
+    const totalByCurrencyType = await prisma.savingTransitions.findMany({
+      where: {
+        createdById: userId,
+        isActive: true,
+      },
+    })
+
+    return totalByCurrencyType
   }
 }

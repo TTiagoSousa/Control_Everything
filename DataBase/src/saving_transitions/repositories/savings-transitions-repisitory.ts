@@ -7,4 +7,5 @@ export interface SavingsTransitionRepository {
   getByUserIdWithPagination(userId: string, take: number, skip: number): Promise<SavingTransitions[]>;
   save(userId: string, data: Prisma.SavingTransitionsUpdateInput): Promise<SavingTransitions>;
   findByTransitionId(id: string): Promise<SavingTransitions | null>;
-}
+  findMany(userId: string): Promise<SavingTransitions[]>
+} 

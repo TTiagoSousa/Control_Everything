@@ -48,4 +48,25 @@ export class SavingTransitionsController {
   ) {
     return this.savingTransitionsService.enableSavingTransition(userId, transitionId);
   }
+
+  // @UseGuards(JwtAuthGuard)
+  // @Get(':userId/get-total-by-currency-type')
+  // async getTotalByCurrencyType(@Param('userId') userId: string) {
+  //   return this.savingTransitionsService.getTotalByCurrencyType(userId, baseCurrency, targetCurrencyPair);
+  // }
+
+  @UseGuards(JwtAuthGuard)
+  @Get(':userId/get-total-by-currency-type/:targetCurrencyPair')
+  async getTotalByCurrencyType(
+    @Param('userId') userId: string,
+    @Param('targetCurrencyPair') targetCurrencyPair: string,
+  ) {
+    
+      const baseCurrency = 'USD';
+
+      // Get the total amount for each currency type in the specified base currency
+      const totalByCurrencyType = await this.savingTransitionsService.getTotalByCurrencyType(userId, baseCurrency, targetCurrencyPair);
+
+      return totalByCurrencyType 
+  }
 }

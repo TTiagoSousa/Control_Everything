@@ -5,6 +5,7 @@ import { getTotalTransitionsByUserId } from './helpers/get.total.transitions.by.
 import { getSavingTransitions } from './helpers/get.saavings.transitions';
 import { disableSavingTransition } from './helpers/disable.saving.transition';
 import { enableSavingTransition } from './helpers/enable.saving.transition';
+import { getTotalByCurrencyType } from './helpers/get.total.by.currency.type';
 
 @Injectable()
 export class SavingTransitionsService {
@@ -33,6 +34,12 @@ export class SavingTransitionsService {
   async enableSavingTransition(userId: string,transitionId: string){
     const result = await enableSavingTransition(userId,transitionId);
 
+    return result
+  }
+
+  async getTotalByCurrencyType(userId: string,baseCurrency: string, targetCurrencyPair: string){
+    const result = await getTotalByCurrencyType(userId, baseCurrency, targetCurrencyPair);
+    
     return result
   }
 }
