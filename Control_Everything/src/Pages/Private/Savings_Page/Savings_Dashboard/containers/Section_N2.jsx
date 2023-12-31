@@ -4,8 +4,10 @@ import useFetchTotalByCurrencyType from '../../../../../Hooks/Saving_Transitions
 
 const Section_N2 = () => {
 
-  const { totalonSavingTransition } = useFetchTotalByCurrencyType();
-
+  const { totalOnByTypeSavingTransition, totalonSavingTransition } = useFetchTotalByCurrencyType();
+  console.log(totalOnByTypeSavingTransition);
+  console.log(totalonSavingTransition);
+  
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

@@ -6,6 +6,7 @@ import { GlobalState } from '../../Contexts/Global_Context';
 
 const useFetchTotalByCurrencyType = () => {
  
+  const [ totalOnByTypeSavingTransition, setTotalOnByTypeSavingTransition ] = useState(null);
   const [ totalonSavingTransition, setTotalonSavingTransition ] = useState(null);
   const { selectCurrency } = GlobalState();
 
@@ -23,7 +24,8 @@ const useFetchTotalByCurrencyType = () => {
           },
         });
 
-        setTotalonSavingTransition(response.data);
+        setTotalOnByTypeSavingTransition(response.data[1]);
+        setTotalonSavingTransition(response.data.totalConvertedAmount);
       } catch (error) {
         console.error(error);
       }
@@ -32,7 +34,7 @@ const useFetchTotalByCurrencyType = () => {
     fetchTotalTransitions();
   }, [userId, authenticated]); // Dependências do efeito
 
-  return {totalonSavingTransition, setTotalonSavingTransition};
+  return {totalOnByTypeSavingTransition, totalonSavingTransition};
 }
 
 export default useFetchTotalByCurrencyType; 
