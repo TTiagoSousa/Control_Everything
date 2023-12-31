@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import '../../Settings_Dashboard.scss';
 import * as Componente from '../../../../../../Imports/components';
 import getCurrencyFromStorage from '../../../../../../Hooks/Currency/getCurrencyFromStorage';
+import { GlobalState } from '../../../../../../Contexts/Global_Context';
 
 const Currency_Card = () => {
 
-  const { currency } = getCurrencyFromStorage()
-  console.log(currency)
+  const { selectCurrency } = GlobalState();
+  
+  console.log(selectCurrency)
   
   return (
     <div className='Settings_Field'>
@@ -15,7 +17,7 @@ const Currency_Card = () => {
       </div>
       <div className='Selector'>
         <Componente.Currency_Selector 
-          currency={currency}
+          currency={selectCurrency}
         />
       </div>
     </div>

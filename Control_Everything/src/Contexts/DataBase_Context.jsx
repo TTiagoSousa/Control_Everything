@@ -6,6 +6,7 @@ import { BASE_URL } from '../config/urls';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import * as jwt_decode from "jwt-decode";
+import { GlobalState } from './Global_Context';
 
 const DataBase = createContext({});
 

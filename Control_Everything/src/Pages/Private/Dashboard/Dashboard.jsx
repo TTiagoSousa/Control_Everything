@@ -1,8 +1,12 @@
 import React from 'react';
 import './Dashboard.scss';
 import Section_N1 from './Components/Section_N1';
+import { GlobalState } from '../../../Contexts/Global_Context';
  
 const Dashboard = () => {
+
+  const {selectCurrency, setSelectCurrency} = GlobalState()
+  console.log(selectCurrency)
 
   return (
 
