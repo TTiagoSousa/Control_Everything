@@ -38,7 +38,7 @@ export async function getTotalByCurrencyType(
     const amountInUSD = totalAmount / Number(currency.rate);
 
     // Convert from USD to target currency
-    const convertedAmount = amountInUSD * baseToTargetRate;
+    const convertedAmount = Math.round((amountInUSD * baseToTargetRate) * 100) / 100;
 
     result.push({
       currencyType,
