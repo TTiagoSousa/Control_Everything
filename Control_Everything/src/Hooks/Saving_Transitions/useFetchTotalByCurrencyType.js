@@ -7,8 +7,7 @@ import { GlobalState } from '../../Contexts/Global_Context';
 const useFetchTotalByCurrencyType = () => {
  
   const [ totalonSavingTransition, setTotalonSavingTransition ] = useState(null);
-  const { selectCurrency, setSelectCurrency } = GlobalState();
-  console.log("selectCurrency  " + selectCurrency)
+  const { selectCurrency } = GlobalState();
 
   const { authenticated, userId } = DataBaseState();
 

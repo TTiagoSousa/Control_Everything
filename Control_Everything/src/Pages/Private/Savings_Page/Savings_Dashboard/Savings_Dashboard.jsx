@@ -2,8 +2,9 @@ import React from 'react';
 import './Savings_Dashboard.scss'
 import First_Transition from './containers/First_Transition';
 import useCreateSavingTransition from '../../../../Hooks/Saving_Transitions/useCreateSavingTransition';
-import Section_N1 from './containers/Section_N1';
+import Section_N2 from './containers/Section_N1';
 import useFetchTotalByCurrencyType from '../../../../Hooks/Saving_Transitions/useFetchTotalByCurrencyType';
+import Section_N1 from './containers/Section_N2';
 
 const Savings_Dashboard = () => {
 
@@ -38,6 +39,7 @@ const Savings_Dashboard = () => {
       ) : (
         <>
           <Section_N1 />
+          <Section_N2 />
         </>
       )}
     </div>
