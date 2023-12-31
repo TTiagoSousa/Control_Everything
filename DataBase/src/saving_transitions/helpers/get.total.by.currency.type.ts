@@ -3,14 +3,23 @@ import { PrismaSavingsTransitionsRepository } from "../repositories/prisma/prism
 import { BadRequestException } from "@nestjs/common";
 
 export async function getTotalByCurrencyType(
-  userId : string, 
+  userId: string, 
   baseCurrency: string, 
   targetCurrencyPair: string
-) : Promise<{ currencyType: string; symbol: string; totalAmount: number; convertedAmount: number; baseCurrencySymbol: string }[]>{
+): Promise<{
+  result: {
+    currencyType: string;
+    symbol: string;
+    totalAmount: number;
+    convertedAmount: number;
+    baseCurrencySymbol: string;
+  }[];
+  totalConvertedAmount: number;
+}> {
 
   const SavingsTransitionRepository = new PrismaSavingsTransitionsRepository();
 
-  const activeTransitions = await SavingsTransitionRepository.findMany(userId)
+  const activeTransitions = await SavingsTransitionRepository.findMany(userId);
 
   const currencyTotals: { [currencyType: string]: number } = {};
   for (const transition of activeTransitions) {
@@ -26,13 +35,20 @@ export async function getTotalByCurrencyType(
 
   const baseCurrencyData = currenciesData.find(c => c.code === baseCurrency);
   const targetCurrencyData = currenciesData.find(c => c.code === targetCurrencyPair);
+  if (!baseCurrencyData || !targetCurrencyData) {
+    throw new BadRequestException('Invalid currency code provided');
+  }
   const baseToTargetRate = Number(targetCurrencyData.rate) / Number(baseCurrencyData.rate);
 
-  const result: { currencyType: string; symbol: string; totalAmount: number; convertedAmount: number; baseCurrencySymbol: string }[] = [];
+  let totalConvertedAmount = 0;
+  const result = [];
 
   for (const currencyType in currencyTotals) {
     const totalAmount = currencyTotals[currencyType];
     const currency = currenciesData.find(c => c.code === currencyType);
+    if (!currency) {
+      continue; // Ignore if currency data is not found
+    }
 
     // Convert each currency amount to USD
     const amountInUSD = totalAmount / Number(currency.rate);
@@ -40,14 +56,16 @@ export async function getTotalByCurrencyType(
     // Convert from USD to target currency
     const convertedAmount = Math.round((amountInUSD * baseToTargetRate) * 100) / 100;
 
+    totalConvertedAmount += convertedAmount;
+
     result.push({
       currencyType,
       symbol: currency.symbol,
       totalAmount,
       convertedAmount,
-      baseCurrencySymbol: targetCurrencyData.symbol,
+      baseCurrencySymbol: baseCurrencyData.symbol,
     });
   }
 
-  return result;
+  return { result, totalConvertedAmount };
 }
