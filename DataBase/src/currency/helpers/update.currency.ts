@@ -15,8 +15,6 @@ export async function UpdateCurrency() {
   const responseCurrencyName = await axios.get(currencyNameUrl);
   const currencies = responseCurrencyName.data.data;
 
-  console.log('currencyRates', currencies);
-
   const simplifiedCurrencies = Object.keys(currencies).map((currency) => {
     return {
       name_currency: currencies[currency].name,
@@ -35,7 +33,7 @@ export async function UpdateCurrency() {
     const existingCurrency = await currencyRepository.findByCode(currency.code_currency);
     if (existingCurrency) {
       await currencyRepository.updateRate(existingCurrency.id, rate.toString());
-      console.log(`Rate atualizado ${currency.code_currency}: ${rate.toString()}`);
+      // console.log(`Rate atualizado ${currency.code_currency}: ${rate.toString()}`);
     } else {
       try {
         await currencyRepository.create({
@@ -44,7 +42,7 @@ export async function UpdateCurrency() {
           rate: rate.toString(),
           code: currency.code_currency,
         });
-        console.log(`Created currency ${currency.code_currency} with rate ${rate.toString()}`);
+        // console.log(`Created currency ${currency.code_currency} with rate ${rate.toString()}`);
       } catch (error) {
         console.error('Error creating currency:', error);
       }

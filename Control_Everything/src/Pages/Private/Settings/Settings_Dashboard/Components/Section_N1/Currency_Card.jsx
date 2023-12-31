@@ -8,8 +8,6 @@ const Currency_Card = () => {
 
   const { selectCurrency } = GlobalState();
   
-  console.log(selectCurrency)
-  
   return (
     <div className='Settings_Field'>
       <div className='Title'>

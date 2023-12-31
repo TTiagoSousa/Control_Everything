@@ -5,9 +5,6 @@ import { GlobalState } from '../../../Contexts/Global_Context';
  
 const Dashboard = () => {
 
-  const {selectCurrency, setSelectCurrency} = GlobalState()
-  console.log(selectCurrency)
-
   return (
 
     <div className="Dashboard">

@@ -27,8 +27,7 @@ const Savings_Dashboard = () => {
     totalTransitions
   };
 
-  const {totalonSavingTransition, setTotalonSavingTransition} = useFetchTotalByCurrencyType()
-  console.log(totalonSavingTransition)
+  const {totalonSavingTransition, setTotalonSavingTransition} = useFetchTotalByCurrencyType();
 
   return (
     <div className='Savings_Dashboard'>
