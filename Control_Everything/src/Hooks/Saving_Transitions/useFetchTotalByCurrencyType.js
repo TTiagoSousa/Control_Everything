@@ -24,8 +24,10 @@ const useFetchTotalByCurrencyType = () => {
           },
         });
 
-        setTotalOnByTypeSavingTransition(response.data[1]);
-        setTotalonSavingTransition(response.data.totalConvertedAmount);
+        const { result, totalConvertedAmount } = response.data;
+
+        setTotalOnByTypeSavingTransition(result);
+        setTotalonSavingTransition(totalConvertedAmount);
       } catch (error) {
         console.error(error);
       }
