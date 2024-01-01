@@ -309,11 +309,11 @@
               span {
                 font-size: 15px;
               }
+            }
 
-              .Buy_or_Sell {
-                position: sticky;
-                left: 25%;
-              }
+            .Buy_or_Sell {
+              position: sticky;
+              left: 25%;
             }
           }
         }
@@ -354,19 +354,21 @@
             position: sticky;
             left: 25%;
           }
+
+          tr{
+
+            th{
+
+              span {
+                font-size: 13px;
+              }
+            }
+          }
         }
 
         tbody{
 
           tr{
-            height: 30px;
-
-            th{
-
-              span {
-                font-size: 15px;
-              }
-            }
 
             .Buy_or_Sell {
               position: sticky;
