@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Custumize_Sidebar.scss';
 import * as Component from '../../../Imports/components';
 import { NavsState } from '../../../Contexts/Navs_Context';
@@ -17,6 +17,20 @@ const Custumize_Sidebar = () => {
   const currentLocation = window.location.pathname;
   const isHomePage = currentLocation === "/CE" || currentLocation.startsWith("/CE/");
 
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 500);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 500);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Limpa o event listener quando o componente for desmontado
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+
   return (
     <>
       <Component.Dark_Div 
@@ -30,12 +44,16 @@ const Custumize_Sidebar = () => {
 
         <div className='Settings_Container'>
           <Toggle_Theme />
-          {authenticated && isHomePage &&(
+          {authenticated && isHomePage && !isSmallScreen && (
             <>
-              <Diviser />
               <Choose_Color />
               <Diviser />
+            </>
+          )}
+          {authenticated && isHomePage && (
+            <>
               <Type_Of_Navigations />
+              <Diviser />
             </>
           )}
         </div>
