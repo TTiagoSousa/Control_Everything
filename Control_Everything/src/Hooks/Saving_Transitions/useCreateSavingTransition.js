@@ -3,6 +3,7 @@ import { NavsState } from "../../Contexts/Navs_Context";
 import axios from "axios";
 import { BASE_URL } from "../../config/urls";
 import useFetchTotalTransitions from "./useFetchTotalTransitions";
+import { set } from "zod";
 
 const useCreateSavingTransition = () => {
 
@@ -16,6 +17,8 @@ const useCreateSavingTransition = () => {
   const [ transitiontype, setTransitiontype ] = useState('Deposit');
 
   const {totalTransitions, setTotalTransitions} = useFetchTotalTransitions();
+
+   const [ newTransaction, setNewTransaction ] = useState();
 
   const createSavingTransaction = async () => {
 
@@ -50,6 +53,8 @@ const useCreateSavingTransition = () => {
         }
       )
 
+      setNewTransaction(response.data.savingTransition)
+      console.log(newTransaction);
       setAlert({
         open: true,
         message: 'Transition created successfully',
@@ -86,7 +91,8 @@ const useCreateSavingTransition = () => {
     platform, setPlatform,
     currencyType, setCurrencyType,
     transitiontype, setTransitiontype,
-    totalTransitions
+    totalTransitions,
+    newTransaction
   }
 }
 

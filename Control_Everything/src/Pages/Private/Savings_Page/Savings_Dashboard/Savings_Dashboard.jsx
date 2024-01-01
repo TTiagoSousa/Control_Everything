@@ -14,7 +14,7 @@ const Savings_Dashboard = () => {
     amount, setAmount,
     platform, setPlatform,
     currencyType, setCurrencyType,
-    totalTransitions
+    totalTransitions,
   } = useCreateSavingTransition(null);
 
   const firstTransitionProps = {

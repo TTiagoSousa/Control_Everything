@@ -5,12 +5,12 @@ import LinearProgress from '@mui/material/LinearProgress';
 
 const Section_N2 = () => {
 
-  const { totalOnByTypeSavingTransition } = useFetchTotalByCurrencyType();
+  const { totalOnByTypeSavingTransition, setTotalOnByTypeSavingTransition } = useFetchTotalByCurrencyType();
   
   const [isLoading, setIsLoading] = useState(true);
-
+   
   useEffect(() => {
-    const delay = 200;
+    const delay = 500;
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, delay);
@@ -22,7 +22,7 @@ const Section_N2 = () => {
     <div className='Section_N2'>
       <div className='Total_Saving_Transiton'>
         <div className='Table_Wrapper'>
-          <table>
+          <table> 
             <thead>
               <tr>
                 <th className="Currency"><span>Currency</span></th>
@@ -30,15 +30,15 @@ const Section_N2 = () => {
                 <th className="Total_in_Conversion"><span>Total in Conversion</span></th>
               </tr>
             </thead>
+            {isLoading && 
+              <div className='Loading'>
+                <LinearProgress />
+              </div>
+            }
             <tbody>
-              {isLoading ? (
-                <tr className='Loading'>
-                  <td colSpan="3">
-                    <LinearProgress />
-                  </td>
-                </tr>
-              ) : (
-                totalOnByTypeSavingTransition && totalOnByTypeSavingTransition.map((currency) => (
+            {!isLoading && ( 
+              <>
+                {totalOnByTypeSavingTransition && totalOnByTypeSavingTransition.map((currency) => (
                   <tr key={currency.currencyType}>
                     <td className='currency'>
                       <span>{currency.currencyType}</span>
@@ -52,8 +52,9 @@ const Section_N2 = () => {
                       <span className='Symbol'>{currency.baseCurrencySymbol}</span>
                     </td>
                   </tr>
-                ))
-              )}
+                ))}
+              </> // Add closing curly brace here
+            )}
             </tbody>
           </table>
         </div>    
