@@ -48,12 +48,12 @@ const Custumize_Sidebar = () => {
             <>
               <Choose_Color />
               <Diviser />
+              <Type_Of_Navigations />
+              <Diviser />
             </>
           )}
           {authenticated && isHomePage && (
             <>
-              <Type_Of_Navigations />
-              <Diviser />
             </>
           )}
         </div>
