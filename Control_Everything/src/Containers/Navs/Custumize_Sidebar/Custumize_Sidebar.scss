@@ -478,6 +478,26 @@
 
 }
 
+@media (max-width: 500px) {
+  .Custumize_Sidebar{
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    transition: 300ms;
+
+    &.active {
+      right: 0;
+      transition: 300ms;
+    }
+
+    .Settings_Container{
+      height: 100vh;
+    }
+  }
+
+}
+
 // Colors
   .Dark_Mode .Custumize_Sidebar .Settings_Container,
   .Dark_Mode .Custumize_Sidebar{
