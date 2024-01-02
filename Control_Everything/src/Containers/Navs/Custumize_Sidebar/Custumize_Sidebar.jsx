@@ -46,6 +46,7 @@ const Custumize_Sidebar = () => {
           <Toggle_Theme />
           {authenticated && isHomePage && !isSmallScreen && (
             <>
+              <Diviser />
               <Choose_Color />
               <Diviser />
               <Type_Of_Navigations />
