@@ -2,6 +2,7 @@ import React from 'react';
 import '../Auth.scss';
 import * as Component from '../../../../Imports/components';
 import { DataBaseState } from '../../../../Contexts/DataBase_Context';  
+import { useSignup } from '../../../../Hooks/Auth/useSignup';
 
 const Sign_Up_Form = () => {
 
@@ -14,7 +15,7 @@ const Sign_Up_Form = () => {
     confirmPassword, setConfirmPassword,
     gender, setGender,
     signup
-   } = DataBaseState();
+   } = useSignup();
 
   return (
     <>

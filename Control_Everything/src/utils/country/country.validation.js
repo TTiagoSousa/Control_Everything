@@ -4,7 +4,7 @@ import axios from 'axios';
 export const valideCountry = async (country) => {
 
   try {
-    const response = await axios.get(`${BASE_URL}/countries/all`);
+    const response = await axios.get(`${BASE_URL}/countries/get-all-countries`);
    
     const countriesData = response.data; 
     const requestedCountry = countriesData.find(c => c.countryName === country);
