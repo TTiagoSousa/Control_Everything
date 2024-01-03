@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { DataBaseState } from '../../Contexts/DataBase_Context';
 import { GlobalState } from '../../Contexts/Global_Context';
+import http from '../../Services/httpService';
 
 const useFetchTotalByCurrencyType = () => {
  
