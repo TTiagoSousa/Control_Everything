@@ -2,14 +2,15 @@ import React from 'react';
 import '../Auth.scss'
 import * as Component from '../../../../Imports/components';
 import { DataBaseState } from '../../../../Contexts/DataBase_Context';
+import { useSignin } from '../../../../Hooks/Auth/useSignin';
 
 const Sign_In_Form = ({ Children }) => {
 
   const { 
     email, setEmail,
     password, setPassword,
-    login
-   } = DataBaseState();
+    signin
+   } = useSignin();
 
   return (
     <>
@@ -34,7 +35,7 @@ const Sign_In_Form = ({ Children }) => {
         <div className="Input_Field">
           <Component.Global_Button 
             Text="Login"
-            onClick={login}
+            onClick={signin}
           />
         </div>
         {Children}
