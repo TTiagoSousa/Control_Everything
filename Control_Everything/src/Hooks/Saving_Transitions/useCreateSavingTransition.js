@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { NavsState } from "../../Contexts/Navs_Context";
-import axios from "axios";
-import { BASE_URL } from "../../config/urls";
 import useFetchTotalTransitions from "./useFetchTotalTransitions";
-import { set } from "zod";
+import http from "../../Services/httpService";
 
 const useCreateSavingTransition = () => {
 
-  const { setAlert, alert } = NavsState();
+  const { setAlert } = NavsState();
 
   const [ date, setDate ] = useState('');
   const [ hour, setHour]  = useState('');
@@ -32,26 +30,15 @@ const useCreateSavingTransition = () => {
       return;
     }
 
-    const token = sessionStorage.getItem('token');
-
     try {
-      const response = await axios.post(
-        `${BASE_URL}/saving-transitions/Create`,
-        {
-          transitiontype: transitiontype,
-          data: date,
-          hour: hour,
-          amount: amount,
-          platform: platform,
-          currencyType: currencyType,
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      )
+      const response = await http.post('/saving-transitions/Create', {
+        transitiontype: transitiontype,
+        data: date,
+        hour: hour,
+        amount: amount,
+        platform: platform,
+        currencyType: currencyType,
+      });
 
       setNewTransaction(response.data.savingTransition)
       console.log(newTransaction);
@@ -80,7 +67,6 @@ const useCreateSavingTransition = () => {
         
       }
     }
-
   }
 
   return {

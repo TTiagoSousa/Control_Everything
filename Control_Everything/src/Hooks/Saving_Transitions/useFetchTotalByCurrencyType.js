@@ -1,6 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
-import { BASE_URL } from '../../config/urls';
-import axios from 'axios';
+import { useState, useEffect } from 'react';
 import { DataBaseState } from '../../Contexts/DataBase_Context';
 import { GlobalState } from '../../Contexts/Global_Context';
 
@@ -17,12 +15,8 @@ const useFetchTotalByCurrencyType = () => {
 
     const fetchTotalTransitions = async () => {
       try {
-        const token = sessionStorage.getItem('token');
-        const response = await axios.get(`${BASE_URL}/saving-transitions/${userId}/get-total-by-currency-type/${selectCurrency}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+
+        const response = await http.get(`/saving-transitions/${userId}/get-total-by-currency-type/${selectCurrency}`);
 
         const { result, totalConvertedAmount } = response.data;
 

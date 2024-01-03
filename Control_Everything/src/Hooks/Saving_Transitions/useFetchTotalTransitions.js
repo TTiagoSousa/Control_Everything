@@ -1,7 +1,6 @@
-import { useState, useEffect, useContext } from 'react';
-import { BASE_URL } from '../../config/urls';
-import axios from 'axios';
-import DataBaseContext, { DataBaseState } from '../../Contexts/DataBase_Context';
+import { useState, useEffect } from 'react';
+import { DataBaseState } from '../../Contexts/DataBase_Context';
+import http from '../../Services/httpService';
 
 const useFetchTotalTransitions = () => {
  
@@ -13,12 +12,8 @@ const useFetchTotalTransitions = () => {
 
     const fetchTotalTransitions = async () => {
       try {
-        const token = sessionStorage.getItem('token');
-        const response = await axios.get(`${BASE_URL}/saving-transitions/${userId}/total-of-savnig-transitions`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+
+        const response = await http.get(`/saving-transitions/${userId}/total-of-savnig-transitions`);
 
         setTotalTransitions(response.data);
       } catch (error) {

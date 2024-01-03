@@ -1,20 +1,15 @@
-import axios from "axios";
 import { DataBaseState } from "../../Contexts/DataBase_Context";
+import http from "../../Services/httpService";
 
 const useDisableOrEnableSavingTransition = (setSavingTransitionsList) => {
 
-  const { userId, authenticated } = DataBaseState();
+  const { userId } = DataBaseState();
 
   const disableSavingTransition = async (transitionId) => {
     try {
-      const token = sessionStorage.getItem('token');
     
       // Send a DELETE request to the API to disable the transition
-      await axios.delete(`http://192.168.0.121:3000/saving-transitions/${userId}/${transitionId}/disable-savings-transition`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      await http.delete(`/saving-transitions/${userId}/${transitionId}/disable-savings-transition`);
     
       // After successfully disabling the transition, update the UI state
       setSavingTransitionsList((prevTransitions) =>
@@ -23,7 +18,6 @@ const useDisableOrEnableSavingTransition = (setSavingTransitionsList) => {
         )
       );
     
-      console.log(transitionId)
     } catch (error) {
       console.error(error);
     }
@@ -31,17 +25,9 @@ const useDisableOrEnableSavingTransition = (setSavingTransitionsList) => {
 
   const enableSavingTransition = async (transitionId) => {
     try {
-      const token = sessionStorage.getItem('token');
-      console.log(token)
 
-      // Send a DELETE request to the API to disable the transition
-      await axios.post(`http://192.168.0.121:3000/saving-transitions/${userId}/${transitionId}/enable-savings-transition`, null,{
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      console.log(transitionId)
+      // Senda DELETE request to the API to disable the transition
+      await http.post(`/saving-transitions/${userId}/${transitionId}/enable-savings-transition`);
     
       // After successfully disabling the transition, update the UI state
       setSavingTransitionsList((prevTransitions) =>
@@ -49,8 +35,6 @@ const useDisableOrEnableSavingTransition = (setSavingTransitionsList) => {
           transition.id === transitionId ? { ...transition, isActive: true } : transition
         )
       );
-
-      console.log(transitionId)
   
     } catch (error) {
       console.error(error);
