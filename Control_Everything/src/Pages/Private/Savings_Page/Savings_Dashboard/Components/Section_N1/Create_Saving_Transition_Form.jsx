@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import './Create_Saving_Transition_Form.scss';
-import * as Component from '../../../Imports/components';import useCreateSavingTransition from '../../../Hooks/Saving_Transitions/useCreateSavingTransition';
-;
+import React, { useState } from 'react'
+import useCreateSavingTransition from '../../../../../../Hooks/Saving_Transitions/useCreateSavingTransition';
+import * as Component from '../../../../../../Imports/components';
 
 const Create_Saving_Transition_Form = ({ createSavingTransitionForm, setCreateSavingTransitionForm }) => {
 
