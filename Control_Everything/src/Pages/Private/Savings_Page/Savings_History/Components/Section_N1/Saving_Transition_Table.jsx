@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './Saving_Transition_Table.scss';
-import useFetchSavingsTransitions from '../../../Hooks/Saving_Transitions/useFetchSavingsTransitions';
-import useFetchTotalTransitions from '../../../Hooks/Saving_Transitions/useFetchTotalTransitions';
+import useFetchSavingsTransitions from '../../../../../../Hooks/Saving_Transitions/useFetchSavingsTransitions';
+import useFetchTotalTransitions from '../../../../../../Hooks/Saving_Transitions/useFetchTotalTransitions';
 import LinearProgress from '@mui/material/LinearProgress';
-import * as Icon from '../../../Imports/icons';
-import * as Color from '../../../Styles/Colors';
-import * as Component from '../../../Imports/components'
-import useDisableOrEnableSavingTransition from '../../../Hooks/Saving_Transitions/useDisableOrEnableSavingTransition';
+import * as Icon from '../../../../../../Imports/icons';
+import * as Color from '../../../../../../Styles/Colors';
+import * as Component from '../../../../../../Imports/components'
+import useDisableOrEnableSavingTransition from '../../../../../../Hooks/Saving_Transitions/useDisableOrEnableSavingTransition';
+import '../../Savings_History.scss'
 
 const Saving_Transition_Table = () => {
 

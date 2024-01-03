@@ -3,4 +3,482 @@
 .Savings_History{
   @include Pages_Configs;
   height: 95vh;
+
+  .Section_N1{
+    position: relative;
+    width: 100%;
+    height: auto;
+    
+    .Saving_Transition_Table {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    
+      .Table_Wrapper{
+        box-shadow: $box_shadow;
+        border-radius: $border_radius;
+        width: 100%;
+        position: relative;
+    
+        table{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+    
+    
+    
+          thead {
+            width: 100%;
+            position: sticky;
+            top: 5vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            border-radius: 10px 10px 0px 0px;
+            padding: 5px 0px 5px 0px;
+    
+            tr{
+              width: 100%;
+              display: flex;
+    
+              th {
+                width: 12.5%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                span {
+                  font-weight: 650;
+                  color: $blue;
+                  font-family: $font_family_poppins;
+                  font-size: 15px;
+                }
+              }
+            }
+          }
+    
+          tbody {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+    
+            tr{
+              width: 100%;
+              height: 35px;
+              display: flex;
+              justify-content: space-around;
+    
+              :last-child{
+                border-bottom: none;
+              }
+    
+              td {
+                width: 12.5%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                span {
+                  font-weight: 650;
+                  font-family: 'Open Sans', sans-serif;
+                  font-size: 15px;
+                }
+              }
+    
+              .Modify {
+                display: flex;
+                justify-content: space-evenly;
+    
+                button {
+                  display: flex;
+                  align-items: center;
+                  border-radius: 50%;
+                  padding: 5px;
+                  border: none;
+                  background: none;
+                  cursor: pointer;
+    
+                  div {
+                    height: 18px;
+                  }
+                
+                }
+              }
+    
+              .Cut_Line {
+                position: absolute;
+                width: 90%;
+                margin-top: 15px;
+                left: 0%;
+                height: 2px;
+                background-color: rgba(242, 19, 19, 0.515);
+              }
+            }
+          }
+        }
+      }
+    
+      .Filters {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+        transition: 0.3s;
+        padding: 5px 0px 5px 0px;
+      }
+    }
+  }
 }
+
+@media (max-width: 1100px) {
+  .Savings_History{
+
+    .Section_N1{
+
+      .Saving_Transition_Table{
+
+        .Table_Wrapper {
+          overflow-y: auto; 
+    
+          table {
+            width: 120%;
+    
+            thead{
+              position: relative; 
+              top: 0;
+    
+              .Transition_ID {
+                position: sticky;
+                left: 0%;
+              }
+    
+              .Buy_or_Sell {
+                position: sticky;
+                left: 15%;
+              }
+            }
+    
+            tbody{
+    
+              .Transition_ID {
+                position: sticky;
+                left: 0%;
+              }
+    
+              .Buy_or_Sell {
+                position: sticky;
+                left: 15%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .Savings_History{
+
+    .Section_N1{
+
+      .Saving_Transition_Table{
+
+        .Table_Wrapper{
+    
+          table {
+            width: 140%;
+    
+            thead{
+    
+              tr{
+               
+                .Buy_or_Sell {
+                  position: sticky;
+                  left: 17.5%;
+                }
+    
+                th{
+    
+                  span{
+                    font-size: 17px;
+                  }
+                }
+              }
+            }
+    
+            tbody{
+    
+              tr{
+    
+                .Buy_or_Sell {
+                  position: sticky;
+                  left: 17.5%;
+                }
+    
+                .Cut_Line{
+                  width: 125%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .Savings_History{
+
+    .Section_N1{
+
+      .Saving_Transition_Table{
+
+        .Table_Wrapper{
+    
+          table{
+            width: 160%;
+    
+            thead{
+    
+              tr{
+    
+                .Buy_or_Sell {
+                  position: sticky;
+                  left: 20%;
+                }
+              }
+            }
+    
+            tbody{
+    
+              tr{
+    
+                .Buy_or_Sell {
+                  position: sticky;
+                  left: 20%;
+                }
+    
+                .Cut_Line{
+                  width: 140%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .Savings_History{
+
+    .Section_N1{
+      
+      .Saving_Transition_Table{
+
+        .Table_Wrapper{
+    
+          table {
+            width: 180%;
+    
+            thead{
+    
+              tr{
+    
+                th{
+    
+                  span {
+                    font-size: 16px;
+                  }
+                }
+    
+                .Buy_or_Sell {
+                  position: sticky;
+                  left: 22.5%;
+                }
+              }
+            }
+    
+            tbody{
+    
+              tr{
+    
+                .Buy_or_Sell {
+                  position: sticky;
+                  left: 22.5%;
+                }
+    
+                .Cut_Line{
+                  width: 160%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .Savings_History{
+
+    .Section_N1{
+      
+      .Saving_Transition_Table{
+
+        .Table_Wrapper{
+    
+          table {
+            width: 200%;
+    
+            thead{
+    
+              tr{
+    
+                th{
+    
+                  span {
+                    font-size: 15px;
+                  }
+                }
+    
+                .Buy_or_Sell {
+                  position: sticky;
+                  left: 25%;
+                }
+              }
+            }
+    
+            tbody{
+    
+              tr{
+                height: 30px;
+                padding: 4px 0px 4px 0px;
+    
+                .Buy_or_Sell {
+                  position: sticky;
+                  left: 25%;
+                }
+    
+                .Cut_Line{
+                  width: 175%;
+                  margin-top: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .Saving_Transition_Table{
+
+    .Table_Wrapper{
+
+      table {
+        width: 200%;
+
+        thead{
+
+          .Buy_or_Sell {
+            position: sticky;
+            left: 25%;
+          }
+
+          tr{
+
+            th{
+
+              span {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+
+        tbody{
+
+          tr{
+
+            .Buy_or_Sell {
+              position: sticky;
+              left: 25%;
+            }
+
+            .Cut_Line{
+              width: 178%;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Colors
+  .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Filters,
+  .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table thead {
+    background-color: $secundery_color_dark;
+  }
+        
+  .Light_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Filters,
+  .Light_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table thead{
+    background-color: $secundery_color_light;
+  }
+
+  .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr {
+    border-bottom: 3px solid #162231;
+  }
+    
+  .Light_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr {
+    border-bottom: 3px solid #f9fafd;
+  }
+
+  .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr .Currency span,
+  .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr .Platform span,
+  .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr .Hour span,
+  .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr .Data span,
+  .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr .Transition_ID span {
+    color: $gray;
+  }
+      
+  .Light_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr .Currency span,
+  .Light_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr .Platform span,
+  .Light_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr .Hour span,
+  .Light_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr .Data span,
+  .Light_Mode .Savings_History .Section_N1.Saving_Transition_Table .Table_Wrapper table tbody tr .Transition_ID span  {
+    color: $gray_dark;
+  }
+
+  .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr .Transition_ID,
+  .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr .Buy_or_Sell {
+    background-color: #0b1727;
+  }
+     
+  .Light_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr .Transition_ID,
+  .Light_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr .Buy_or_Sell{
+    background-color: #f9fafd;
+  }
+
+  .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table thead tr .Buy_or_Sell,
+  .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table thead tr .Transition_ID {
+    background-color: #162231;
+  }
+      
+  .Light_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table thead tr .Buy_or_Sell
+  .Light_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table thead tr .Transition_ID{
+    background-color: #f9fafd;
+  }
+// Colors
