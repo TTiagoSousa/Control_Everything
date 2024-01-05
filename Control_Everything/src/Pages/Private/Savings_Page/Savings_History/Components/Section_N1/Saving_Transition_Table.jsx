@@ -8,7 +8,7 @@ import * as Component from '../../../../../../Imports/components'
 import useDisableOrEnableSavingTransition from '../../../../../../Hooks/Saving_Transitions/useDisableOrEnableSavingTransition';
 import '../../Savings_History.scss'
 
-const Saving_Transition_Table = () => {
+const Saving_Transition_Table = ({ handleModifyButtonClick, transitionUpdate }) => {
 
   const {
     savingTransitionsList, setSavingTransitionsList,
@@ -20,20 +20,19 @@ const Saving_Transition_Table = () => {
   
   const { disableSavingTransition, enableSavingTransition } = useDisableOrEnableSavingTransition(setSavingTransitionsList);
 
-
   const [currentPage, setCurrentPage] = useState(page);
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
     setPage(pageNumber); // Adicionado para atualizar a página atual na Api.Savings_User()
   };
 
-  const [transactionsPerPage, setTransactionsPerPage] = useState(perPage);
-  const handleTransactionsPerPageChange = (event) => {
-    const newPerPage = parseInt(event.target.value);
-    setTransactionsPerPage(newPerPage);
-    setPerPage(newPerPage); // Atualiza o valor no estado global
-    setPage(1); // Volta para a primeira página quando o número de transações por página é alterado
-  };
+  // const [transactionsPerPage, setTransactionsPerPage] = useState(perPage);
+  // const handleTransactionsPerPageChange = (event) => {
+  //   const newPerPage = parseInt(event.target.value);
+  //   setTransactionsPerPage(newPerPage);
+  //   setPerPage(newPerPage); // Atualiza o valor no estado global
+  //   setPage(1); // Volta para a primeira página quando o número de transações por página é alterado
+  // };
 
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
@@ -49,6 +48,19 @@ const Saving_Transition_Table = () => {
     return () => clearTimeout(timer); // Cleanup the timer on component unmount
 
   }, [currentPage]);
+
+  useEffect(() => {
+    if (transitionUpdate) {
+      // Update the savingTransitionsList
+      const updatedSavingTransitionsList = savingTransitionsList.map((transition) => {
+        if (transition.id === transitionUpdate.id) {
+          return transitionUpdate;
+        }
+        return transition;
+      });
+      setSavingTransitionsList(updatedSavingTransitionsList);
+    }
+  }, [transitionUpdate]);
 
   return (
     <div className='Saving_Transition_Table'>
@@ -136,7 +148,7 @@ const Saving_Transition_Table = () => {
                           </div>
                         </button>
                       )}
-                        <button >
+                        <button onClick={() => handleModifyButtonClick(transition, savingTransitionsList)}>
                           {/* Use an arrow function to pass the transition.id */}
                           <div className="Modify_Icon">
                             <Icon.Settings Global_Color={Color.orange}/>

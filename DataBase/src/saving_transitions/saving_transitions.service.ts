@@ -6,6 +6,8 @@ import { getSavingTransitions } from './helpers/get.saavings.transitions';
 import { disableSavingTransition } from './helpers/disable.saving.transition';
 import { enableSavingTransition } from './helpers/enable.saving.transition';
 import { getTotalByCurrencyType } from './helpers/get.total.by.currency.type';
+import { ModifySavingTransition } from './helpers/modify.saving.transition';
+import { modifySavingTransition_dto } from './dto/modigy.savings.transition.dto';
 
 @Injectable()
 export class SavingTransitionsService {
@@ -41,5 +43,10 @@ export class SavingTransitionsService {
     const result = await getTotalByCurrencyType(userId, baseCurrency, targetCurrencyPair);
     
     return result
+  }
+
+  async ModifySavingTransition(dto: modifySavingTransition_dto, id: string, userId: string) {
+    const result = await ModifySavingTransition(dto, id, userId);
+    return result;
   }
 }

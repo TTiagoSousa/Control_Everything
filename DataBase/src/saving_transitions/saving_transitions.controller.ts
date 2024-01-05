@@ -1,4 +1,4 @@
-import { Controller, UseGuards, Post, Body, Req, Get, Param, Query, Delete } from '@nestjs/common';
+import { Controller, UseGuards, Post, Body, Req, Get, Param, Query, Delete, Patch } from '@nestjs/common';
 import { SavingTransitionsService } from './saving_transitions.service';
 import { JwtAuthGuard } from 'src/auth/jwt.guard';
 import { Request } from 'express';
@@ -68,5 +68,15 @@ export class SavingTransitionsController {
       const totalByCurrencyType = await this.savingTransitionsService.getTotalByCurrencyType(userId, baseCurrency, targetCurrencyPair);
 
       return totalByCurrencyType 
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Patch(':userId/:transitionId') // Modificamos o nome do parâmetro de "transitionId" para "id"
+  async updateSavingTransition(
+    @Param('userId') userId: string,
+    @Param('transitionId') id: string, // Modificamos o nome do parâmetro de "transitionId" para "id"
+    @Body() dto: createSavingTransition_dto,
+  ) {
+    return this.savingTransitionsService.ModifySavingTransition(dto, id, userId);
   }
 }

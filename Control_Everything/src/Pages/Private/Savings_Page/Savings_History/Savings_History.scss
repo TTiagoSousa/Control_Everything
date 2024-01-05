@@ -4,6 +4,71 @@
   @include Pages_Configs;
   height: 95vh;
 
+  .Alert{
+    position: absolute;
+    top: 90%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  .Modfy_Saving_Transition{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    display: none;
+    position: fixed;
+    z-index: 5;
+  
+    &.active{
+      display: flex;
+    }
+
+    form{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 15px;
+      border-radius: $border_radius;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: $box_shadow;
+  
+      .Field_Transition_Type,
+      .Input_Field,
+      .Button_Field,
+      .Text_Field{
+        width: 350px;
+        height: 35px;
+      }
+  
+      .Field_Transition_Type{
+        display: flex;
+        justify-content: space-evenly;
+        gap: 10px;
+  
+        button{
+          width: 100%;
+          font-family: $font_family_poppins;
+          border-radius: $border_radius;
+          padding: 0px 10px 0px 10px;
+          cursor: pointer;
+          border: none;
+          color: $gray;
+  
+          &.active[value='Deposit']{
+            color: $green;
+          }
+        }
+      }
+    }
+  }
+
   .Section_N1{
     position: relative;
     width: 100%;
@@ -428,14 +493,26 @@
 }
 
 // Colors
+  .Dark_Mode .Savings_History .Modfy_Saving_Transition form,
+  .Dark_Mode .Savings_History .Modfy_Saving_Transition form .Field_Transition_Type button,
   .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Filters,
   .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table thead {
     background-color: $secundery_color_dark;
   }
         
+  .Light_Mode .Savings_History .Modfy_Saving_Transition form,
+  .Light_Mode .Savings_History .Modfy_Saving_Transition form .Field_Transition_Type button,
   .Light_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Filters,
   .Light_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table thead{
     background-color: $secundery_color_light;
+  }
+  
+  .Light_Mode .Savings_History .Modfy_Saving_Transition form .Field_Transition_Type button.active[value='Withdraw']{
+    color: $red_light;
+  }
+  
+  .Dark_Mode .Savings_History .Modfy_Saving_Transition form .Field_Transition_Type button.active[value='Withdraw']{
+    color: $red;
   }
 
   .Dark_Mode .Savings_History .Section_N1 .Saving_Transition_Table .Table_Wrapper table tbody tr {
