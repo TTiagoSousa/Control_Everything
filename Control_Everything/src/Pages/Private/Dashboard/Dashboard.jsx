@@ -1,14 +1,15 @@
 import React from 'react';
 import './Dashboard.scss';
-import Section_N1 from './Components/Section_N1';
-import { GlobalState } from '../../../Contexts/Global_Context';
+import Assets_Card from './Components/Section_N1/Assets_Card';
  
 const Dashboard = () => {
 
   return (
 
     <div className="Dashboard">
-      <Section_N1 />
+      <section className='Section_N1'>
+        <Assets_Card />
+      </section>
     </div>
 
   )
