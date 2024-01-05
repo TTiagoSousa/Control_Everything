@@ -1,9 +1,15 @@
 import React from 'react';
 import '../../Dashboard.scss';
 import { Link } from 'react-router-dom';
+import useFetchTotalByCurrencyType from '../../../../../Hooks/Saving_Transitions/useFetchTotalByCurrencyType';
 
 const Assets_Card = () => {
+
+  const { totalonSavingTransition, baseSymbol } = useFetchTotalByCurrencyType();
   
+  console.log(totalonSavingTransition);
+  console.log(baseSymbol);
+
   return (
     <div className='Assets_Card'>
       <header>
@@ -12,7 +18,13 @@ const Assets_Card = () => {
       </header>
       <body>
         <ul>
-          <li><Link className='Title' to="/CE/Savings">Savings Account</Link> <span>0 $</span></li>
+          <li>
+            <Link className='Title' to="/CE/Savings">Savings Account</Link> 
+            <div>
+              <span>{totalonSavingTransition}</span>
+              <span>{baseSymbol}</span>
+            </div>
+          </li>
         </ul>
       </body>
       <footer>

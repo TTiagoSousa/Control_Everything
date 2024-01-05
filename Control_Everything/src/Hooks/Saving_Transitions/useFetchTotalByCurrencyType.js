@@ -7,6 +7,7 @@ const useFetchTotalByCurrencyType = () => {
  
   const [ totalOnByTypeSavingTransition, setTotalOnByTypeSavingTransition ] = useState(null);
   const [ totalonSavingTransition, setTotalonSavingTransition ] = useState(null);
+  const [ baseSymbol, setBaseSymbol ] = useState(null);
   const { selectCurrency } = GlobalState();
 
   const { authenticated, userId } = DataBaseState();
@@ -19,10 +20,11 @@ const useFetchTotalByCurrencyType = () => {
 
         const response = await http.get(`/saving-transitions/${userId}/get-total-by-currency-type/${selectCurrency}`);
 
-        const { result, totalConvertedAmount } = response.data;
-
+        const { result, totalConvertedAmount, baseCurrencySymbol } = response.data;
+        
         setTotalOnByTypeSavingTransition(result);
         setTotalonSavingTransition(totalConvertedAmount);
+        setBaseSymbol(baseCurrencySymbol);
       } catch (error) {
         console.error(error);
       }
@@ -31,7 +33,7 @@ const useFetchTotalByCurrencyType = () => {
     fetchTotalTransitions();
   }, [userId, authenticated]); // Dependências do efeito
 
-  return {totalOnByTypeSavingTransition, totalonSavingTransition};
+  return {totalOnByTypeSavingTransition, totalonSavingTransition, baseSymbol};
 }
 
 export default useFetchTotalByCurrencyType; 
