@@ -21,7 +21,7 @@ const useFetchTotalByCurrencyType = () => {
         const response = await http.get(`/saving-transitions/${userId}/get-total-by-currency-type/${selectCurrency}`);
 
         const { result, totalConvertedAmount, baseCurrencySymbol } = response.data;
-        
+        console.log(response.data);
         setTotalOnByTypeSavingTransition(result);
         setTotalonSavingTransition(totalConvertedAmount);
         setBaseSymbol(baseCurrencySymbol);

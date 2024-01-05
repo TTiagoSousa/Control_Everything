@@ -59,7 +59,7 @@ export async function getTotalByCurrencyType(
     const convertedAmount = Math.round((amountInUSD * baseToTargetRate) * 100) / 100;
 
     totalConvertedAmount += convertedAmount;
-    baseCurrencySymbol = currency.symbol;
+    baseCurrencySymbol = baseCurrencyData.symbol;
 
     result.push({
       currencyType,
