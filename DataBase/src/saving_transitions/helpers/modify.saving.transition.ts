@@ -3,7 +3,7 @@ import { PrismaSavingsTransitionsRepository } from "../repositories/prisma/prism
 import { containsOnlyNumber } from "src/utils/all.utilis";
 import { containsOnlyLettersAndNumbers } from "src/utils/text/contains.only.letters.and.numbers";
 import { isValidHour } from "src/utils/hour/is.valid.hour";
-import * as CreateSavingTransition_Error from '../errors/create.savings.transition.errors';
+import * as ModifyavingTransition_Error from '../errors/create.savings.transition.errors';
 import { modifySavingTransition_dto } from "../dto/modigy.savings.transition.dto";
 
 export async function ModifySavingTransition (
@@ -30,19 +30,19 @@ export async function ModifySavingTransition (
     transitiontype !== 'Withdraw' &&
     transitiontype !== 'Transfer'
   ) {
-    throw new CreateSavingTransition_Error.InvalitTypeTransition;
+    throw new ModifyavingTransition_Error.InvalitTypeTransition;
   }
 
   if(!isValidHour(hour)) {
-    throw new CreateSavingTransition_Error.InvalidHour;
+    throw new ModifyavingTransition_Error.InvalidHour;
   }
 
   if(!containsOnlyNumber(amount.toString())) {
-    throw new CreateSavingTransition_Error.InvalidTransitionAmount;
+    throw new ModifyavingTransition_Error.InvalidTransitionAmount;
   }
 
   if(!containsOnlyLettersAndNumbers(platform)) {
-    throw new CreateSavingTransition_Error.InvalidPlatform;
+    throw new ModifyavingTransition_Error.InvalidPlatform;
   }
 
   const updatedTransition = await SavingsTransitionRepository.save(userID, {
