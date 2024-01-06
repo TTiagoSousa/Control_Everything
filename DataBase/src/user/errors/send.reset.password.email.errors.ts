@@ -6,3 +6,8 @@ export class Email_is_Not_Valid extends BadRequestException {
     super('Email is not valid');
   }
 }
+export class User_Not_Found extends BadRequestException {
+  constructor() {
+    super('User Not Found');
+  }
+}
