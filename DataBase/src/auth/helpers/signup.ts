@@ -4,6 +4,8 @@ import { getCountriesFromDatabase } from "src/countries/helpers/get.countries.fr
 import * as Signup_Error from '../../user/errors/signup.function.errors';
 import { JwtService } from '@nestjs/jwt';
 import { EmailService } from 'src/email/email.service';
+import { sendActivationEmail } from "./send.activation.email";
+import { createUserSettings } from "src/user-settings/helpers/create.user.settings";
 import { 
   hashPassword, 
   isValidEmail, 
@@ -11,15 +13,11 @@ import {
   calculateUserAge, 
   isStrongPassword 
 } from "src/utils/all.utilis";
-import { sendActivationEmail } from "./send.activation.email";
-import { UserSettingsService } from "src/user-settings/user-settings.service";
-import { createUserSettings } from "src/user-settings/helpers/create.user.settings";
 
 export async function Signup (
   dto: signup_dto,
   jwt: JwtService,
   emailService: EmailService,
-  userSettingsService: UserSettingsService,
 ) {
 
   const usersRepository = new PrismaUsersRepository();
@@ -86,7 +84,6 @@ export async function Signup (
 
   return {
     user: creationResult,
-    userSettings,
     message: "User created successfully"
   };
 } 
