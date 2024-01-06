@@ -6,18 +6,15 @@ const Global = createContext({});
 
 const GlobalContext = ({ children }) => {
   
-  const [selectCurrency, setSelectCurrency] = useState("");
-  useEffect(() => {
-    // Retrieve user settings from sessionStorage
-    const userSettings = sessionStorage.getItem('userSettings');
-    if (userSettings) {
-      const settings = JSON.parse(userSettings);
-      // Set the currency if it exists in the user settings
-      if (settings.currency) {
-        setSelectCurrency(settings.currency);
-      }
-    }
-  }, []);
+  // Currency
+    const storedCurrency = localStorage.getItem('selectCurrency');
+    const [selectCurrency, setSelectCurrency] = useState(storedCurrency || "USD");
+
+    useEffect(() => {
+      // Update the local storage whenever selectCurrency changes
+      localStorage.setItem('selectCurrency', selectCurrency);
+    }, [selectCurrency]);
+// Currency 
 
   return (
     <Global.Provider 

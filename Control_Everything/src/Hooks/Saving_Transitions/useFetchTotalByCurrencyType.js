@@ -12,6 +12,10 @@ const useFetchTotalByCurrencyType = () => {
 
   const { authenticated, userId } = DataBaseState();
 
+  console.log(totalOnByTypeSavingTransition);
+  console.log("selectCurrency" + selectCurrency);
+  console.log(baseSymbol);
+
   useEffect(() => {
     if (!authenticated) return;
 

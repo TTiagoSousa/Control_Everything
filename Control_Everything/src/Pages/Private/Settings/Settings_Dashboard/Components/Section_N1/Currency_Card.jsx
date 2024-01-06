@@ -6,7 +6,7 @@ import { GlobalState } from '../../../../../../Contexts/Global_Context';
 
 const Currency_Card = () => {
 
-  const { selectCurrency } = GlobalState();
+  const { selectCurrency, setSelectCurrency } = GlobalState();
   
   return (
     <div className='Settings_Field'>
@@ -16,6 +16,7 @@ const Currency_Card = () => {
       <div className='Selector'>
         <Componente.Currency_Selector 
           currency={selectCurrency}
+          setCurrency={setSelectCurrency}
         />
       </div>
     </div>

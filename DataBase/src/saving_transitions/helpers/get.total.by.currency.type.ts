@@ -16,6 +16,7 @@ export async function getTotalByCurrencyType(
   }[];
   totalConvertedAmount: number;
   baseCurrencySymbol: string;
+  baseCurrencyCode: string;
 }> {
 
   const SavingsTransitionRepository = new PrismaSavingsTransitionsRepository();
@@ -43,6 +44,8 @@ export async function getTotalByCurrencyType(
 
   let totalConvertedAmount = 0;
   let baseCurrencySymbol = '';
+  let baseCurrencyCode = '';
+
   const result = [];
 
   for (const currencyType in currencyTotals) {
@@ -60,6 +63,7 @@ export async function getTotalByCurrencyType(
 
     totalConvertedAmount += convertedAmount;
     baseCurrencySymbol = baseCurrencyData.symbol;
+    baseCurrencyCode = baseCurrencyData.code;
 
     result.push({
       currencyType,
@@ -70,5 +74,5 @@ export async function getTotalByCurrencyType(
     });
   }
 
-  return { result, totalConvertedAmount, baseCurrencySymbol };
+  return { result, totalConvertedAmount, baseCurrencySymbol, baseCurrencyCode };
 }
