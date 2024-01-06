@@ -42,8 +42,8 @@ export class AuthService {
     return result;
   }
 
-  async signin(dto: signin_dto, req, res) {
-    const result = await Signin(dto, this.jwt, req, res);
+  async signin(dto: signin_dto, req) {
+    const result = await Signin(dto, req);
     return result;
   }
 
