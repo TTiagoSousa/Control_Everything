@@ -1,16 +1,18 @@
+import { JwtService } from "@nestjs/jwt";
 import { signin_dto } from "src/user/dto/signin.dto";
 import { PrismaUsersRepository } from "src/user/repositories/prisma/prisma-user-repisitory";
 import * as Utili from '../../utils/all.utilis';
-import { Response } from 'express';
+import { Request, Response } from 'express';
 import * as Singnin_Error from '../../user/errors/signin.errors';
 
 export async function Signin (
   dto: signin_dto,
+  jwt: JwtService,
+  req: Request,
   res: Response,
 ) {
 
   const { email, password } = dto
-
   const usersRepository = new PrismaUsersRepository();
   
   const foundUser = await usersRepository.findByEmail(email);

@@ -10,11 +10,14 @@ import { resetPassword } from './helpers/reset.password';
 import { signin_dto } from 'src/user/dto/signin.dto';
 import { Signin } from './helpers/signin';
 import { refreshTokens } from './helpers/refresh.tokens';
+import { UserSettingsService } from 'src/user-settings/user-settings.service';
+
 @Injectable()
 export class AuthService {
   constructor(
     private readonly emailService: EmailService,
     private readonly jwt: JwtService,
+    private readonly userSettingsService: UserSettingsService,
   ) {}
 
   async signup(dto: signup_dto) {
@@ -42,8 +45,8 @@ export class AuthService {
     return result;
   }
 
-  async signin(dto: signin_dto, req) {
-    const result = await Signin(dto, req);
+  async signin(dto: signin_dto, req, res) {
+    const result = await Signin(dto, this.jwt, req, res);
     return result;
   }
 

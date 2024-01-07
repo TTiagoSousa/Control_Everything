@@ -22,12 +22,12 @@ export class AuthController {
     return;
   }
 
-  @Post('send-email-to-reset-password')
+  @Post('reset-password')
   async sendPasswordResetEmail(@Body('email') email: string) {
 
    await this.authService.sendResetPasswordEmail(email)
 
-    return { message: 'Email sent successfully' };
+    return;
   }
 
   @Post('reset-password/:token')
@@ -45,9 +45,9 @@ export class AuthController {
   }
 
   @Post('signin')
-  async signin(@Body() dto: signin_dto, @Req() req) {
+  async signin(@Body() dto: signin_dto, @Req() req, @Res() res) {
 
-    return this.authService.signin(dto, req);
+    return this.authService.signin(dto, req, res);
   }
 
   @Post('refresh-token')
