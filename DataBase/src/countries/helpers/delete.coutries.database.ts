@@ -9,5 +9,6 @@ export async function DeleteAllCountries() {
     const deleteInfo = await countriesRepository.deleteAllCountries();
 
   } catch (error) {
+    console.log(error);
   }
 }
