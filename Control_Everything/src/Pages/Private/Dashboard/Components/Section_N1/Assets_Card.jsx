@@ -6,9 +6,6 @@ import useFetchTotalByCurrencyType from '../../../../../Hooks/Saving_Transitions
 const Assets_Card = () => {
 
   const { totalonSavingTransition, baseSymbol } = useFetchTotalByCurrencyType();
-  
-  console.log(totalonSavingTransition);
-  console.log(baseSymbol);
 
   return (
     <div className='Assets_Card'>
