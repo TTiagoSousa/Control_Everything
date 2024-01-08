@@ -71,6 +71,21 @@ export class SavingTransitionsController {
   }
 
   @UseGuards(JwtAuthGuard)
+  @Get(':userId/get-total-converted/:targetCurrencyPair')
+  async getTotalConverted(
+    @Param('userId') userId: string,
+    @Param('targetCurrencyPair') targetCurrencyPair: string,
+  ) {
+    
+      const baseCurrency = 'USD';
+
+      // Get the total amount for each currency type in the specified base currency
+      const totalConverted = await this.savingTransitionsService.getTotalConverted(userId, baseCurrency, targetCurrencyPair);
+
+      return totalConverted 
+  }
+
+  @UseGuards(JwtAuthGuard)
   @Patch(':userId/:transitionId') // Modificamos o nome do parâmetro de "transitionId" para "id"
   async updateSavingTransition(
     @Param('userId') userId: string,
