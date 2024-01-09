@@ -53,3 +53,6 @@
   export { default as Simple_Triangle } from '../Assets/Icons/Triangle/Simple_Triangle'
 // Triangle
 
+// User
+  export { default as User } from '../Assets/Icons/User/User';
+// User

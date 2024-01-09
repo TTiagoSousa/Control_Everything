@@ -4,6 +4,7 @@ import * as Component from '../../../Imports/components';
 import * as Color from '../../../Styles/Colors';
 import { Sling as Hamburger } from 'hamburger-react';
 import { NavsState } from '../../../Contexts/Navs_Context';
+import Avatar_Drop_Menu from '../../Navs/Drop_Menus/Avatar_Drop_Menu/Avatar_Drop_Menu';
 
 const Header_Home = () => {
 
@@ -38,6 +39,9 @@ const Header_Home = () => {
         <div className="Right_Side">
           <div className='Theme_Button'>
             <Component.Change_Theme />
+          </div>
+          <div className='Theme_Button'>
+            <Avatar_Drop_Menu />
           </div>
           <div className='Custumize_Sidebar_Button'>
             <Component.Custumize_Sidebar_Button />

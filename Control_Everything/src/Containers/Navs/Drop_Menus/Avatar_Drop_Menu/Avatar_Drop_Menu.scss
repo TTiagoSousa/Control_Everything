@@ -1,0 +1,120 @@
+@import '../../../../Styles/Global.scss';
+
+.Avatar_Drop_Menu{
+  position: relative;
+  height: 100%;
+  width: 100%;    
+
+  button{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none; 
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .Icon {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .Avatar_Drop_Menu_Options.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.4s ease;
+  }
+
+  .Avatar_Drop_Menu_Options.inactive{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: 0.4s ease;
+  }
+
+  .Avatar_Drop_Menu_Options{
+    position: absolute;
+    top: 160%;
+    right: 3px;
+    width: 200px;
+    box-shadow: $box_shadow;
+    border-radius: 10px 0px 10px 10px;
+
+    .Arrow{
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: -5px;
+      right: 2.5px;
+      transform: (rotate(45deg));
+    }
+
+    ul{
+      width: 100%;
+      height: 100%;
+      list-style: none;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px 0px 10px 10px;
+
+      li{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        .Icon{
+          width: 18px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          margin-left: 10px;
+        }
+
+        a{
+          margin-left: 10px;
+          font-family: $font_family_open_sans;
+          font-weight: 600;
+          text-decoration: none;
+          margin-right: 10px;
+        
+          &:hover{
+            color: $blue !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Colors
+  .Dark_Mode .Avatar_Drop_Menu .Avatar_Drop_Menu_Options .Arrow,
+  .Dark_Mode .Avatar_Drop_Menu .Avatar_Drop_Menu_Options ul,
+  .Dark_Mode .Avatar_Drop_Menu .Avatar_Drop_Menu_Options{
+    background-color: $secundery_color_dark;
+  }
+
+  .Light_Mode .Avatar_Drop_Menu .Avatar_Drop_Menu_Options .Arrow,
+  .Light_Mode .Avatar_Drop_Menu .Avatar_Drop_Menu_Options ul,
+  .Light_Mode .Avatar_Drop_Menu .Avatar_Drop_Menu_Options{
+    background-color: $secundery_color_light;
+  }
+
+  .Dark_Mode .Avatar_Drop_Menu .Avatar_Drop_Menu_Options ul li a{
+    color: $gray;
+  }
+
+  .Light_Mode .Avatar_Drop_Menu .Avatar_Drop_Menu_Options ul li a{
+    color: $gray_dark;
+  }
+// Colors
