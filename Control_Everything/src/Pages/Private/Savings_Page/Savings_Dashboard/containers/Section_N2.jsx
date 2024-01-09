@@ -3,20 +3,9 @@ import '../Savings_Dashboard.scss';
 import useFetchTotalByCurrencyType from '../../../../../Hooks/Saving_Transitions/useFetchTotalByCurrencyType';
 import LinearProgress from '@mui/material/LinearProgress';
 
-const Section_N2 = () => {
+const Section_N2 = ({ isLoading }) => {
 
-  const { totalOnByTypeSavingTransition, setTotalOnByTypeSavingTransition } = useFetchTotalByCurrencyType();
-  
-  const [isLoading, setIsLoading] = useState(true);
-   
-  useEffect(() => {
-    const delay = 1000;
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, delay);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const { totalOnByTypeSavingTransition } = useFetchTotalByCurrencyType();
 
   return (
     <div className='Section_N2'>

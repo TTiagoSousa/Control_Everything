@@ -3,7 +3,7 @@ import '../Savings_Dashboard.scss';
 import * as Component from '../../../../../Imports/components';
 import Create_Saving_Transition_Form from '../Components/Section_N1/Create_Saving_Transition_Form';
 
-const Section_N1 = () => {
+const Section_N1 = ({isLoading, setIsLoading}) => {
 
   const [ createSavingTransitionForm, setCreateSavingTransitionForm ] = useState(false);
   const showCreateSavingTransitionForm = () => setCreateSavingTransitionForm(true);
@@ -13,6 +13,8 @@ const Section_N1 = () => {
       <Create_Saving_Transition_Form 
         createSavingTransitionForm={createSavingTransitionForm}
         setCreateSavingTransitionForm={setCreateSavingTransitionForm}
+        setIsLoading={setIsLoading} 
+        isLoading={isLoading}
       />
 
     <div className='Section_N1'>

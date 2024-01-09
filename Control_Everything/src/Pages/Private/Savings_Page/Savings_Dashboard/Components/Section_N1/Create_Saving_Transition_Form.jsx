@@ -2,9 +2,7 @@ import React, { useState } from 'react'
 import useCreateSavingTransition from '../../../../../../Hooks/Saving_Transitions/useCreateSavingTransition';
 import * as Component from '../../../../../../Imports/components';
 
-const Create_Saving_Transition_Form = ({ createSavingTransitionForm, setCreateSavingTransitionForm }) => {
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
+const Create_Saving_Transition_Form = ({ createSavingTransitionForm, setCreateSavingTransitionForm, setIsLoading, isLoading }) => {
 
   const { 
     createSavingTransaction,    
@@ -18,17 +16,17 @@ const Create_Saving_Transition_Form = ({ createSavingTransitionForm, setCreateSa
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setIsSubmitting(true); // Start submitting
+    setIsLoading(true); // Start submitting
 
     const success = await createSavingTransaction();
 
     if (success) {
       setTimeout(() => {
         setCreateSavingTransitionForm(false);
-        setIsSubmitting(false); // Reset submitting state
-      }, 2000); // 2000 milliseconds delay
+        setIsLoading(false); // Reset submitting state
+      }, 1000); // 2000 milliseconds delay
     } else {
-      setIsSubmitting(false); // Reset submitting state in case of failure
+      setIsLoading(false); // Reset submitting state in case of failure
     }
   }
 
@@ -107,9 +105,9 @@ const Create_Saving_Transition_Form = ({ createSavingTransitionForm, setCreateSa
           </div>
           <div className="Button_Field">
             <Component.Global_Button 
-              Text={isSubmitting ? "Loading" : "Create Transition"}
+              Text={isLoading ? "Loading" : "Create Transition"}
               onClick={handleSubmit}
-              disabled={isSubmitting}
+              disabled={isLoading}
             />
           </div>
         </form>
