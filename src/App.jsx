@@ -2,6 +2,7 @@ import * as Public_Page from './Imports/public.pages';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.scss';
 import Header_Index from './Containers/Headers/Header_Index/Header_Index';
+import * as Intermediate_Page from './Imports/intermediate.pages';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route index element={<Public_Page.Index />} />
         <Route path="Auth" element={ <Public_Page.Auth /> } />
+        <Route path="activate_user/:token" element={<Intermediate_Page.Active_Account />} />
       </Routes>
     </main>
   )

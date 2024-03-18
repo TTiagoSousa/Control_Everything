@@ -1,0 +1,1 @@
+export { default as Active_Account } from '../Pages/Intermediate_Pages/Active_Account/Active_Account';
