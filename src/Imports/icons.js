@@ -2,3 +2,8 @@ export { default as BigBen } from '../Assets/Icons/Countries/England/BigBen';
 export { default as Chrysler_Building } from '../Assets/Icons/Countries/USA/Chrysler_Building';
 export { default as Building_Gate } from '../Assets/Icons/Countries/Japan/Building_Gate';
 export { default as Building_House } from '../Assets/Icons/Countries/Australia/Building_House';
+export { default as Circle_Half } from '../Assets/Icons/Circle/Circle_Half';
+export { default as Simple_Check } from '../Assets/Icons/Check/Simple_Check';
+export { default as Moon_N1 } from '../Assets/Icons/Moon/Moon_N1';
+export { default as Sun_N1 } from '../Assets/Icons/Sun/Sun_N1';
+export { default as World } from '../Assets/Icons/World/World';

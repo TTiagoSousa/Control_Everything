@@ -1,0 +1,35 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+
+.Header_Index{
+  position: fixed;
+  height: 5vh;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+
+  .Left_Side{
+    position: relative;
+    
+    h1{
+      font-family: $font_family_poppins;
+      font-size: 17px;
+      letter-spacing: 2px;
+      color: $blue_darker;
+    }
+  }
+
+  .Rigth_Side{
+    position: relative;
+    display: flex;
+    gap: 10px;
+
+    .Button_Field{
+      position: relative;
+      width: 21px;
+      height: 21px;
+    }
+  }
+}
