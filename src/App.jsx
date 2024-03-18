@@ -20,6 +20,7 @@ function App() {
 
       <Routes>
         <Route index element={<Public_Page.Index />} />
+        <Route path="Auth" element={ <Public_Page.Auth /> } />
       </Routes>
     </main>
   )
