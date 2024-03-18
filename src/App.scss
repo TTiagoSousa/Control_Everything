@@ -1,0 +1,17 @@
+@import './Styles/Colors.scss';
+@import './Styles/Fonts.scss';
+@import './Styles/Formats.scss';
+
+
+*{
+  margin: 0;
+  padding: 0;
+} 
+
+.Dark_Mode main{
+  background-color: $primary_color_dark;
+}
+
+.Ligth_Mode main{
+  background-color: $secundery_color_light;
+}
