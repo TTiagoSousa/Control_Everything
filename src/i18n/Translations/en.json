@@ -1,8 +1,9 @@
 {
   "translation": {
     "London": "London",
-    "New York": "London",
-    "Tokyo": "London",
-    "Sydney": "London"
+    "New York": "New York",
+    "Tokyo": "Tokyo",
+    "Sydney": "Sydney",
+    "Login": "Login or Register"
   }
 }

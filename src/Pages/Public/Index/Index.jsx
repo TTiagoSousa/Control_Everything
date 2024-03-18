@@ -3,8 +3,11 @@ import * as Icon from '../../../Imports/icons';
 import * as Color from '../../../Styles/Colors';
 import './Index.scss';
 import Global_Button from '../../../Components/Buttons/Global_Button/Global_Button';
+import { useTranslation } from 'react-i18next';
 
 const Index = () => {
+
+  const { t } = useTranslation();
 
   function LondonClock({ offset }) {
     const [time, setTime] = useState(new Date());
@@ -24,7 +27,7 @@ const Index = () => {
             <Icon.BigBen Global_Color={Color.blue_darker}/>
           </div>
         </div>
-        <h2>London</h2>
+        <h2>{t('London')}</h2>
         <p>{time.toLocaleTimeString()}</p>
       </div>
     );
@@ -48,7 +51,7 @@ const Index = () => {
             <Icon.Chrysler_Building Global_Color={Color.blue_darker}/>
           </div>
         </div>
-        <h2>New York</h2>
+        <h2>{t('New York')}</h2>
         <p>{time.toLocaleTimeString()}</p>
       </div>
     );
@@ -72,7 +75,7 @@ const Index = () => {
             <Icon.Building_Gate Global_Color={Color.blue_darker}/>
           </div>
         </div>
-        <h2>Tokyo</h2>
+        <h2>{t('Tokyo')}</h2>
         <p>{time.toLocaleTimeString()}</p>
       </div>
     );
@@ -96,7 +99,7 @@ const Index = () => {
             <Icon.Building_House Global_Color={Color.blue_darker}/>
           </div>
         </div>
-        <h2>Sydney</h2>
+        <h2>{t('Sydney')}</h2>
         <p>{time.toLocaleTimeString()}</p>
       </div>
     );
@@ -114,7 +117,7 @@ const Index = () => {
           </div>
           <div className='Button'>
             <Global_Button 
-              Text={'Login or Register'}
+              Text={t('Login')}
               to={'Auth'}
             />
           </div>
