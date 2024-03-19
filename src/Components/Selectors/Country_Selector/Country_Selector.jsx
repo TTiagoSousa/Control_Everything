@@ -6,7 +6,9 @@ import { useTranslation } from 'react-i18next';
 
 const Country_Selector = ({ country, setCountry }) => { 
 
-  const { t } = useTranslation();
+
+
+  const { t, i18n } = useTranslation();
 
   const [language, setLanguage] = useState(localStorage.getItem('language') || 'en');
 
@@ -68,14 +70,22 @@ const Country_Selector = ({ country, setCountry }) => {
     setCountry(inputValue);
   
     const filtered = countries.filter((country) =>
-      country.countryName && country.countryName.toLowerCase().includes(inputValue.toLowerCase())
+      getCountryName(country).toLowerCase().includes(inputValue.toLowerCase())
     );
-    
+  
     setFilteredCountries(filtered);
   };
 
+  const countryNamesEn = countries.map(country => country.countryNameEn);
+  const countryNamesPt = countries.map(country => country.countryNamePt);
+
+  const getCountryName = (country) => {
+    const currentLanguage = i18n.language;
+    return country[`countryName${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}`];
+  };
+
   return (
-    <div className='Coutrie_Selector'>
+    <div className={`Coutrie_Selector ${inputActive ? 'open' : ''}`}>
       <div className='Countrie_Selector_Label'>
         <span>{t('Country')}</span>
       </div>
@@ -97,7 +107,7 @@ const Country_Selector = ({ country, setCountry }) => {
             filteredCountries.map((country, index) => (
               <li key={index} onClick={() => handleCountryClick(country.countryNameEn)}>
                 <img src={country.CoutryFlag} alt='' /> <span>-</span>{' '}
-                <span className='Country_Name'>{language === 'en' ? country.countryNameEn : country.countryNamePt}</span>
+                <span className='Country_Name'>{getCountryName(country)}</span>
               </li>
             ))
           ) : (

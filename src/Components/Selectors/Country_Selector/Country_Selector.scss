@@ -9,35 +9,48 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: $border_radius;
+
+  &.open {
+
+    .Countrie_Selector_Label,
+
+    input {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-top: 1px solid $blue_darker;
+      border-right: 1px solid $blue_darker;
+    }
+  }
 
   .Countrie_Selector_Label {
+    position: relative;
     width: 30%;
     height: 100%;
-    border-radius: 10px 0px 0px 10px;
     background-color: $blue_darker;
-    font-family: $font_family_open_sans;
-    color: white;
-    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
+    border-radius: 10px 0px 0px 10px;
+
+    span{
+      color: $white;
+      font-family: $font_family_poppins;
+      font-size: 13px;
+    }
   }
 
   input{
     position: relative;
     width: 70%;
     height: 100%;
-    border-radius: 0px 10px 10px 0px;
     color: #9da9bb;
     font-size: 15px;
     font-weight: 600;
-    transition: 0.5s;
     text-align: center;
     cursor: pointer;
     border: none;
     outline: none;
+    border-radius: 0px 10px 10px 0px;
     font-family: $font_family_open_sans;
   
 
@@ -48,49 +61,60 @@
 
   .Coutrie_Selector_List_Wrapper{
     position: absolute;
-    bottom: -30%;
+    bottom: 0%;
     left: 0%;
     z-index: 5;
-    width: 100%;
+    width: calc(100% - 2px);
 
     .Coutrie_Selector_List {
       position: absolute;
       width: 100%;
-      max-height: 200px;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
+      max-height: 180px;
+      scroll-behavior: auto;
       overflow-y: scroll;
-      z-index: 4;
       display: flex;
       flex-direction: column;
-      font-family: $font_family_poppins;
-      border-radius: 5px;
-      border: $border;
-      box-shadow: $box_shadow;
+      border-bottom: 1px solid $blue_darker;
+      border-left: 1px solid $blue_darker;
+      border-right: 1px solid $blue_darker;
+      border-radius: 0px 0px 10px 10px;
+      overflow: auto; 
+      z-index: 344;
+
+      &::-webkit-scrollbar
+      {
+        width: 7px;
+        height: 4px;
+        border-radius: 0px 0px 10px 0px;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+
+        border-radius: 0px 0px 10px 0px;
+        background-color: $blue_darker;/* Definindo a altura para 10 pixels abaixo do tamanho máximo */
+      }
 
       li {
         width: 100%;
-        margin-top: 5px;
         display: flex;
         align-items: center;
-        border-radius: 5px;
-        transition: 300ms;
+        gap: 5px;
+        cursor: pointer;
 
         span {
           color: $gray;
-          margin-left: 5px;
+          font-family: $font_family_poppins;
         }
 
         img {
-          width: 30px;
-          height: 20px;
-          margin-left: 10px;
+          width: 20px;
+          height: 15px;
+          margin-left: 5px;
         }
       }
 
       .NotFound{
         color: $gray;
-        margin-left: 5px;
       }
     }
   }
