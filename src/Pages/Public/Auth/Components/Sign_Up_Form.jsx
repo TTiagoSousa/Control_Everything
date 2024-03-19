@@ -3,30 +3,33 @@ import '../Auth.scss';
 import Global_Input from '../../../../Components/Inputs/Global_Input/Global_Input';
 import Global_Button from '../../../../Components/Buttons/Global_Button/Global_Button';
 import Country_Selector from '../../../../Components/Selectors/Country_Selector/Country_Selector';
+import { useTranslation } from 'react-i18next';
 
 const Sign_Up_Form = () => {
 
-  const [ country, setCountry ] = useState('')
+  const [ country, setCountry ] = useState('');
+
+  const { t } = useTranslation();
 
   return (
     <>
       <form action="#" className="Sign_Up_Form">
-        <h1>Sign up</h1>
+        <h1>{t('Register')}</h1>
         <div className="Input_Field">
           <Global_Input 
-            Type="email"
+            Type={t('Email')}
             Text="Email"
           />
         </div>
         <div className="Input_Field">
           <Global_Input 
-            Text="Full Name"
+            Text={t('Full Name')}
             Type="text"
           />
         </div>
         <div className="Input_Field">
           <Global_Input 
-            Text="Birthday"
+            Text={t('Birthday')}
             Type="date"
           />
         </div>
@@ -38,25 +41,25 @@ const Sign_Up_Form = () => {
         </div>
         <div className="Input_Field">
           <Global_Input 
-            Text="Gender"
+            Text={t('Gender')}
             Type="text"
           />
         </div>
         <div className="Input_Field">
           <Global_Input
-            Text="Passoword" 
+            Text={t('Password')}
             Type="password"
           />
         </div>
         <div className="Input_Field">
           <Global_Input
-            Text="Confirm Passoword" 
+            Text={t('Confirm Password')} 
             Type="password"
           />
         </div>
         <div className="Input_Field">
           <Global_Button 
-            Text="Register"
+            Text={t('Register')} 
           />
         </div>
       </form>   

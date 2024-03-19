@@ -2,8 +2,11 @@ import React from 'react';
 import '../Auth.scss';
 import Global_Input from '../../../../Components/Inputs/Global_Input/Global_Input';
 import Global_Button from '../../../../Components/Buttons/Global_Button/Global_Button';
+import { useTranslation } from 'react-i18next';
 
 const Recover_Password_Form = ({ Children }) => {
+
+  const { t } = useTranslation();
 
   return (
     <>
@@ -17,7 +20,7 @@ const Recover_Password_Form = ({ Children }) => {
         </div>
         <div className="Input_Field">
           <Global_Button 
-            Text="Recover Password"
+            Text={t("Recover Password")}
           />
         </div>
         {Children}

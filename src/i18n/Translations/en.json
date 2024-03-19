@@ -4,6 +4,19 @@
     "New York": "New York",
     "Tokyo": "Tokyo",
     "Sydney": "Sydney",
-    "Login": "Login or Register"
+    "Login or Register": "Login or Register",
+    "Login": "Login",
+    "Register": "Register",
+    "Email": "Email",
+    "Full Name": "Full Name",
+    "Birthday": "Birthday",
+    "Country": "Country",
+    "Gender": "Gender",
+    "Password": "Password",
+    "Confirm Password": "Confirm Password",
+    "One of us ?": "One of us ?",
+    "New here ?": "New here ?",
+    "Recover Password": "Recover Password",
+    "Back to login": "Back to login"
   }
 }

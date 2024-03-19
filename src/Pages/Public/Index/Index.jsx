@@ -117,7 +117,7 @@ const Index = () => {
           </div>
           <div className='Button'>
             <Global_Button 
-              Text={t('Login')}
+              Text={t('Login or Register')}
               to={'Auth'}
             />
           </div>

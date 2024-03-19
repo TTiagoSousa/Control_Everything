@@ -2,8 +2,11 @@ import React, { useState, useEffect, useRef  } from 'react';
 import http from "../../../Services/httpService";
 import './Country_Selector.scss';
 import { BASE_URL } from '../../../config/urls';
+import { useTranslation } from 'react-i18next';
 
 const Country_Selector = ({ country, setCountry }) => { 
+
+  const { t } = useTranslation();
 
   const [language, setLanguage] = useState(localStorage.getItem('language') || 'en');
 
@@ -74,7 +77,7 @@ const Country_Selector = ({ country, setCountry }) => {
   return (
     <div className='Coutrie_Selector'>
       <div className='Countrie_Selector_Label'>
-        <span>Countrie</span>
+        <span>{t('Country')}</span>
       </div>
       <input
         type='text'

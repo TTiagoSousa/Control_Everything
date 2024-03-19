@@ -4,6 +4,19 @@
     "New York": "Nava Iorque",
     "Tokyo": "Tóquio",
     "Sydney": "Sidney",
-    "Login": "Iniciar ou criar conta"
+    "Login or Register": "Iniciar ou criar conta",
+    "Login": "Iniciar sessão",
+    "Register": "Registrar",
+    "Email": "Email",
+    "Full Name": "Nome",
+    "Birthday": "Nascimento",
+    "Country": "País",
+    "Gender": "Género",
+    "Password": "Password",
+    "Confirm Password": "Confirma Password",
+    "One of us ?": "Já és um de nós?",
+    "New here ?": "És novo aqui?",
+    "Recover Password": "Recuperar passoword",
+    "Back to login": "Voltar para iniciar sessão"
   }
 }

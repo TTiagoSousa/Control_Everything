@@ -5,8 +5,11 @@ import * as Image from '../../../Imports/images';
 import Sign_Up_Form from './Components/Sign_Up_Form';
 import Sign_In_Form from './Components/Sign_In_Form';
 import Recover_Password_Form from './Components/Recover_Password_Form';
+import { useTranslation } from 'react-i18next';
 
 const Auth = () => {
+
+  const { t } = useTranslation();
 
   const [isSignUpMode, setIsSignUpMode] = useState(false);
   const [isRecoverPasswordMode, setIsRecoverPasswordMode] = useState(false);
@@ -28,7 +31,7 @@ const Auth = () => {
               Children={
                 <div className="Input_Field">
                   <Global_Button
-                    Text="Back to Login"
+                    Text={t("Back to login")}
                     onClick={toggleRecoverPasswordMode}
                   />
                 </div>   
@@ -39,7 +42,7 @@ const Auth = () => {
               Children={
                 <div className="Input_Field">
                   <Global_Button
-                    Text="Recover Password"
+                    Text={t('Recover Password')}
                     onClick={toggleRecoverPasswordMode}
                   />
                 </div>   
@@ -54,26 +57,26 @@ const Auth = () => {
       <div className="Panels_Container">
         <div className="Panel Left_Panel">
           <div className="Content">
-            <h1>New here ?</h1>
+            <h1>{t('New here ?')}</h1>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
               ex ratione. Aliquid!
             </p>
             <button className="btn transparent" id="sign-up-btn" onClick={toggleSignUpMode}>
-              Sign up
+              {t('Register')}
             </button>
           </div>
           <img src={Image.Web3} className="image" alt="" />
         </div>
         <div className="Panel Right_Panel">
           <div className="Content">
-            <h1>One of us ?</h1>
+            <h1>{t('One of us ?')}</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
               laboriosam ad deleniti.
             </p>
             <button className="btn transparent" id="sign-in-btn" onClick={toggleSignUpMode}>
-              Sign in
+            {t('Login')}
             </button>
           </div>
           <img src={Image.Web3} className="image" alt="" />
