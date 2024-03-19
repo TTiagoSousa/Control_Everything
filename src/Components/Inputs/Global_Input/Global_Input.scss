@@ -1,4 +1,6 @@
 @import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
 
 .Global_Input {
   position: relative;
@@ -18,15 +20,17 @@
 
   .Text {
     position: relative;
-    height: 100%;
     width: 30%;
-    border-radius: 10px 0px 0px 10px;
+    height: 100%;
     background-color: $blue_darker;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px 0px 0px 10px;
 
     span {
+      color: $white;
+      font-family: $font_family_poppins;
       font-size: 13px;
     }
   }
@@ -35,13 +39,15 @@
     position: relative;
     width: 70%;
     height: 100%;
-    border-radius: 0px 10px 10px 0px;
+    color: #9da9bb;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
     border: none;
     outline: none;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    color: #9da9bb;
+    border-radius: 0px 10px 10px 0px;
+    font-family: $font_family_open_sans;
   }
   
   .Icon {
