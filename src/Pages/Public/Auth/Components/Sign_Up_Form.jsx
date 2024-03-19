@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Auth.scss';
 import Global_Input from '../../../../Components/Inputs/Global_Input/Global_Input';
 import Global_Button from '../../../../Components/Buttons/Global_Button/Global_Button';
+import Country_Selector from '../../../../Components/Selectors/Country_Selector/Country_Selector';
 
 const Sign_Up_Form = () => {
+
+  const [ country, setCountry ] = useState('')
 
   return (
     <>
@@ -28,9 +31,9 @@ const Sign_Up_Form = () => {
           />
         </div>
         <div className="Input_Field">
-          <Global_Input 
-            Text="Country"
-            Type="text"
+          <Country_Selector 
+            country={country}
+            setCountry={setCountry}
           />
         </div>
         <div className="Input_Field">
