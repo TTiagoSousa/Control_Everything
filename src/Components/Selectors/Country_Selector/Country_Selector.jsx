@@ -93,7 +93,7 @@ const Country_Selector = ({ country, setCountry }) => {
         type='text'
         className='Coutrie_Selector'
         value={country}
-        placeholder='Enter country name'
+        placeholder={t('Enter country name')}
         onClick={handleInputClick}
         onFocus={handleInputFocus}
         ref={inputRef}
@@ -112,7 +112,7 @@ const Country_Selector = ({ country, setCountry }) => {
             ))
           ) : (
             <li className='NotFound'>
-              <span>Country Not Found</span>
+              <span>{t('Country Not Found')}</span>
             </li>
           )}
         </ul>

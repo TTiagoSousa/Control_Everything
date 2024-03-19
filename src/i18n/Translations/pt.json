@@ -17,6 +17,8 @@
     "One of us ?": "Já és um de nós?",
     "New here ?": "És novo aqui?",
     "Recover Password": "Recuperar passoword",
-    "Back to login": "Voltar para iniciar sessão"
+    "Back to login": "Voltar para iniciar sessão",
+    "Country Not Found": "País não encontrado",
+    "Enter country name": "Insira o nome do país"
   }
 }
