@@ -1,0 +1,70 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+.Top_Navigation {
+  position: fixed;
+  margin-top: 5vh;
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  height: 5vh;
+  display: flex;
+  justify-content: space-around;
+  z-index: 1;
+  border-radius: $border_radius;
+  border: $border;
+  box-shadow: $box_shadow;
+
+  .Wrap_Menu {
+    position: relative;
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .Hyper_Link {
+      text-decoration: none;
+      font-family: $font_family_poppins;
+
+      .Informations_Link{
+
+        span{
+          font-size: 13px;
+        }
+      }
+    }
+
+    .Div_SubMenu {
+      display: none;
+    }
+
+    &.active {
+      .Div_SubMenu {
+        position: absolute;
+        display: flex;
+        top: 190%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        border-radius: 0px 0px 10px 10px;
+        padding: 10px;
+
+        .Nav_Link_Group{
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          
+          a{
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Colors
+  .Dark_Mode .Top_Navigation,
+  .Dark_Mode .Top_Navigation .Wrap_Menu .Div_SubMenu{
+    background-color: $secundery_color_dark;
+  }
+// Colors
