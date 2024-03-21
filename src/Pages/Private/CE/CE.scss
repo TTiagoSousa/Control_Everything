@@ -1,0 +1,90 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+.CE {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: right;
+  
+  .Small_Container_With_SideBar_Close {
+    width: calc(100% - 50px);
+    height: auto;
+    margin-top: 5vh;
+    transition: 0.3s all;
+    box-sizing: border-box;
+    padding: 0px 10px 0px 10px;
+    transition: all 0.3s;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    .Breadcrumbs_CE{
+      width: calc(100% - 50px);
+    }
+  }
+
+  .Small_Container_With_SideBar_Open {
+    width: calc(100% - 250px);
+    height: auto;
+    margin-top: 5vh;
+    transition: 0.3s all;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0px 10px 0px 10px;
+    transition: all 0.3s;
+    display: flex;
+    gap: 10px;
+
+    .Breadcrumbs_CE{
+      width: calc(100% - 250px);
+    }
+  }
+
+  .Container_With_MobileMenu {
+    width: 100%;
+    height: auto;
+    margin-top: 5vh;
+    transition: 0.3s all;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 10px 0px 10px;
+    transition: all 0.3s;
+    gap: 10px;
+
+    .Breadcrumbs_CE{
+      width: 100%;
+    }
+  }
+
+  .Container_With_Top_Navigation {
+    width: 100%;
+    height: auto;
+    margin-top: 11vh;
+    transition: 0.3s all;
+    box-sizing: border-box;
+    padding: 0px 10px 0px 10px;
+    transition: all 0.3s;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    .Breadcrumbs_CE{
+      width: 100%;
+    }
+  }
+}
+
+// Colors
+  .Dark_Mode .CE{
+    background-color: $primary_color_dark;
+  }
+
+  .Light_Mode .CE{
+    background-color: $primary_color_light;
+  }
+// Colors

@@ -1,0 +1,90 @@
+import { useState } from "react";
+import { NavsState } from "../../Contexts/Navs_Context";
+import http from "../../Services/httpService";
+import { BASE_URL } from "../../config/urls";
+import { useNavigate } from 'react-router-dom';
+import { DataBaseState } from "../../Contexts/DataBase_Context";
+import * as jwt_decode from "jwt-decode";
+import Cookies from 'js-cookie';
+import { validateEmail } from '../../Utils/email/is.valide.email';
+
+export const useSignin = () => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
+
+  const { setAlert } = NavsState();
+
+  const { setAuthenticated } = DataBaseState();
+
+  const signin  = async (e) => {
+    e.preventDefault();
+
+    if (!email || !password) {
+      setAlert({
+        open: true,
+        message: "All fields must be filleds",
+        type: 'error'
+      });
+      
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setAlert({
+        open: true,
+        message: "Invalid email format",
+        type: 'error'
+      });
+      
+      return;
+    }
+
+    try{
+      const response = await http.post(`${BASE_URL}/auth/signin_user`, {
+        email: email,
+        password: password,
+      });
+
+      const { token, id } = response.data;
+
+      if (token) {
+        const decoded = jwt_decode.jwtDecode(token);
+  
+        Cookies.set('rthtrh3445gv@@firnf1rgher', token);
+        Cookies.set('agerg3234rrthrts322455', decoded.id);
+      }
+
+      setAuthenticated(true);
+
+      setAlert({
+        open: true,
+        message: "Login successful",
+        type: 'success'
+      });
+
+      setTimeout(() => {
+        navigate('/CE/Dashboard');
+        window.location.reload();
+      }, 3000);
+      
+    }catch (error) {
+      if (error.response && error.response.status === 400) {
+        const errorMessage = error.response.data.message;
+        setAlert({
+          open: true,
+          message: errorMessage,
+          type: 'error'
+        });
+      }
+    }
+  }
+
+  return {
+    email, setEmail,
+    password, setPassword,
+    signin
+  }
+}
