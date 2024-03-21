@@ -6,6 +6,7 @@ import Sign_Up_Form from './Components/Sign_Up_Form';
 import Sign_In_Form from './Components/Sign_In_Form';
 import Recover_Password_Form from './Components/Recover_Password_Form';
 import { useTranslation } from 'react-i18next';
+import Mui_Alert from '../../../Components/Alerts/Mui_Alert/Mui_Alerts';
 
 const Auth = () => {
 
@@ -81,6 +82,9 @@ const Auth = () => {
           </div>
           <img src={Image.Web3} className="image" alt="" />
         </div>
+      </div>
+      <div className='Alert'>
+        <Mui_Alert />
       </div>
     </div>
   );
