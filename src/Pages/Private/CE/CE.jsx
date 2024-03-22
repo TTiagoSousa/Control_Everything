@@ -6,6 +6,7 @@ import Top_Navigation from '../../../Containers/Home_Navigation/Top_Navigation/T
 import Sidebar_Home from '../../../Containers/Home_Navigation/Sidebar_Home/Sidebar_Home';
 import Mobile_Menu_Home from '../../../Containers/Home_Navigation/Mobile_Menu_Home/Mobile_Menu_Home';
 import Header_Home from '../../../Containers/Headers/Header_Home/Header_Home';
+import Custumize_Sidebar from '../../../Containers/Navs/Custumize_Sidebar/Custumize_Sidebar';
 
 const CE = () => {
 
@@ -31,6 +32,7 @@ const CE = () => {
     <>
 
       <Header_Home />
+      <Custumize_Sidebar />
 
       {
         typeOfNavifation === "Sidebar_Home" ? (

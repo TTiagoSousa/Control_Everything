@@ -5,10 +5,11 @@ import Change_Theme from '../../../Components/Selectors/Change_Theme/Change_Them
 import Language_Selector from '../../../Components/Selectors/Language_Selector/Language_Selector';
 import { Sling as Hamburger } from 'hamburger-react';
 import * as Color from '../../../Styles/Colors';
+import * as Icon from '../../../Imports/icons';
 
 const Header_Home = () => {
 
-  const { typeOfNavifation, sidebar_Home, setSidebar_Home } = NavsState();
+  const { typeOfNavifation, sidebar_Home, setSidebar_Home,showCustomize_Sidebar } = NavsState();
 
   const headerClass = typeOfNavifation === 'Sidebar_Home' ? 'Header_Home With_SideBar' : 'Header_Home';
 
@@ -45,6 +46,18 @@ const Header_Home = () => {
         </div>
         <div className='Button_Field'>
           <Language_Selector />
+        </div>
+        <div
+          className='Custumize_Sidebar_Button'
+          onClick={showCustomize_Sidebar}
+        >
+          <div>
+            <Icon.Settings_With_Two_Arrows 
+              GlobalColor={Color.blue_darker} 
+              Color_2={Color.blue_darker} 
+              Color_1={Color.blue_darker}
+            />
+          </div>
         </div>
       </div>
     </div>
