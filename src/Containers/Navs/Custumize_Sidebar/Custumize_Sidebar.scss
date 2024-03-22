@@ -296,6 +296,113 @@
         }
       }
     }
+
+    .Choose_Color{
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .Text{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        h1{
+          font-family: $font_family_open_sans;
+          font-size: 15px;
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
+
+        span{
+          font-family: $font_family_open_sans;
+          font-size: 13px;
+          font-weight: 600;
+        }
+      }
+
+      .Choose_Type_Color{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-radius: $border_radius;
+        cursor: pointer;
+        height: 30px;
+        align-items: center;
+
+        .Information{
+          width: auto;
+          margin-left: 10px;
+          font-family: $font_family_poppins;
+          font-size: 13px;
+          display: flex;
+          gap: 10px;
+          color: $blue_darker;
+        }
+
+        .Icon{
+          width: auto;
+          height: 100%;
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          div{
+            width: 13px;
+            height: 13px;
+            transform: rotate(90deg);
+            margin-bottom: 2.5px;
+            transition: 0.5s;
+
+            &.active{
+              transform: rotate(60deg);
+            }
+          }
+        }
+      }
+
+      .Colors_Options {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        font-family: $font_family_poppins;
+        border-radius: $border_radius;
+
+        &.inactive{
+          height: 0px;
+          display: none;
+          opacity: 0;
+        }
+
+        &.active{
+          opacity: 1;
+        }
+
+        div{
+          cursor: pointer;
+          text-align: center;
+
+          span{
+            font-size: 13px;
+            transition: 0.5s;
+
+            &.selected{
+              color: $blue_darker !important;
+            }
+          }
+
+          &:hover{
+
+            span{
+              color: $blue_darker !important;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -332,22 +439,30 @@
   }
   
   .Dark_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Navigation_Options,
-  .Dark_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Choose_The_Type{
+  .Dark_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Choose_The_Type,
+  .Dark_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Choose_Type_Color,
+  .Dark_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Colors_Options{
     background-color: $secundery_color_dark;
   }
 
   .Light_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Navigation_Options,
-  .Light_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Choose_The_Type{
+  .Light_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Choose_The_Type,
+  .Light_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Choose_Type_Color,
+  .Light_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Colors_Option{
     background-color: $secundery_color_light;
   }
 
   .Dark_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Navigation_Options div span,
-  .Dark_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Text{
+  .Dark_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Text,
+  .Dark_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Text,
+  .Dark_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Colors_Options div span{
     color: $gray;
   }
 
   .Light_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Navigation_Options div span,
-  .Light_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Text {
+  .Light_Mode .Custumize_Sidebar .Settings_Container .Type_Of_Navigations .Text,
+  .Light_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Text,
+  .Light_Mode .Custumize_Sidebar .Settings_Container .Choose_Color .Colors_Options div span {
     color: $gray_dark;
   }
 // Colors
