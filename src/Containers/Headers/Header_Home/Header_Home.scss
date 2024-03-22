@@ -26,6 +26,25 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      button{
+        width: auto;
+        height: 100%;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+
+        div{
+          background-color: $blue;
+          width: 20px;
+          height: 2px;
+        }
+      }
     }
   }
 

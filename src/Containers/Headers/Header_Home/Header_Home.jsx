@@ -9,7 +9,7 @@ import * as Icon from '../../../Imports/icons';
 
 const Header_Home = () => {
 
-  const { typeOfNavifation, sidebar_Home, setSidebar_Home,showCustomize_Sidebar } = NavsState();
+  const { typeOfNavifation, sidebar_Home, setSidebar_Home,showCustomize_Sidebar, show_Mobile_Sidebar_Home } = NavsState();
 
   const headerClass = typeOfNavifation === 'Sidebar_Home' ? 'Header_Home With_SideBar' : 'Header_Home';
 
@@ -30,7 +30,7 @@ const Header_Home = () => {
             ) :
             typeOfNavifation === 'Mobile_Menu' ?  (
               <button
-                
+                onClick={show_Mobile_Sidebar_Home}
               >
                 <div></div>
                 <div></div>
