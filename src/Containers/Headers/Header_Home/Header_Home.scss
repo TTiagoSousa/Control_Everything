@@ -1,0 +1,44 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+
+.Header_Home {
+  position: fixed;
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  box-sizing: border-box;
+
+  .Left_Side{
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .Right_Side {
+    position: relative;
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+
+
+// Colors
+  .Dark_Mode .Header_Home {
+    background-color: $primary_color_dark;
+  }
+    
+  .Light_Mode .Header_Home{
+    background-color: $primary_color_light;
+  }
+// Colors

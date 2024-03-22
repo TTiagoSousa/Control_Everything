@@ -5,6 +5,7 @@ import Private_Routes from '../../../Routes/Private_Routes';
 import Top_Navigation from '../../../Containers/Home_Navigation/Top_Navigation/Top_Navigation';
 import Sidebar_Home from '../../../Containers/Home_Navigation/Sidebar_Home/Sidebar_Home';
 import Mobile_Menu_Home from '../../../Containers/Home_Navigation/Mobile_Menu_Home/Mobile_Menu_Home';
+import Header_Home from '../../../Containers/Headers/Header_Home/Header_Home';
 
 const CE = () => {
 
@@ -28,6 +29,8 @@ const CE = () => {
 
   return (
     <>
+
+      <Header_Home />
 
       {
         typeOfNavifation === "Sidebar_Home" ? (
