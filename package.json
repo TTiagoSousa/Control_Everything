@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.13",
     "axios": "^1.6.8",
+    "hamburger-react": "^2.5.0",
     "i18next": "^23.10.1",
     "js-cookie": "^3.0.5",
     "jwt-decode": "^4.0.0",
