@@ -3,8 +3,11 @@ import '../Custumize_Sidebar.scss';
 import { ThemeState } from '../../../../Contexts/Theme_Context';
 import * as Icon from '../../../../Imports/icons';
 import * as Color from '../../../../Styles/Colors';
+import { useTranslation } from 'react-i18next';
 
 const Choose_Color = () => {
+
+  const { t } = useTranslation();
 
   const { sidebar_Color_Change, handle_Sidebar_Color_Change, setSidebar_Color_Change } = ThemeState();
 
@@ -37,13 +40,13 @@ const Choose_Color = () => {
   return (
     <div className="Choose_Color">
       <div className="Text" >
-        <h1>Choose a color to Sidebar</h1>
-        <span>What's your color?</span>
+        <h1>{t("Choose a color to sidebar")}</h1>
+        <span>{t("What's your color ?")}</span>
       </div>
       <div className='Choose_Type_Color' onClick={()=>{setOpen(!open)}} >
         <div className='Information'>
-          <span>Select Value:</span>
-          <span>{sidebar_Color_Change}</span>
+          <span>{t("Select color :")}</span>
+          <span>{t(sidebar_Color_Change)}</span>
         </div>
         <div className='Icon'> 
           <div className={`Arrow ${open? 'active' : 'inactive'}`}>
@@ -53,10 +56,10 @@ const Choose_Color = () => {
       </div >
         <div className={`Colors_Options ${open? 'active' : 'inactive'}`}>
         <div onClick={() => handleColorSelection("Dark")}>
-          <span className={sidebar_Color_Change === "Dark" ? "selected" : ""}>Color Dark</span>
+          <span className={sidebar_Color_Change === "Dark" ? "selected" : ""}>{t("Color Dark")}</span>
         </div>
         <div onClick={() => handleColorSelection("Blue")}>
-          <span className={sidebar_Color_Change === "Blue" ? "selected" : ""}>Color Blue</span>
+          <span className={sidebar_Color_Change === "Blue" ? "selected" : ""}>{t("Color Blue")}</span>
         </div>
         </div>
     </div>

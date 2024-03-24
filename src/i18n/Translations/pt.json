@@ -22,6 +22,13 @@
     "Enter country name": "Insira o nome do país",
     "Dark Mode": "Modo Escuro",
     "Light Mode": "Modo Claro",
-    "Auto Mode": "Automático"
+    "Auto Mode": "Automático",
+    "Choose a color to sidebar":"Escolha uma cor para o menu",
+    "What's your color ?":"Qual vai ser ?",
+    "Select color :": "Cor selecionada :",
+    "Color Dark": "Cor escura",
+    "Color Blue": "Cor azul",
+    "Blue": "Azul",
+    "Dark": "Escuro"
   }
 }
