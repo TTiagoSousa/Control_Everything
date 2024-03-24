@@ -3,9 +3,11 @@ import '../Custumize_Sidebar.scss';
 import * as Icon from '../../../../Imports/icons';
 import * as Color from '../../../../Styles/Colors';
 import { NavsState } from '../../../../Contexts/Navs_Context';
-
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
+
+  const { t } = useTranslation();
 
   const { showCustomize_Sidebar  } = NavsState();
 
@@ -21,14 +23,14 @@ const Header = () => {
                 GlobalColor={Color.whitte}
               />
             </div>
-            <h1>Settings</h1>
+            <h1>{t("Settings")}</h1>
             <button >
               <div>
                 <Icon.Back_Square 
                   GlobalColor={Color.whitte}
                 />
               </div>
-              <span>Reset</span>
+              <span>{t("Resete")}</span>
             </button>
           </div>
           <div className="Right">
@@ -42,7 +44,7 @@ const Header = () => {
           </div>
         </div>
         <div className="Bottom">
-          <span>Set your own customized style</span>
+          <span>{t("Set your own customized style")}</span>
         </div>
       </div>
     </header>
