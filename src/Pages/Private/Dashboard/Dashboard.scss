@@ -5,5 +5,131 @@
 .Dashboard{
   @include Pages_Configs;
   height: 95vh;
+
+  .Assets_Card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: $border_radius;
+    border: $border;
+
+    header{
+      border-radius: 10px 10px 0px 0px;
+      padding: 5px;
+      box-sizing: border-box;
+      
+      span{
+        font-family: $font_family_poppins;
+        font-size: 16px;
+      }
+    }
+
+    body{
+      width: 100%;
+      display: flex;
+
+      ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        li{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 5px 0px 5px 0px;
+          font-family: $font_family_open_sans;
+          font-weight: 600;
+          padding: 5px;
+          box-sizing: border-box;
+
+          &:last-child {
+            border-bottom : none !important;
+          }
+
+          a{
+            text-decoration: none;
+            border-bottom: 1px solid rgba(245, 222, 179, 0);
+            transition: 0.3s;
+            font-size: 15px;
+
+            &:hover{
+              border-bottom: 1px solid #2c7be5;
+              color: $blue;
+            }
+          }
+
+          span {
+            font-size: 15px;
+          }
+        } 
+      }
+    }
+
+    footer{
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0px 0px 10px 10px;
+      padding: 5px;
+      box-sizing: border-box;
+
+      span{
+        font-family: $font_family_poppins;
+        font-size: 16px;
+        letter-spacing: 2px;
+      }
+    }
+  }
 }
+
+// Colors
+
+  .Dark_Mode .Dashboard .Assets_Card {
+    box-shadow: $box_shadow_dark;
+  }
+
+  .Light_Mode .Dashboard .Assets_Card {
+    box-shadow: $box_shadow_light;
+  }
+
+  .Dark_Mode .Dashboard .Assets_Card header,
+  .Dark_Mode .Dashboard .Assets_Card footer{
+    background-color: $secundery_color_dark;
+  }
+
+  .Light_Mode .Dashboard .Assets_Card header,
+  .Light_Mode .Dashboard .Assets_Card footer{
+    background-color: $secundery_color_light;
+  }
+
+  .Dark_Mode .Dashboard .Assets_Card body ul li {
+    border-bottom: 5px solid $tertiary_color_dark;
+  }
+
+  .Light_Mode .Dashboard .Assets_Card body ul li {
+    border-bottom: 5px solid $tertiary_color_ligth;
+  }
+
+  .Dark_Mode .Dashboard .Assets_Card footer span,
+  .Dark_Mode .Dashboard .Assets_Card header span{
+    color: $white;
+  }
+
+  .Light_Mode .Dashboard .Assets_Card footer span,
+  .Light_Mode .Dashboard .Assets_Card header span{
+    color: $gray_dark;
+  }
+
+  .Dark_Mode .Dashboard .Assets_Card body ul li a{
+    color: $gray;
+  }
+
+  .Light_Mode .Dashboard .Assets_Card body ul li a{
+    color: $gray_dark;
+  }
+// Colors
 

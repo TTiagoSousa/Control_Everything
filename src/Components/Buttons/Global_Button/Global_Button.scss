@@ -19,7 +19,6 @@
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
     background-color: $blue_darker;
-    color: white;
     z-index: 1;
 
     span {
@@ -29,6 +28,7 @@
       transition: 0.5s;
       font-size: 15px;
       z-index: 1;
+      color: white !important;
 
       &::after{
         content: '»';
