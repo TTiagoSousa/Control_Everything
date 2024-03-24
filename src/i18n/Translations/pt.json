@@ -19,6 +19,9 @@
     "Recover Password": "Recuperar passoword",
     "Back to login": "Voltar para iniciar sessão",
     "Country Not Found": "País não encontrado",
-    "Enter country name": "Insira o nome do país"
+    "Enter country name": "Insira o nome do país",
+    "Dark Mode": "Modo Escuro",
+    "Light Mode": "Modo Claro",
+    "Auto Mode": "Automático"
   }
 }

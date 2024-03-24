@@ -3,8 +3,11 @@ import './Change_Theme.scss';
 import { ThemeState } from '../../../Contexts/Theme_Context';
 import * as Icon from '../../../Imports/icons';
 import * as Color from '../../../Styles/Colors';
+import { useTranslation } from 'react-i18next';
 
 const Change_Theme = () => {
+
+  const { t } = useTranslation();
 
   const { handleDarkMode, handleLightMode, mode, handleAutoMode } = ThemeState();
 
@@ -68,7 +71,7 @@ const Change_Theme = () => {
                   Global_Color={Color.blue_darker}
                 />
               </div>
-              <span>Dark Mode</span>
+              <span>{t("Dark Mode")}</span>
             </div>
             <div className='Check_Icon'>
               <div className='Icon'>
@@ -83,7 +86,7 @@ const Change_Theme = () => {
                   Global_Color={Color.blue_darker}
                 />
               </div>
-              <span>Light Mode</span>
+              <span>{t("Light Mode")}</span>
             </div>
             <div className='Check_Icon'>
               <div className='Icon'>
@@ -98,7 +101,7 @@ const Change_Theme = () => {
                   Global_Color={Color.blue_darker}
                 />
               </div>
-              <span>Auto Mode</span>
+              <span>{t("Auto Mode")}</span>
             </div>
             <div className='Check_Icon'>
               <div className='Icon'>
