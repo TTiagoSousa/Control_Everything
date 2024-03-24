@@ -29,6 +29,12 @@
     "Color Dark": "Color Dark",
     "Color Blue": "Color Blue",
     "Blue": "Blue",
-    "Dark": "Dark"
+    "Dark": "Dark",
+    "Navigation Position": "Navigation Position",
+    "Select a suitable navigation system for your web application": "Select a suitable navigation system for your web application",
+    "Navigation :": "Navigation :",
+    "Sidebar Navigation": "Sidebar Navigation",
+    "Mobile Menu Navigation": "Mobile Menu Navigation",
+    "Top Menu Navigation": "Top Menu Navigation"
   }
 }

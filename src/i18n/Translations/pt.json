@@ -29,6 +29,12 @@
     "Color Dark": "Cor escura",
     "Color Blue": "Cor azul",
     "Blue": "Azul",
-    "Dark": "Escuro"
+    "Dark": "Escuro",
+    "Navigation Position": "Tipo de navegação",
+    "Select a suitable navigation system for your web application": "Selecione a sua navegação preferida",
+    "Navigation :": "Navegação :",
+    "Sidebar Navigation": "Menu lateral",
+    "Mobile Menu Navigation": "Menu movél",
+    "Top Menu Navigation": "Menu superior"
   }
 }

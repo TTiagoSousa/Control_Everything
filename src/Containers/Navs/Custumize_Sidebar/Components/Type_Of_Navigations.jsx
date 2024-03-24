@@ -3,8 +3,11 @@ import '../Custumize_Sidebar.scss';
 import { NavsState } from '../../../../Contexts/Navs_Context';
 import * as Icon from '../../../../Imports/icons';
 import * as Color from '../../../../Styles/Colors';
+import { useTranslation } from 'react-i18next';
 
 const Type_Of_Navigations = () => {
+
+  const { t } = useTranslation();
 
   const { handleTypeofPositionChange, typeOfNavifation, setTypeOfNavifation } = NavsState();
 
@@ -60,13 +63,13 @@ const Type_Of_Navigations = () => {
   return (
     <div className='Type_Of_Navigations'>
       <div className='Text'> 
-        <h1>Navigation Position</h1>
-        <span>Select a suitable navigation system for your web application</span>
+        <h1>{t("Navigation Position")}</h1>
+        <span>{t("Select a suitable navigation system for your web application")}</span>
       </div>
       <div className='Choose_The_Type' onClick={() => { windowWidth >= 1000 && setOpen(!open) }}>
         <div className='Information'>
-          <span>Select Value:</span>
-          <span>{navigationLabels[typeOfNavifation]}</span>
+          <span>{t("Navigation :")}</span>
+          <span>{t(navigationLabels[typeOfNavifation])}</span>
         </div>
         <div className='Icon'> 
           <div className={`Arrow ${open? 'active' : 'inactive'}`}>
@@ -76,13 +79,13 @@ const Type_Of_Navigations = () => {
       </div>
       <div className={`Navigation_Options ${open? 'active' : 'inactive'}`}>
         <div onClick={() => handleNavtigationrSelection("Sidebar_Home")}>
-          <span className={typeOfNavifation === "Sidebar_Home" ? "selected" : ""}>Sidebar Navigation</span>
+          <span className={typeOfNavifation === "Sidebar_Home" ? "selected" : ""}>{t("Sidebar Navigation")}</span>
         </div>
         <div onClick={() => handleNavtigationrSelection("Mobile_Menu")}>
-          <span className={typeOfNavifation === "Mobile_Menu" ? "selected" : ""}>Mobile Menu Navigation</span>
+          <span className={typeOfNavifation === "Mobile_Menu" ? "selected" : ""}>{t("Mobile Menu Navigation")}</span>
         </div>
         <div onClick={() => handleNavtigationrSelection("Top_Nav_Navigation")}>
-          <span className={typeOfNavifation === "Top_Nav_Navigation" ? "selected" : ""}>Top Menu Navigation</span>
+          <span className={typeOfNavifation === "Top_Nav_Navigation" ? "selected" : ""}>{t("Top Menu Navigation")}</span>
         </div>
       </div>
     </div>  
