@@ -42,6 +42,9 @@
     "Type of Assets": "Tipo de ativo",
     "Savings Account": "Conta poupança",
     "Crypto": "Criptomoedas",
-    "Choose the asset": "Escolha o ativo"
+    "Choose the asset": "Escolha o ativo",
+    "Repete Password": "Repita a password",
+    "Change password": "Mudar a password",
+    "Did you remember your password ?": "Lembras-te da tua password ?"
   }
 }
