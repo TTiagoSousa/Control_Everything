@@ -4,16 +4,11 @@
 
 .Top_Navigation {
   position: fixed;
+  width: 100%;
   margin-top: 5vh;
-  width: calc(100% - 20px);
-  margin-left: 10px;
-  height: 5vh;
   display: flex;
   justify-content: space-around;
-  z-index: 1;
-  border-radius: $border_radius;
-  border: $border;
-  box-shadow: $box_shadow;
+  align-items: center;
 
   .Wrap_Menu {
     position: relative;
@@ -63,8 +58,19 @@
 }
 
 // Colors
-  .Dark_Mode .Top_Navigation,
+  .Dark_Mode .Top_Navigation{
+    background-color: $primary_color_dark;
+  }
+
+  .Light_Mode .Top_Navigation{
+    background-color: $primary_color_light;
+  }
+
   .Dark_Mode .Top_Navigation .Wrap_Menu .Div_SubMenu{
     background-color: $secundery_color_dark;
+  }
+
+  .Light_Mode .Top_Navigation .Wrap_Menu .Div_SubMenu{
+    background-color: $secundery_color_light;
   }
 // Colors
