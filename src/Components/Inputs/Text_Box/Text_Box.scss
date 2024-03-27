@@ -1,0 +1,38 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+.Text_Box{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: $border_radius;
+  border: none;
+  outline: none;
+  text-align: center;
+
+  textarea{
+    height: 100%;
+    width: 100%;
+    resize: none;
+    border-radius: $border_radius;
+    border: none;
+    color: #9da9bb;
+    box-sizing: border-box;
+    padding: 10px;
+
+    &:focus{
+      outline: 0;
+    }
+  }
+}
+
+// Colors
+  .Dark_Mode .Text_Box textarea{
+    background-color: #0b1727;
+  }
+      
+  .Light_Mode .Text_Box textarea{
+    background-color: #edf2f9;
+  }
+// Colors

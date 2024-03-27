@@ -45,6 +45,17 @@
     "Choose the asset": "Escolha o ativo",
     "Repete Password": "Repita a password",
     "Change password": "Mudar a password",
-    "Did you remember your password ?": "Lembras-te da tua password ?"
+    "Did you remember your password ?": "Lembras-te da tua password ?",
+    "Currency": "Moeda",
+    "Date" : "Data",
+    "Hour": "Hora",
+    "Platform": "Plataforma",
+    "Ammount": "Aporte",
+    "Observation" : "Observação",
+    "Submit": "Submeter",
+    "Transition Type": "Tipo de transição",
+    "Deposit": "Depósito",
+    "Savings dashboard": "Dashboard de poupanças",
+    "Add your first transition": "Adiciona a tua primeira transição"
   }
 }

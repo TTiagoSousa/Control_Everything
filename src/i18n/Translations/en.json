@@ -45,6 +45,17 @@
     "Choose the asset": "Choose or asset",
     "Repete Password": "Repete Password",
     "Change password": "Change password",
-    "Did you remember your password ?": "Did you remember your password ?"
+    "Did you remember your password ?": "Did you remember your password ?",
+    "Currency": "Currency",
+    "Date" : "Date",
+    "Hour": "Hour",
+    "Platform": "Platform",
+    "Ammount": "Ammount",
+    "Observation" : "Observation",
+    "Submit": "Submit",
+    "Transition Type": "Transition Type",
+    "Deposit": "Deposit",
+    "Savings dashboard": "Savings dashboard",
+    "Add your first transition": "Add your first transition"
   }
 }

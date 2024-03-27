@@ -1,6 +1,7 @@
 import React from 'react';
 import './Savings_Dashboard.scss';
 import useFetchTotalTransitions from '../../../../../Hooks/Savings/useFetchTotalTransitions';
+import First_Transition from './Containers/First_Transition';
 
 const Savings_Dashboard = () => {
 
@@ -12,7 +13,7 @@ const Savings_Dashboard = () => {
         <section className='Loading'></section>
         ) : totalTransitions === 0 ? 
         <>
-        
+          <First_Transition />
         </>
        : (
         <>
