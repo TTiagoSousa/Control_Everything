@@ -96,6 +96,51 @@
   }
 }
 
+@media (max-width: 700px){
+  .Savings_Dashboard{
+
+    .First_Transition{
+
+      .Title{
+
+        h1{
+          font-size: 35px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px){
+  .Savings_Dashboard{
+
+    .First_Transition{
+
+      .Title{
+
+        h1{
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px){
+  .Savings_Dashboard{
+
+    .First_Transition{
+
+      .Title{
+
+        h1{
+          font-size: 27px;
+        }
+      }
+    }
+  }
+}
+
 // Colors 
   .Dark_Mode .Savings_Dashboard .First_Transition form{
     background-color: $secundery_color_dark;
