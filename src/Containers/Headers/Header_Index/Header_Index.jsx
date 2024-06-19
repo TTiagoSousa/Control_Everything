@@ -2,6 +2,7 @@ import React from 'react';
 import './Header_Index.scss';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import Change_Theme from '../../../Components/Selectores/Change_Theme/Change_Theme';
 
 const Header_Index = () => {
 
@@ -20,6 +21,9 @@ const Header_Index = () => {
       </div>
 
       <div className='Rigth_Side'>
+        <div className='Button_Field'>
+          <Change_Theme />
+        </div>
         <Link 
           to={authenticated ? 'CE/Dashboard' : '/Sign_In'}
         >
