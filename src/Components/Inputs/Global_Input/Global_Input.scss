@@ -1,0 +1,86 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+.Global_Input {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  color: $white;
+  box-shadow:inset 0 0 5px 1px #88888847;
+  transition: 0.5s;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  border-radius: 10px;
+
+  .Text {
+    position: relative;
+    width: 30%;
+    height: 100%;
+    background-color: $blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 0px 0px 10px;
+
+    span {
+      color: $white;
+      font-family: $font_family_poppins;
+      font-size: 10px;
+    }
+  }
+
+  input {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 0px 10px 10px 0px;
+    font-family: $font_family_open_sans;
+
+    &::placeholder {
+      font-family: $font_family_open_sans;
+      font-size: 11px;
+      font-weight: 600;
+    }
+  }
+  
+  .Icon {
+    position: absolute;
+    height: 20px;
+    right: 1%;
+    top: 18%;
+    cursor: pointer;
+  }
+}
+
+.Dark_Mode{
+
+  .Global_Input{
+
+    input{
+      background-color: $fourth_color_Dark;
+      color: $gray;
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Global_Input{
+
+    input{
+      background-color: $fourth_color_light;
+      color: $gray_darker;
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export { default as Mounth } from '../Assets/Video/Mounth.mp4'

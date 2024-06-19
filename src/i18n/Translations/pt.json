@@ -10,6 +10,14 @@
     "Value" : "Valor",
     "Dark Mode" : "Modo escuro",
     "Light Mode" : "Modo claro",
-    "Login or Register" : "Iniciar ou criar conta"
+    "Login or Register" : "Iniciar ou criar conta",
+    "Email" : "Email",
+    "Password" : "Senha",
+    "Login" : "Iniciar sessão",
+    "Sign In" : "Iniciar sessão",
+    "Forgot your password ?" : "Não te lembras da tua senha ?",
+    "Recover Password" : "Recuperar a senha",
+    "Do not have an account ?" : "Ainda não tens conta ?",
+    "Sign Up" : "Registrar"
   }
 }
