@@ -2,6 +2,7 @@ import React from 'react';
 import './Index.scss';
 import * as Image from '../../../Imports/images';
 import { useTranslation } from 'react-i18next';
+import Header_Index from '../../../Containers/Headers/Header_Index/Header_Index';
 
 const Index = () => {
 
@@ -9,6 +10,8 @@ const Index = () => {
 
   return (
     <div className='Index'>
+
+      <Header_Index />
 
       <div className='Mobile_Contaier'>
         <h1>Control Everthing</h1>
