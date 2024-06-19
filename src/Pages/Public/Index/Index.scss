@@ -1,0 +1,428 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+.Index{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  .Assets_Section{
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .Assets{
+      position: relative;
+      border-radius: 50%;
+
+      .Content{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        img{
+          width: 100%;
+          border-radius: 50%;
+        }
+
+        div{
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          span{
+            font-family: $font_family_poppins;
+          }
+        }
+      }
+      
+      &.Crypto{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .Crypto_One{
+          top: 0%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Crypto_Two{
+          top: 15%;
+          left: 85%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Crypto_Three{
+          top: 50%;
+          left: 100%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Crypto_Four{
+          top: 85%;
+          left: 85%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Crypto_Five{
+          top: 100%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Crypto_Six{
+          top: 85%;
+          left: 15%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Crypto_Seven{
+          top: 50%;
+          left: 0%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Crypto_Eight{
+          top: 15%;
+          left: 15%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &.Currency{
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        .Currency_One{
+          top: 5%;
+          left: 70%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Currency_Two{
+          top: 30%;
+          left: 95%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Currency_Three{
+          top: 70%;
+          left: 95%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Currency_Four{
+          top: 95%;
+          left: 70%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Currency_Five{
+          top: 95%;
+          left: 30%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Currency_Six{
+          top: 70%;
+          left: 5%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Currency_Seven{
+          top: 30%;
+          left: 5%;
+          transform: translate(-50%, -50%);
+        }
+
+        .Currency_Eight{
+          top: 5%;
+          left: 30%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    .Container{
+      width: auto;
+      height: 40px;
+      font-size: 28px;
+      font-family: sans-serif;
+      line-height:  40px;
+      display: flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: auto;
+      overflow: hidden;
+
+      &::before{
+        content: '[';
+        left: 0;
+      }
+
+      &::after{
+        content: ']';
+        position: absolute;
+        right: 0;
+      }
+
+      &::after, &::before{
+        position: absolute;
+        top: 0px;
+        
+        color: darkorange;
+        font-size: 40px;
+        line-height: 40px;
+      
+        -webkit-animation-name: opacity;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        animation-name: opacity;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+      }
+
+      ul{
+        list-style: none;
+        margin: 0px;
+        animation: cambiar 18s infinite;
+        text-align: center;
+        padding: 5px 20px;
+      }
+
+      @keyframes cambiar {
+        0%{margin-top: 0;}
+        2%{margin-top: 0;}
+         
+        7%{margin-top: -40px;}
+        9%{margin-top: -40px;} 
+        
+        14%{margin-top: -80px;}
+        16%{margin-top: -80px;}
+        
+        21%{margin-top: -120px;}
+        23%{margin-top: -120px;} 
+        
+        28%{margin-top: -160px;}
+        30%{margin-top: -160px;} 
+        
+        37%{margin-top: -200px;}
+        39%{margin-top: -200px;} 
+        
+        44%{margin-top: -240px;}
+        46%{margin-top: -240px;} 
+        
+        51%{margin-top: -280px;}
+        52%{margin-top: -280px;} 
+
+        57%{margin-top: -240px;}
+        59%{margin-top: -240px;} 
+             
+        64%{margin-top: -200px;}
+        66%{margin-top: -200px;} 
+      
+      
+        71%{margin-top: -160px;}
+        72%{margin-top: -160px;} 
+        
+        77%{margin-top: -120px;}
+        79%{margin-top: -120px;} 
+        
+        84%{margin-top: -80px;}
+        86%{margin-top: -80px;}
+        
+        90%{margin-top: -40px;}
+        92%{margin-top: -40px;} 
+        
+        94%{margin-top: 0;}
+        100%{margin-top: 0;}
+      } 
+      
+      @keyframes opacity {
+        0%, 100% {opacity:0;}
+        50% {opacity:1;}
+      }
+      
+      @keyframes change {
+        0%, 12.66%, 100% {transform:translate3d(0,0,0);}
+        16.66%, 29.32% {transform:translate3d(0,-25%,0);}
+        33.32%,45.98% {transform:translate3d(0,-50%,0);}
+        49.98%,62.64% {transform:translate3d(0,-75%,0);}
+        66.64%,79.3% {transform:translate3d(0,-50%,0);}
+        83.3%,95.96% {transform:translate3d(0,-25%,0);}
+      }
+    }
+  }
+
+  .Mobile_Contaier{
+    display: none;
+  }
+}
+
+@media (max-width: 800px){
+
+  .Index{
+
+    .Assets_Section{
+      width: 500px;
+      height: 500px;
+
+      .Assets{
+        
+        .Content{
+          width: 40px;
+          height: 40px;
+        }
+
+        &.Crypto{
+
+        }
+
+        &.Currency{
+
+        }
+      }
+
+      .Container{
+        width: auto;
+        height: 40px;
+        font-size: 28px;
+        font-family: sans-serif;
+        line-height:  40px;
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: auto;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px){
+
+  .Assets_Section{
+    display: none;
+  }
+
+  .Mobile_Contaier{
+    display: flex !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+      font-family: $font_family_poppins;
+      color: $blue;
+    }
+  }
+}
+
+.Dark_Mode{
+
+  .Index{
+
+    .Assets_Section{
+
+      .Assets{
+
+        .Content{
+          background-color: $primary_color_dark;
+          border: 3px solid $terciary_color_dark;
+
+          div{
+
+            span{
+              color: $gray;
+            }
+          }
+        }
+
+        &.Crypto{
+          border: 2px solid $gray;
+        }
+
+        &.Currency{
+          border: 2px solid $gray;
+        }
+      }
+
+      .Container{
+
+        ul{
+
+          li{
+            color: $gray;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Index{
+
+    .Assets_Section{
+
+      .Assets{
+
+        .Content{
+          background-color: $primary_color_light;
+          border: 3px solid $gray_dark;
+
+          div{
+
+            span{
+              color: $gray_dark;
+            }
+          }
+        }
+
+        &.Crypto{
+          border: 2px solid $gray_dark;
+        }
+
+        &.Currency{
+          border: 2px solid $gray_dark;
+        }
+      }
+
+      .Container{
+
+        ul{
+
+          li{
+            color: $gray_dark;
+          }
+        }
+      }
+    }
+  }
+}
