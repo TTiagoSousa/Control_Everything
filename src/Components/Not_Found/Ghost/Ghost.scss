@@ -1,0 +1,80 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+  
+
+.Ghost_Container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+
+  .ghost {
+    animation: float 3s ease-out infinite;
+  }
+
+  .shadowFrame {
+    width: 50%;
+    margin-top: 10px;
+  }
+
+  .shadow {
+    animation: shrink 3s ease-out infinite;
+    transform-origin: center center;
+
+    ellipse {
+      transform-origin: center center;
+    }
+  }
+
+  span{
+    font-family: $font_family_poppins;
+  }
+}
+  
+@keyframes float {
+
+    50% {
+       transform: translate(0, 10px);
+    }
+}
+
+@keyframes shrink {
+  0% {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  50% {
+    width: 60%;
+    margin: 0 18%;
+  }
+
+  100% {
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
+.Dark_Mode{
+
+  .Ghost_Container{
+
+    span{
+      color: $gray;
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Ghost_Container{
+
+    span{
+      color: $gray_dark;
+    }
+  }
+}
