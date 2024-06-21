@@ -46,6 +46,7 @@
     "Email to recover passowrd send" : "Email to recover passowrd send",
     "Something is wrong" : "Something is wrong",
     "Login successful" : "Login successful",
-    "Account not active" : "Account not active"
+    "Account not active" : "Account not active",
+    "Password changed successfully" : "Password changed successfully"
   }
 }

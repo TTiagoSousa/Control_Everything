@@ -46,6 +46,7 @@
     "Email to recover passowrd send" : "Email para recuperar a senha enviado",
     "Something is wrong" : "Algo deu errado",
     "Login successful" : "Início de sessão feito",
-    "Account not active" : "A conta não está ativa"
+    "Account not active" : "A conta não está ativa",
+    "Password changed successfully" : "Password mudada com sucesso"
   }
 }
