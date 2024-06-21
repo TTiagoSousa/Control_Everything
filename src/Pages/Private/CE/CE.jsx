@@ -3,6 +3,7 @@ import './CE.scss';
 import Private_Routes from '../../../Routes/Private_Routes';
 import { NavsState } from '../../../Contexts/Navs_Context';
 import Header_Home from '../../../Containers/Headers/Header_Home/Header_Home';
+import Custumize_Sidebar from '../../../Containers/Sidebars/Custumize_Sidebar/Custumize_Sidebar';
 
 const CE = () => {
 
@@ -26,6 +27,7 @@ const CE = () => {
     <>
 
       <Header_Home />
+      <Custumize_Sidebar />
 
       {
         typeOfNavifation === "Sidebar_Home" ? (

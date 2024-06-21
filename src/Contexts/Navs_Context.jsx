@@ -12,6 +12,11 @@ const NavsContext = ({ children }) => {
     })
   // Alert
 
+  // Customize Sidebar
+    const [ customize_Sidebar, setCustomize_Sidebar ] = useState(false);
+    const showCustomize_Sidebar = () => setCustomize_Sidebar(!customize_Sidebar);
+  // Customize Sidebar
+
   // Choose navigation type
     const [typeOfNavifation, setTypeOfNavifation] = useState(
       localStorage.getItem("sidebarPosition") || "Sidebar_Home"
@@ -52,6 +57,7 @@ const NavsContext = ({ children }) => {
       value={{ 
         alert, setAlert,
         typeOfNavifation, setTypeOfNavifation, handleTypeofPositionChange,
+        showCustomize_Sidebar, customize_Sidebar, setCustomize_Sidebar
       }}
     >
       {children}
