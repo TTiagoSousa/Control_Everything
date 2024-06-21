@@ -8,10 +8,13 @@ import { useTranslation } from 'react-i18next';
 import Mui_Alert from '../../../Components/Alerts/Mui_Alert/Mui_Alerts';
 import Change_Theme from '../../../Components/Selectores/Change_Theme/Change_Theme';
 import Language_Selector from '../../../Components/Selectores/Language_Selector/Language_Selector';
+import { useEmailToRecoverPassword } from '../../../Hooks/Auth/email/useEmailToRecoverPassword';
 
 const Recover_Password = () => {
 
   const { t } = useTranslation();
+
+  const { sendEmailToRecoverPassword, email, setEmail } = useEmailToRecoverPassword();
 
   return (
     <div className='Recover_Password'>
@@ -47,11 +50,14 @@ const Recover_Password = () => {
             <Global_Input 
               Text={t('Email')}
               Type="email"
+              Value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className='Button_Field'>
             <Global_Button 
               Text={t('Recover password')}
+              onClick={sendEmailToRecoverPassword}
             />
           </div>
         </form>
