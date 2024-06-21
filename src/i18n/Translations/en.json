@@ -49,6 +49,7 @@
     "Account not active" : "Account not active",
     "Password changed successfully" : "Password changed successfully",
     "Activating the account" : "Activating the account",
-    "Please wait..." : "Please wait..."
+    "Please wait..." : "Please wait...",
+    "Back to main page" : "Back to main page"
   }
 }

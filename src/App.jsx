@@ -22,6 +22,7 @@ function App() {
 
           <Route path="Reset_Password/:token" element={authenticated ? <Navigate to="/" /> : <Intermediate_Page.Reset_Password />} />
           <Route path="Active_Account/:token" element={ authenticated ? <Navigate to="/" /> :  <Intermediate_Page.Active_Account /> } />
+          <Route path="*" element={<Intermediate_Page.Not_Found />} />
 
           <Route
             path="/CE/*"

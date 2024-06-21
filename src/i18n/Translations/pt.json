@@ -49,6 +49,7 @@
     "Account not active" : "A conta não está ativa",
     "Password changed successfully" : "Password mudada com sucesso",
     "Activating the account" : "A ativar a conta",
-    "Please wait..." : "Por favor espere..."
+    "Please wait..." : "Por favor espere...",
+    "Back to main page" : "Voltar para a página principal"
   }
 }
