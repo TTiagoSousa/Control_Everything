@@ -47,6 +47,8 @@
     "Something is wrong" : "Algo deu errado",
     "Login successful" : "Início de sessão feito",
     "Account not active" : "A conta não está ativa",
-    "Password changed successfully" : "Password mudada com sucesso"
+    "Password changed successfully" : "Password mudada com sucesso",
+    "Activating the account" : "A ativar a conta",
+    "Please wait..." : "Por favor espere..."
   }
 }

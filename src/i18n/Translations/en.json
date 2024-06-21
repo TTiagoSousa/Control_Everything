@@ -47,6 +47,8 @@
     "Something is wrong" : "Something is wrong",
     "Login successful" : "Login successful",
     "Account not active" : "Account not active",
-    "Password changed successfully" : "Password changed successfully"
+    "Password changed successfully" : "Password changed successfully",
+    "Activating the account" : "Activating the account",
+    "Please wait..." : "Please wait..."
   }
 }
