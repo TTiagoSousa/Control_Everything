@@ -2,6 +2,7 @@ import React from 'react';
 import './CE.scss';
 import Private_Routes from '../../../Routes/Private_Routes';
 import { NavsState } from '../../../Contexts/Navs_Context';
+import Header_Home from '../../../Containers/Headers/Header_Home/Header_Home';
 
 const CE = () => {
 
@@ -23,6 +24,8 @@ const CE = () => {
 
   return (
     <>
+
+      <Header_Home />
 
       {
         typeOfNavifation === "Sidebar_Home" ? (
