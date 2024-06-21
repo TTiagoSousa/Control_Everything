@@ -13,6 +13,7 @@ function App() {
           <Route index element={<Public_Page.Index />} />
           <Route path='Sign_In' element={ authenticated ? <Navigate to="/" /> :  <Public_Page.Sign_In /> } />
           <Route path='Sign_Up' element={ authenticated ? <Navigate to="/" /> :  <Public_Page.Sign_Up /> } />
+          <Route path="Recover_Password" element={authenticated ? <Navigate to="/" /> : <Public_Page.Recover_Password />} />
         </Routes>
       </main>
     </>

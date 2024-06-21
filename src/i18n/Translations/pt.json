@@ -38,6 +38,10 @@
     "Passwords do not match" : "As password não são iguais",
     "Email to activate account sent" : "Email para ativar a conta enviado",
     "Invalid country" : "Páis inválido",
-    "Invalid date of birth" : "Data de nascimento inválida"
+    "Invalid date of birth" : "Data de nascimento inválida",
+    "Recover password" : "Recuperar senha",
+    "Back to main page ?" : "Voltar pare a página principal ?",
+    "Back to sign in ?" : "Voltar para iniciar sessão",
+    "Main page" : "Página princial"
   }
 }

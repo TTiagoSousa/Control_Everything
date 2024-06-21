@@ -38,6 +38,10 @@
     "Passwords do not match" : "Passwords do not match",
     "Email to activate account sent" : "Email to activate account sent",
     "Invalid country" : "Invalid country",
-    "Invalid date of birth" : "Invalid date of birth"
+    "Invalid date of birth" : "Invalid date of birth",
+    "Recover password" : "Recover password",
+    "Back to main page ?" : "Back to main page ?",
+    "Back to sign in" : "Back to sign in",
+    "Main page" : "Main page"
   }
 }
