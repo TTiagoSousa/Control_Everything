@@ -44,6 +44,8 @@
     "Back to sign in ?" : "Voltar para iniciar sessão",
     "Main page" : "Página princial",
     "Email to recover passowrd send" : "Email para recuperar a senha enviado",
-    "Something is wrong" : "Algo deu errado"
+    "Something is wrong" : "Algo deu errado",
+    "Login successful" : "Início de sessão feito",
+    "Account not active" : "A conta não está ativa"
   }
 }

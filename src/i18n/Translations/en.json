@@ -44,6 +44,8 @@
     "Back to sign in" : "Back to sign in",
     "Main page" : "Main page",
     "Email to recover passowrd send" : "Email to recover passowrd send",
-    "Something is wrong" : "Something is wrong"
+    "Something is wrong" : "Something is wrong",
+    "Login successful" : "Login successful",
+    "Account not active" : "Account not active"
   }
 }

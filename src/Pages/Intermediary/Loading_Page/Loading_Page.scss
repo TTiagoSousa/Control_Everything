@@ -1,0 +1,19 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+.Loading_Page{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+// Colors
+  .Dark_Mode .Loading_Page{
+    background-color: $primary_color_dark;
+  }
+
+  .Light_Mode .Loading_Page{
+    background-color: $primary_color_light;
+  }
+// Colors

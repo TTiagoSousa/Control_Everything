@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Change_Theme from '../../../Components/Selectores/Change_Theme/Change_Theme';
 import Language_Selector from '../../../Components/Selectores/Language_Selector/Language_Selector';
+import { DataBaseState } from '../../../Contexts/DataBase_Context';
 
 const Header_Index = () => {
 
   const { t } = useTranslation();
 
-  const authenticated = false
+  const { authenticated } = DataBaseState();
 
   return (
 
