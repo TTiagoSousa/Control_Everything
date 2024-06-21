@@ -10,19 +10,30 @@ import Change_Theme from '../../../Components/Selectores/Change_Theme/Change_The
 import Language_Selector from '../../../Components/Selectores/Language_Selector/Language_Selector';
 import { Link } from 'react-router-dom';
 import Countries_Selector from '../../../Components/Selectores/Countries_Selector/Countries_Selector';
+import { useSignup } from '../../../Hooks/Auth/useSignup';
+import Mui_Alert from '../../../Components/Alerts/Mui_Alert/Mui_Alerts';
 
 const Sign_Up = () => {
 
   const { t } = useTranslation();
-
-  const [ country, setCountry ] = useState();
-  const [ gender, serGender ] = useState()
 
   const [ countryForm, setCountryForm ] = useState(false);
   const showCountryForm = () => setCountryForm(true);
 
   const [ countryName, setcountryName ] = useState('')
   const [ countryImage, setCountryImage ] = useState('')
+
+  const { 
+    fullName, setFullName,
+    email, setEmail,
+    password, setPassword,
+    dateOfBirth, setDateOfBirth,
+    country, setCountry,
+    confirmPassword, setConfirmPassword,
+    gender, setGender,
+    signup,
+    creatingAccount
+   } = useSignup();
 
   // Gender 
     const genderOptions = useGenderOptions();
@@ -33,6 +44,10 @@ const Sign_Up = () => {
 
   return (
     <div className='Sign_Up'>
+
+      <div className='Alert'>
+        <Mui_Alert />
+      </div>
 
       <Countries_Selector 
         countryForm={countryForm}
@@ -68,18 +83,24 @@ const Sign_Up = () => {
             <Global_Input 
               Text={t('Email')}
               Type="email"
+              Value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="Input_Field">
             <Global_Input 
               Text={t('Name')}
               Type="text"
+              Value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
             />
           </div>
           <div className="Input_Field">
             <Global_Input 
               Text={t('Date of birth')}
               Type="date"
+              Value={dateOfBirth}
+              onChange={(e) => setDateOfBirth(e.target.value)}
             />
           </div>
           <div className="Input_Field">
@@ -103,17 +124,22 @@ const Sign_Up = () => {
             <Global_Input 
               Text={t('Password')}
               Type="password"
+              Value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="Input_Field">
             <Global_Input 
               Text={t('Repite password')}
               Type="password"
+              Value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
           <div className='Button_Field'>
             <Global_Button 
-              Text={t("Create account")}
+              Text={creatingAccount ? t('Loading...') : t('Create account')}
+              onClick={signup}
             />
           </div>
         </form>
