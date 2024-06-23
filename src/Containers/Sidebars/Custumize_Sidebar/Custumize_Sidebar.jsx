@@ -2,6 +2,7 @@ import React  from 'react';
 import './Custumize_Sidebar.scss';
 import Dark_Div from '../../../Components/Dark_Div/Dark_Div';
 import { NavsState } from '../../../Contexts/Navs_Context';
+import Header from './Components/Header';
 
 const Custumize_Sidebar = () => {
 
@@ -16,7 +17,8 @@ const Custumize_Sidebar = () => {
       />
 
       <nav className={`Custumize_Sidebar ${customize_Sidebar ? 'active' : ''}`}>
-
+        <Header />
+        <div className='Settings_Container'></div>
       </nav>
     </>
   )

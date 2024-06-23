@@ -50,6 +50,9 @@
     "Password changed successfully" : "Password mudada com sucesso",
     "Activating the account" : "A ativar a conta",
     "Please wait..." : "Por favor espere...",
-    "Back to main page" : "Voltar para a página principal"
+    "Back to main page" : "Voltar para a página principal",
+    "Settings" : "Defenições",
+    "Reset settings" : "Predefenir",
+    "Set your own customized style" : "Custumiza ao teu estilo o CE"
   }
 }
