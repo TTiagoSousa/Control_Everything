@@ -3,6 +3,7 @@ import './Custumize_Sidebar.scss';
 import Dark_Div from '../../../Components/Dark_Div/Dark_Div';
 import { NavsState } from '../../../Contexts/Navs_Context';
 import Header from './Components/Header';
+import Theme from './Components/Theme';
 
 const Custumize_Sidebar = () => {
 
@@ -18,7 +19,9 @@ const Custumize_Sidebar = () => {
 
       <nav className={`Custumize_Sidebar ${customize_Sidebar ? 'active' : ''}`}>
         <Header />
-        <div className='Settings_Container'></div>
+        <div className='Settings_Container'>
+          <Theme />
+        </div>
       </nav>
     </>
   )

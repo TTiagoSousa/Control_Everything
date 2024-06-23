@@ -6,3 +6,5 @@ export { default as Link } from '../Assets/Imgs/Assets_Types/Crypto/Link.png';
 export { default as Solana } from '../Assets/Imgs/Assets_Types/Crypto/Solana.png';
 export { default as Dogecoin } from '../Assets/Imgs/Assets_Types/Crypto/Dogecoin.png';
 export { default as Matic } from '../Assets/Imgs/Assets_Types/Crypto/Matic.png';
+export { default as Dark_Mode } from '../Assets/Imgs/Theme_Image/Dark_Mode.jpg'
+export { default as Light_Mode } from '../Assets/Imgs/Theme_Image/Light_Mode.jpg'

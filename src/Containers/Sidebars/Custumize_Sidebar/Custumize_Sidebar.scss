@@ -155,6 +155,67 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .Theme{
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .Theme_Info{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        
+        span:nth-child(1){
+         font-family: $font_family_poppins;
+         font-size: 15px;
+         letter-spacing: 2px;
+        }
+
+        span:nth-child(2){
+          font-family: $font_family_open_sans;
+          font-size: 14px;
+        }
+      }
+
+      .Theme_Option{
+        width: 100%;
+        display: flex;
+        gap: 15px;
+
+        .Option{
+          width: 100%;
+          cursor: pointer;
+
+          img{
+            width: 100%;
+            height: 120px;
+            border-radius: $border_radius;
+            border: 2px solid rgba(0, 128, 0, 0);
+          }
+
+          .GreenBoxShadow{
+            border: 2px solid rgb(34, 196, 34);
+          }
+
+          .Checkbox{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            span{
+              font-family: $font_family_open_sans;
+              font-size: 13px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -174,6 +235,33 @@
 
     .Settings_Container{
       background-color: $primary_color_dark;
+
+      .Theme{
+  
+        .Theme_Info{
+          
+          span:nth-child(1){
+           color: $white;
+          }
+  
+          span:nth-child(2){
+            color: $gray_light;
+          }
+        }
+
+        .Theme_Option{
+
+          .Option{
+
+            .Checkbox{
+
+              span{
+                color: $gray_light;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -194,6 +282,33 @@
 
     .Settings_Container{
       background-color: $primary_color_light;
+
+      .Theme{
+  
+        .Theme_Info{
+          
+          span:nth-child(1){
+           color: $gray_dark;
+          }
+  
+          span:nth-child(2){
+            color: $gray_darker;
+          }
+        }
+
+        .Theme_Option{
+
+          .Option{
+
+            .Checkbox{
+
+              span{
+                color: $gray_darker;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
