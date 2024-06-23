@@ -56,6 +56,14 @@
     "Set your own customized style" : "Custumiza ao teu estilo o CE",
     "Theme" : "Tema",
     "Choose the perfect color mode for your app." : "Escolha o tema ao seu gosto",
-    "Choose a color to sidebar" : "Escolha uma cor para a sidebar"
+    "Choose a color to sidebar" : "Escolha uma cor para a sidebar",
+    "Navigation Position" : "Tipo de navegação",
+    "Select a suitable navigation system for your web application" : "Escolha ao seu gosto o tipo de navegação",
+    "Navigation :" : "Navegação :",
+    "Sidebar Navigation" : "Navegação lateral",
+    "Mobile Menu Navigation" : "Navegação mobile",
+    "What's your color ?" : "Qual é a sua cor ?",
+    "Blue" : "Azul",
+    "Dark" : "Escuro"
   }
 }

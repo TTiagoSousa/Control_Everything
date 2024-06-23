@@ -12,10 +12,21 @@ const NavsContext = ({ children }) => {
     })
   // Alert
 
+  // Open SideBarHome
+    const [ sidebar_Home, setSidebar_Home ] = useState(false);
+    const showSidebar_Home = () => setSidebar_Home(!sidebar_Home);
+  // Open SideBarHome
+
+  // Open SideBarHome
+    const [ mobile_Sidebar_Home, set_Mobile_Sidebar_Home ] = useState(false);
+    const show_Mobile_Sidebar_Home = () => set_Mobile_Sidebar_Home(!mobile_Sidebar_Home);
+  // Open SideBarHome
+
   // Customize Sidebar
     const [ customize_Sidebar, setCustomize_Sidebar ] = useState(false);
     const showCustomize_Sidebar = () => setCustomize_Sidebar(!customize_Sidebar);
   // Customize Sidebar
+
 
   // Choose navigation type
     const [typeOfNavifation, setTypeOfNavifation] = useState(
@@ -56,8 +67,10 @@ const NavsContext = ({ children }) => {
     <Navs.Provider 
       value={{ 
         alert, setAlert,
+        sidebar_Home, setSidebar_Home, showSidebar_Home,
         typeOfNavifation, setTypeOfNavifation, handleTypeofPositionChange,
-        showCustomize_Sidebar, customize_Sidebar, setCustomize_Sidebar
+        mobile_Sidebar_Home, set_Mobile_Sidebar_Home, show_Mobile_Sidebar_Home,
+        customize_Sidebar, setCustomize_Sidebar, showCustomize_Sidebar,
       }}
     >
       {children}

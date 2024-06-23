@@ -4,6 +4,8 @@ import Private_Routes from '../../../Routes/Private_Routes';
 import { NavsState } from '../../../Contexts/Navs_Context';
 import Header_Home from '../../../Containers/Headers/Header_Home/Header_Home';
 import Custumize_Sidebar from '../../../Containers/Sidebars/Custumize_Sidebar/Custumize_Sidebar';
+import Sidebar_Home from '../../../Containers/Navigation_Home/Sidebar_Home/Sidebar_Home';
+import Mobile_Menu_Home from '../../../Containers/Navigation_Home/Mobile_Menu_Home/Mobile_Menu_Home';
 
 const CE = () => {
 
@@ -31,9 +33,9 @@ const CE = () => {
 
       {
         typeOfNavifation === "Sidebar_Home" ? (
-          <></>
+          <Sidebar_Home />
         ) : typeOfNavifation === "Mobile_Menu" ? (
-          <></>
+          <Mobile_Menu_Home />
         ) : null
       }
 

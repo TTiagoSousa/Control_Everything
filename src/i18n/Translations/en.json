@@ -56,6 +56,14 @@
     "Set your own customized style" : "Set your own customized style",
     "Theme" : "Tema",
     "Choose the perfect color mode for your app." : "Choose the perfect color mode for your app.",
-    "Choose a color to sidebar" : "Choose a color to sidebar"
+    "Choose a color to sidebar" : "Choose a color to sidebar",
+    "Navigation Position" : "Navigation Position",
+    "Select a suitable navigation system for your web application" : "Select a suitable navigation system for your web application",
+    "Navigation :" : "Navigation :",
+    "Sidebar Navigation" : "Sidebar Navigation",
+    "Mobile Menu Navigation" : "Mobile Menu Navigation",
+    "What's your color ?" : "What's your color ?",
+    "Blue" : "Blue",
+    "Dark" : "Dark"
   }
 }

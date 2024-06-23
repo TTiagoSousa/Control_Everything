@@ -6,3 +6,6 @@ export { default as Close_Eye } from '../Assets/Icons/Eye/CLose_Eye';
 export { default as Open_Eye } from '../Assets/Icons/Eye/Open_Eye';
 export { default as Settings_With_Two_Arrows } from '../Assets/Icons/Settings/Settings_With_Two_Arrows';
 export { default as Painting } from '../Assets/Icons/Painting/Painting'; 
+export { default as Dashboard_Cubes } from '../Assets/Icons/Dashboard/Dashboard_Cubes';
+export { default as GLobal_SVG } from '../Assets/Icons/GLobal_SVG';
+export { default as Simple_Triangle } from '../Assets/Icons/Triangle/Simple_Triangle';

@@ -21,6 +21,15 @@
     transition: 300ms;
   }
 
+  .Diviser {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: #5e6e824b;
+  }
+
   header{
     position: relative;
     width: 100%;
@@ -216,6 +225,217 @@
         }
       }
     }
+
+    .Type_Of_Navigations{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .Type_Of_Navigations_Info{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+
+        span:nth-child(1){
+          font-family: $font_family_poppins;
+          font-size: 15px;
+          letter-spacing: 2px;
+        }
+ 
+        span:nth-child(2){
+          font-family: $font_family_open_sans;
+          font-size: 14px;
+        }
+      }
+
+      .Choose_The_Type{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-radius: $border_radius;
+        cursor: pointer;
+        align-items: center;
+        padding: 3px;
+        box-sizing: border-box;
+
+        .Information{
+          width: auto;
+          font-family: $font_family_poppins;
+          font-size: 13px;
+          display: flex;
+          color: $blue_darker;
+          padding: 5px;
+          gap: 10px;
+        }
+
+        .Icon{
+          width: auto;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          div{
+            width: 13px;
+            height: 13px;
+            transform: rotate(90deg);
+            margin-bottom: 2.5px;
+            transition: 0.5s;
+
+            &.active{
+              transform: rotate(60deg);
+            }
+          }
+        }
+      }
+
+      .Navigation_Options{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        font-family: $font_family_poppins;
+        border-radius: $border_radius;
+
+        &.inactive{
+          height: 0px;
+          display: none;
+          opacity: 0;
+        }
+
+        &.active{
+          opacity: 1;
+        }
+
+        div{
+          cursor: pointer;
+          text-align: center;
+
+          span{
+            font-size: 13px;
+            transition: 0.5s;
+
+            &.selected{
+              color: $blue !important;
+            }
+          }
+
+          &:hover{
+
+            span{
+              color: $blue !important;
+            }
+          }
+        }
+      }
+    }
+
+    .Choose_Color{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .Choose_Color_Info{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        span:nth-child(1){
+          font-family: $font_family_poppins;
+          font-size: 15px;
+          letter-spacing: 2px;
+        }
+ 
+        span:nth-child(2){
+          font-family: $font_family_open_sans;
+          font-size: 14px;
+        }
+      }
+
+      .Color_Options {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        gap: 15px;
+
+        .Option{
+          width: 100%;
+          border-radius: $border_radius;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          .Checkbox{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            span{
+              font-family: $font_family_open_sans;
+              font-size: 13px;
+              font-weight: 600;
+            }
+          }
+
+          &.GreenBoxShadow{
+            
+            .Conteiner{
+              border: 2px solid rgb(34, 196, 34) !important;
+            }
+          }
+
+          .Conteiner{
+            width: 100%;
+            height: 120px;
+            border-radius: $border_radius;
+            padding: 5px 5px 2.5px 5px;
+            cursor: pointer;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; 
+            grid-template-rows: 1fr 1fr 1fr; 
+            gap: 5px 5px; 
+            grid-template-areas: 
+              "Nav Header Header"
+              "Nav Cube_1 Cube_2"
+              "Nav Cube_3 Cube_3"; 
+
+            div{
+              border-radius: 10px;
+            }
+
+            .Nav { grid-area: Nav; }
+            .Header { grid-area: Header; }
+            .Cube_1 { grid-area: Cube_1; }
+            .Cube_2 { grid-area: Cube_2; }
+            .Cube_3 { grid-area: Cube_3; }
+
+            &.Dark{
+              
+              .Nav{
+
+                background-color: $gray_darker_2;
+              }
+            }
+
+            &.Blue{
+              
+              .Nav{
+
+                background-color: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -252,6 +472,81 @@
         .Theme_Option{
 
           .Option{
+
+            .Checkbox{
+
+              span{
+                color: $gray_light;
+              }
+            }
+          }
+        }
+      }
+
+      .Type_Of_Navigations{
+
+        .Type_Of_Navigations_Info{
+
+          span:nth-child(1){
+            color: $white;
+           }
+   
+           span:nth-child(2){
+            color: $gray_light;
+          }
+        }
+
+        .Choose_The_Type{
+          border: $border_dark;
+
+          .Information{
+
+            span:nth-child(1){
+              color: $white;
+             }
+     
+             span:nth-child(2){
+              color: $gray_light;
+            }
+          }
+        }
+
+        .Navigation_Options{
+          border: $border_dark;
+
+          div{
+
+            span{
+              color: $gray;
+            }
+          }
+        }
+      }
+
+      .Choose_Color{
+
+        .Choose_Color_Info{
+
+          span:nth-child(1){
+            color: $white;
+           }
+   
+           span:nth-child(2){
+            color: $gray_light;
+          }
+        }
+
+        .Color_Options{
+
+          .Option{
+
+            .Conteiner{
+              border: $border_dark;
+
+              div{
+                background-color: $gray;
+              }
+            }
 
             .Checkbox{
 
@@ -299,6 +594,81 @@
         .Theme_Option{
 
           .Option{
+
+            .Checkbox{
+
+              span{
+                color: $gray_darker;
+              }
+            }
+          }
+        }
+      }
+
+      .Type_Of_Navigations{
+
+        .Type_Of_Navigations_Info{
+
+          span:nth-child(1){
+            color: $gray_dark;
+           }
+   
+           span:nth-child(2){
+            color: $gray_darker;
+          }
+        }
+
+        .Choose_The_Type{
+          border: $border_dark;
+
+          .Information{
+
+            span:nth-child(1){
+              color: $gray_dark;
+             }
+     
+             span:nth-child(2){
+              color: $gray_darker;
+            }
+          }
+        }
+
+        .Navigation_Options{
+          border: $border_light;
+
+          div{
+
+            span{
+              color: $gray_dark;
+            }
+          }
+        }
+      }
+
+      .Choose_Color{
+
+        .Choose_Color_Info{
+
+          span:nth-child(1){
+            color: $gray_dark;
+           }
+   
+           span:nth-child(2){
+            color: $gray_darker;
+          }
+        }
+
+        .Color_Options{
+
+          .Option{
+
+            .Conteiner{
+              border: $border_dark;
+
+              div{
+                background-color: $gray;
+              }
+            }
 
             .Checkbox{
 

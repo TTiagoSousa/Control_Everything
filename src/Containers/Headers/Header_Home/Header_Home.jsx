@@ -6,11 +6,12 @@ import * as Color from '../../../Styles/Colors';
 import * as Icon from '../../../Imports/icons';
 import { ThemeState } from '../../../Contexts/Theme_Context';
 import { NavsState } from '../../../Contexts/Navs_Context';
+import { Sling as Hamburger } from 'hamburger-react';
 
 const Header_Home = () => {
 
   const { mode } = ThemeState();
-  const { showCustomize_Sidebar } = NavsState();
+  const { typeOfNavifation, setSidebar_Home, sidebar_Home, show_Mobile_Sidebar_Home, showCustomize_Sidebar } = NavsState();
 
   const [hovered, setHovered] = useState(null);
 
@@ -35,6 +36,29 @@ const Header_Home = () => {
   return (
     <header className='Header_Home'>
       <div className="Left_Side">
+        <div className='Menu'>
+          {
+            typeOfNavifation === 'Sidebar_Home' ? (
+              <div className="Hamburger">
+                <Hamburger 
+                  toggled={sidebar_Home}
+                  toggle={setSidebar_Home}
+                  size={20}
+                  color={Color.blue}
+                />
+              </div>
+            ) :
+            typeOfNavifation === 'Mobile_Menu' ?  (
+              <button
+                onClick={show_Mobile_Sidebar_Home}
+              >
+                <div></div>
+                <div></div>
+                <div></div>
+              </button>
+            ): <></>
+          }
+        </div>
       </div>
       <div className="Right_Side">
         <div className='Button_Field'>
