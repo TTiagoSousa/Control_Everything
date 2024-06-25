@@ -1,0 +1,8 @@
+@import '../../../../../Styles/Colors.scss';
+@import '../../../../../Styles/Fonts.scss';
+@import '../../../../../Styles/Formats.scss';
+
+.Savings_Dashboard{
+  @include Pages_Configs;
+  min-height: 95vh;
+}
