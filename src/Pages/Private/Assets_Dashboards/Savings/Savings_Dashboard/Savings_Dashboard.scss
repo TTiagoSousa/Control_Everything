@@ -5,4 +5,149 @@
 .Savings_Dashboard{
   @include Pages_Configs;
   min-height: 95vh;
+
+  .Totals{
+    width: 100%;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;  
+    margin-top: 10px;
+
+    .Total_On_Savings{
+      width: 100%;
+      height: 100%;
+      border-radius: $border_radius;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: $border;
+
+      .Header{
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 10px 10px 0px 0px;
+        padding: 5px;
+        box-sizing: border-box;
+
+        span{
+          font-family: $font_family_poppins;
+          font-size: 14px;
+          letter-spacing: 1px;
+        }
+      }
+
+      .Body{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        span{
+          font-family: $font_family_poppins;
+          font-size: 35px;
+        }
+      }
+
+      .Footer{
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 0px 0px 10px 10px;
+        padding: 5px;
+        box-sizing: border-box;
+
+        a{
+          text-decoration: none;
+          font-family: $font_family_poppins;
+          font-size: 14px;
+          letter-spacing: 1px;
+          transition: 0.5s;
+
+          &:hover{
+            color: $blue !important;
+          }
+        }
+      }
+    }
+
+    .Savings_Pie_Chart{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: $border_radius;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      border: $border;
+    }
+  }
+
+  .Actions{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: $border_radius;
+    border: $border;
+    
+    .Button_Field{
+      width: 100%;
+      height: 30px;
+    }
+  }
+}
+
+.Dark_Mode{
+ 
+  .Savings_Dashboard{
+
+    .Totals{
+
+      .Total_On_Savings,
+      .Savings_Pie_Chart{
+        background-color: $secundary_color_dark;
+        box-shadow: $border_dark;
+      }
+
+      .Total_On_Savings{
+
+        .Header{
+          background-color: $terciary_color_dark;
+
+          span{
+            color: $gray;
+          }
+        }
+
+        .Body{
+  
+          span{
+            color: $gray
+          }
+        }
+
+        .Footer{
+          background-color: $terciary_color_dark;
+
+          a{
+            color: $gray;
+          }
+        }
+      }
+    }
+
+    .Actions{
+      background-color: $secundary_color_dark;
+      box-shadow: $border_dark;
+    }
+  }
 }
