@@ -68,6 +68,26 @@
     "Total on savings" : "Total em poupanças",
     "View history" : "Ver histórico",
     "Create Transition" : "Criar transição",
-    "Transfer" : "Transferir"
+    "Transfer" : "Transferir",
+    "Select currency" : "Seleciona a moeda",
+    "Next" : "Próximo",
+    "Back" : "Voltar",
+    "Select platform" : "Seleciona a platadorma",
+    "Deposit" : "Depósito",
+    "Withdraw" : "Retirar",
+    "Currency" : "Moeda",
+    "Platform" : "Plataforma",
+    "Amount" : "Montante",
+    "Date" : "Data",
+    "Observation" : "Observação",
+    "Create transition" : "Criar transição",
+    "Transition created successfully" : "Transição criada",
+    "Invalid platform" : "Plataforma inválida",
+    "Invalid currency" : "Moeda inválida",
+    "The first transition must be a deposit" : "A primeira transição tem que ser um depósito",
+    "Description must contain only letters and numbers" : "A descreição só pode conter letras e numeros",
+    "Ammount must contains only numbers" : "O montante só pode conter números",
+    "Platform not found" : "Plataforma não encontrada",
+    "Currency not found" : "Moeda mão encontrada"
   }
 }

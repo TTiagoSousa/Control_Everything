@@ -68,6 +68,26 @@
     "Total on savings" : "Total on savings",
     "View history" : "View history",
     "Create Transition" : "Create transition",
-    "Transfer" : "Transfer"
+    "Transfer" : "Transfer",
+    "Select currency" : "Select currency",
+    "Next" : "Next",
+    "Back" : "Back",
+    "Select platform" : "Select platform",
+    "Deposit" : "Deposit",
+    "Withdraw" : "Withdraw",
+    "Currency" : "Currency",
+    "Platform" : "Platform",
+    "Amount" : "Amount",
+    "Date" : "Date",
+    "Observation" : "Observation",
+    "Create transition" : "Create transition",
+    "Transition created successfully" : "Transition created successfully",
+    "Invalid platform" : "Invalid platform",
+    "Invalid currency" : "Invalid currency",
+    "The first transition must be a deposit" : "The first transition must be a deposit",
+    "Description must contain only letters and numbers" : "Description must contain only letters and numbers",
+    "Ammount must contains only numbers" : "Ammount must contains only numbers",
+    "Platform not found" : "Platform not found",
+    "Currency not found" : "Currency not found"
   }
 }
