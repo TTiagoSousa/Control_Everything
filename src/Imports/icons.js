@@ -9,3 +9,6 @@ export { default as Painting } from '../Assets/Icons/Painting/Painting';
 export { default as Dashboard_Cubes } from '../Assets/Icons/Dashboard/Dashboard_Cubes';
 export { default as GLobal_SVG } from '../Assets/Icons/GLobal_SVG';
 export { default as Simple_Triangle } from '../Assets/Icons/Triangle/Simple_Triangle';
+export { default as Trash } from '../Assets/Icons/Trash/Trash';
+export { default as Trash_Restore } from '../Assets/Icons/Trash/Trash_Restore';
+export { default as Settings } from '../Assets/Icons/Settings/Settings';

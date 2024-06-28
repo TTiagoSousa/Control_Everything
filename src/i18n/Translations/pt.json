@@ -88,6 +88,10 @@
     "Description must contain only letters and numbers" : "A descreição só pode conter letras e numeros",
     "Ammount must contains only numbers" : "O montante só pode conter números",
     "Platform not found" : "Plataforma não encontrada",
-    "Currency not found" : "Moeda mão encontrada"
+    "Currency not found" : "Moeda mão encontrada",
+    "Operation type" : "Operação",
+    "Actions" : "Acões",
+    "No transitions" : "Nenhuma transição",
+    "Add a description" : "Adicionar descrição"
   }
 }

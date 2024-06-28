@@ -88,6 +88,10 @@
     "Description must contain only letters and numbers" : "Description must contain only letters and numbers",
     "Ammount must contains only numbers" : "Ammount must contains only numbers",
     "Platform not found" : "Platform not found",
-    "Currency not found" : "Currency not found"
+    "Currency not found" : "Currency not found",
+    "Operation type" : "Operation type",
+    "Actions" : "Actions",
+    "No transitions" : "No transitions",
+    "Add a description" : "Add a description"
   }
 }

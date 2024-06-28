@@ -213,7 +213,7 @@ const Add_Savings_Transition = ({ selectSavingsForm, setSelectSavingsForm }) => 
             </div>
             <div className='Input_Field'>
               <Global_Input_Forms 
-                Text="Currency"
+                Text={t("Currency")}
                 selectValue={currencyCode}
                 onclick={() => setStep(1)}
               />
