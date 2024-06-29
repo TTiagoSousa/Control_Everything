@@ -12,3 +12,4 @@ export { default as Simple_Triangle } from '../Assets/Icons/Triangle/Simple_Tria
 export { default as Trash } from '../Assets/Icons/Trash/Trash';
 export { default as Trash_Restore } from '../Assets/Icons/Trash/Trash_Restore';
 export { default as Settings } from '../Assets/Icons/Settings/Settings';
+export { default as Academy_Cap } from '../Assets/Icons/Academy/Academy_Cap';

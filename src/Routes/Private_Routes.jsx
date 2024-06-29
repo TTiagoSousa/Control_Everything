@@ -12,6 +12,9 @@ const Private_Routes = () => {
           <Route index element={ <Private_Page.Savings_Dashboard /> } />
           <Route path='Savings_Transitions_History' element={ <Private_Page.Savings_Transitions_History /> } />
         </Route>
+        <Route path='Academy'> 
+          <Route index element={ <Private_Page.Academy /> } />
+        </Route>
       </Routes>
     </>
   )

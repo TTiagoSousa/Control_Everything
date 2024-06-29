@@ -10,6 +10,8 @@ export const navItems = [
       { to: '/CE/Savings_Dashboard', text: 'Savings' },
     ],
   },
+  
+  { to: '/CE/Academy', text: 'Academy', icon: <Icon.Academy_Cap /> },
 
   // {
   //   text: 'Assets',
