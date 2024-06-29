@@ -15,6 +15,7 @@
   }
 
   .Totals{
+    position: relative;
     width: 100%;
     height: 300px;
     display: grid;
@@ -92,7 +93,81 @@
       align-items: center;
       justify-content: space-between;
       flex-direction: column;
-      border: $border;
+
+      .Header{
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 10px 10px 0px 0px;
+        padding: 5px;
+        box-sizing: border-box;
+
+        span{
+          font-family: $font_family_poppins;
+          font-size: 14px;
+          letter-spacing: 1px;
+        }
+
+        select{
+          border: none;
+          border-radius: 5px;
+          width: 130px;
+          text-align: center;
+          font-family: $font_family_poppins;
+          outline: none;
+          cursor: pointer;
+        }
+      }
+
+      .Loading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .No_Transition{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        span{
+          font-family: $font_family_poppins;
+          font-size: 20px;
+        }
+      }
+
+      .Contente{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .SavingsPieChart{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          font-size: 13px;
+          justify-content: center;
+          align-items: center;
+          padding: 10px;
+          height: 90%;
+          width: 400px;
+        }
+      }
+
+      .Loading_Container{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 
@@ -110,6 +185,95 @@
     .Button_Field{
       width: 100%;
       height: 30px;
+    }
+  }
+}
+
+@media (max-width: 1050px){
+  .Savings_Dashboard{
+
+    .Totals{
+
+      .Total_On_Savings{
+
+        .Header{
+
+          span{
+            font-size: 12px;
+          }
+        }
+
+        .Footer{
+
+          a{
+            font-size: 12px;
+          }
+        }
+      }
+
+      .Savings_Pie_Chart{
+
+        .Header{
+
+          span{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px){
+  .Savings_Dashboard{
+
+    .Totals{
+      height: auto;
+      display: flex;
+      flex-direction: column;
+
+      .Total_On_Savings{
+        height: 200px;
+
+        .Body{
+
+          span{
+            font-size: 25px;
+          }
+        }
+      }
+
+      .Savings_Pie_Chart{
+        height: 250px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px){
+  .Savings_Dashboard{
+
+    .Totals{
+
+      .Savings_Pie_Chart{
+        height: 300px;
+        
+        .Header{
+          display: flex;
+          flex-direction: column;
+          height: auto;
+          align-items: center;
+          justify-content: space-around;
+          gap: 10px;
+        }
+
+        .Contente{
+
+          .SavingsPieChart{
+            width: 350px;
+          }
+        }
+      }
     }
   }
 }
@@ -147,6 +311,32 @@
           background-color: $terciary_color_dark;
 
           a{
+            color: $gray;
+          }
+        }
+      }
+
+      .Savings_Pie_Chart{
+        background-color: $secundary_color_dark;
+        box-shadow: $box_shadow_dark;
+
+        .Header{
+          background-color: $terciary_color_dark;
+
+          span{
+            color: $gray;
+          }
+
+          select{
+            background-color: $primary_color_dark;
+            color: $gray;
+            border: 1px solid $blue;
+          }
+        }
+
+        .No_Transition{
+  
+          span{
             color: $gray;
           }
         }

@@ -92,6 +92,8 @@
     "Operation type" : "Operation type",
     "Actions" : "Actions",
     "No transitions" : "No transitions",
-    "Add a description" : "Add a description"
+    "Add a description" : "Add a description",
+    "Distribution of" : "Distribution of",
+    "by Platform" : "by Platform"
   }
 }
