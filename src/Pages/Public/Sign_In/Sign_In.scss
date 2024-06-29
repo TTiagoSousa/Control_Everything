@@ -1,0 +1,278 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+.Sign_In{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+
+  .Alert{
+    position: absolute;
+    width: auto;
+    bottom: 2%;
+    left: 10%;
+    transform: translate(-30%, -50%);
+    z-index: 22;
+  }
+
+  .Image_Container{
+    width: 60%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    box-sizing: border-box;
+
+    div{
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      h1{
+        width: 100%;
+        color: $white;
+        font-family: $font_family_poppins;
+        font-size: 40px;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      
+      video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: $border_radius;
+      }
+    }
+  }
+
+  .Form_Container{
+    position: relative;
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1%;
+    box-sizing: border-box;
+
+    header{
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      .Button_Field{
+        position: relative;
+        width: 21px;
+        height: 21px;
+      }
+    }
+
+    form{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px; 
+
+      .Title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h1{
+          font-family: $font_family_poppins;
+          font-size: 20px;
+          letter-spacing: 3px;
+        }
+      }
+
+      .Title,
+      .Button_Field,
+      .Input_Field{
+        width: 400px;
+        height: 30px;
+      }
+    }
+
+    .Info{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-direction: column;
+
+      div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        span,
+        a{
+          font-family: $font_family_open_sans;
+        }
+  
+        a{
+          text-decoration: none;
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1150px){
+
+  .Sign_In{
+
+    .Image_Container{
+      width: 50%;
+
+      div{
+
+        h1{
+          font-size: 30px;
+        }
+      }
+    }
+
+    .Form_Container{
+      width: 50%;
+
+      form{
+
+        .Title,
+        .Button_Field,
+        .Input_Field{
+          width: 350px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px){
+
+  .Sign_In{
+    flex-direction: column;
+
+    .Alert{
+      position: fixed;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+
+    .Image_Container{
+      width: 100%;
+      height: 50%;
+    }
+
+    .Form_Container{
+      width: 100%;
+      height: 50%;
+      justify-content: center;
+
+      header{
+        position: fixed;
+        top: 2%;
+      }
+
+      form{
+        position: absolute;
+        width: 100%;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+
+      .Info{
+        position: absolute;
+        width: 100%;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+  }
+}
+
+.Dark_Mode{
+
+  .Sign_In{
+   
+    form{
+
+      .Title{
+
+        h1{
+          color: $gray;
+        }
+      }
+
+      .Input_Field.Gender{
+      
+        div{
+          background-color: $terciary_color_dark;
+
+          span{
+            color: $gray;
+          }
+        }
+      }
+    }
+
+    .Info{
+
+      span{
+        color: $gray;
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Sign_In{
+   
+    form{
+
+      .Title{
+
+        h1{
+          color: $gray_dark;
+        }
+      }
+
+      .Input_Field.Gender{
+      
+        div{
+          background-color: $terciary_color_light;
+
+          span{
+            color: $gray_dark;
+          }
+        }
+      }
+    }
+
+    .Info{
+
+      span{
+        color: $gray_dark;
+      }
+    }
+  }
+}

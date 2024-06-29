@@ -1,0 +1,18 @@
+@import './Styles/Colors.scss';
+@import './Styles/Fonts.scss';
+@import './Styles/Formats.scss';
+
+*{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  text-decoration: none;
+} 
+
+.Dark_Mode main{
+  background-color: $primary_color_dark;
+}
+
+.Light_Mode main{
+  background-color: $primary_color_light;
+}

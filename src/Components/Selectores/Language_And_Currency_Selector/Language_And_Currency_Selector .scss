@@ -1,0 +1,148 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+.Language_Currency_Selector {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+
+  button{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none; 
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .Icon {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .Language_Currency_Options{
+    position: absolute;
+    width: 230px;
+    top: 140%;
+    right: 3px;
+    border-radius: 10px 0px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+
+    &.active{
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &.inactive{
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .Arrow{
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: -5px;
+      right: 2.5px;
+      transform: (rotate(45deg));
+      z-index: 3;
+    }
+
+    .Currency_Selector,
+    .Language_Selector{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 5;
+
+      .Title{
+        color: $orange;
+        font-family: $font_family_poppins;
+        font-size: 13px;
+      }
+
+      ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        li{
+          width: 100%;
+          text-align: center;
+
+          span{
+            font-family: $font_family_poppins;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover{
+              color: $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.Dark_Mode{
+
+  .Language_Currency_Selector {
+
+    .Arrow{
+      background-color: $terciary_color_dark;
+    }
+
+    .Language_Currency_Options{
+      background-color: $terciary_color_dark;
+      box-shadow: $box_shadow_dark;
+
+      ul{
+
+        li{
+
+          span{
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Language_Currency_Selector {
+
+    .Arrow{
+      background-color: $terciary_color_light;
+    }
+
+    .Language_Currency_Options{
+      background-color: $terciary_color_light;
+      box-shadow: $box_shadow_light;
+
+      ul{
+
+        li{
+
+          span{
+            color: $gray_dark;
+          }
+        }
+      }
+    }
+  }
+}

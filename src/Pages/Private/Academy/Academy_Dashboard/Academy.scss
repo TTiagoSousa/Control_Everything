@@ -1,0 +1,152 @@
+@import '../../../../Styles/Colors.scss';
+@import '../../../../Styles/Fonts.scss';
+@import '../../../../Styles/Formats.scss';
+
+.Academy{
+  @include Pages_Configs;
+  min-height: 95vh;
+
+  .Cards{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 30px;
+    justify-content: center;
+
+    .Academy_Card{
+      width: 300px;
+      height: 300px;
+      border-radius: $border_radius;
+      
+      &.Loading{
+        animation: pulse 2s infinite linear ;
+        transition: all 5s;
+      }
+
+      &:hover{
+
+        .Bottom{
+
+          span{
+            color: $blue !important;
+          }
+        }
+      }
+
+      .Top{
+        width: 100%;
+        height: 60%;
+
+        img{
+          height: 100%;
+          width: 100%;
+          border-radius: $border_radius;
+        }
+      }
+
+      .Bottom{
+        width: 100%;
+        height: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        span{
+          font-family: $font_family_poppins;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+	0% {
+    opacity: 1;
+	}
+
+  10% {
+    opacity: 0.9;
+	}
+
+  20% {
+    opacity: 0.8;
+	}
+
+  30% {
+    opacity: 0.7;
+	}
+
+	40% {
+    opacity: 0.6;
+	}
+
+	50% {
+    opacity: 0.5;
+	}
+
+  60% {
+    opacity: 0.6;
+	}
+
+  70% {
+    opacity: 0.7;
+	}
+
+  80% {
+    opacity: 0.8;
+	}
+
+  90% {
+    opacity: 0.9;
+	}
+
+  100% {
+    opacity: 1;
+	}
+}
+
+
+.Dark_Mode{
+
+  .Academy{
+
+    .Cards{
+
+      .Academy_Card{
+        background-color: $secundary_color_dark;
+        box-shadow: $box_shadow_dark;
+
+        .Bottom{
+
+          span{
+            color: $gray;
+          }
+        }
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Academy{
+
+    .Cards{
+
+      .Academy_Card{
+        background-color: $secundary_color_light;
+        box-shadow: $box_shadow_light;
+
+        .Bottom{
+
+          span{
+            color: $gray;
+          }
+        }
+      }
+    }
+  }
+}

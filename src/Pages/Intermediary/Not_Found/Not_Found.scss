@@ -1,0 +1,35 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+.Not_Found{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+
+  h1{
+    color: $blue;
+    font-family: $font_family_poppins;
+    font-size: 100px;
+  }
+
+  div{
+    width: 250px;
+    height: 40px;
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 800px){
+  .Not_Found{
+
+    h1 {
+      font-size: 45px;
+    }
+  }
+}

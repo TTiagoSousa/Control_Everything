@@ -1,0 +1,169 @@
+@import '../../../Styles/Colors.scss';
+@import '../../../Styles/Fonts.scss';
+@import '../../../Styles/Formats.scss';
+
+.Mobile_Sidebar_Home{
+  position: fixed;
+  width: 300px;
+  height: 100vh;      
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  top: 0;
+  left: -100%;
+  transition: 850ms; 
+  z-index: 4;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  z-index: 44;
+
+  &.active{
+    left: 0;
+    transition: 350ms;
+  }
+
+  .Mobile_Menu_Body{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    .Nav_Item{
+      width: 100%;
+      height: 30px;
+      align-items: center;
+      display: flex;
+      text-decoration: none;
+      
+      &:hover{
+        
+        .Icon{
+
+          div{
+            animation: swing ease-in-out 0.5s 1 alternate;
+          }
+        }
+      }
+
+      .Icon{
+        position: absolute;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        div{
+          position: relative;
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      .Text{
+        width: calc(100% - 50px);
+        margin-left: 50px;
+
+        span{
+          font-family: $font_family_poppins;
+        }
+      }
+    }
+
+    .Nav_Item_With_Drop_Menu {
+      width: 100%;
+      height: 30px;
+      align-items: center;
+      display: flex;
+      text-decoration: none;
+
+      .Icon{
+        position: absolute;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        div{
+          position: relative;
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      &:hover{
+        
+        .Icon{
+
+          div{
+            animation: swing ease-in-out 0.5s 1 alternate;
+          }
+        }
+      }
+
+      .Text{
+        width: calc(100% - 60px);
+        margin-left: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span{
+          font-family: $font_family_poppins;
+        }
+
+        .Icon_Arrow{
+          width: auto;
+          height: auto;
+
+          div{
+            position: relative;
+            width: 12px;
+            height: 12px;
+            transform: rotate(90deg);
+            animation: fadeIn 0.7s;
+            transition: 0.5s;
+
+            &.active{
+              transform: rotate(60deg);
+            }
+          }
+        }
+      }
+    }
+
+    .DropdownItems{
+      width: calc(100% - 50px);
+      display: flex;
+      flex-direction: column;
+      margin-left: 50px;
+      gap: 5px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+
+      a{
+        text-decoration: none;
+        
+        span{
+          font-family: $font_family_poppins;
+        }
+      }
+    }
+  }
+}
+
+.Dark_Mode {
+    
+  .Mobile_Sidebar_Home{
+    background-color: $primary_color_dark;
+  }
+}
+    
+.Light_Mode{
+
+  .Mobile_Sidebar_Home{
+    background-color: $primary_color_light;
+  }
+}

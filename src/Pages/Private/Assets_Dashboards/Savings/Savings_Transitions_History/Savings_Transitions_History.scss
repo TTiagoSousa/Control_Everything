@@ -1,0 +1,532 @@
+@import '../../../../../Styles/Colors.scss';
+@import '../../../../../Styles/Fonts.scss';
+@import '../../../../../Styles/Formats.scss';
+
+.Savings_Transitions_History{
+  @include Pages_Configs;
+  min-height: 95vh;
+
+  .Savings_Transitions_History_Table{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .Filters{
+      width: 100%;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: $border_radius;
+      box-sizing: border-box;
+      padding: 5px;
+      border: $border;
+    }
+
+    .Table_Wrapper{
+      width: 100%;
+      height: auto;
+      border-radius: $border_radius;
+
+      table{
+        width: 100%;
+        height: auto;
+        border-collapse: collapse;
+        display: flex;
+        flex-direction: column;
+        border-radius: $border_radius;
+  
+        thead{
+          width: 100%;
+          height: auto;
+          border-radius: 10px 10px 0px 0px;
+  
+          tr{
+            width: 100%;
+            height: 35px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+  
+            th{
+              width: 100%;
+  
+              span{
+                font-family: $font_family_poppins;
+                font-size: 13px;
+              }
+            }
+          }
+        }
+
+        tbody{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          border-radius: 0px 0px 10px 10px;
+          flex-direction: column;
+
+          tr{
+            position: relative;
+            width: 100%;
+            height: 35px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            cursor: pointer;
+
+            &:last-child {
+              border-radius: $border_radius;
+              border: none !important;
+            }
+
+            td{
+              position: relative;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+  
+              span{
+                font-family: $font_family_poppins;
+                font-size: 13px;
+              }
+            }
+
+            .Platform{
+              display: flex;
+              gap: 10px;
+
+              .Content{
+                display: flex;
+                justify-content: space-between;
+                width: 150px;
+              }
+
+              div{
+                display: flex;
+                align-items: center;
+                
+                img{
+                  height: 20px;
+                  border-radius: 5px;
+                }
+              }
+            }
+
+            .Date{
+              display: flex;
+              gap: 10px;
+            }
+
+            .Actions{
+              display: flex;
+  
+              button {
+                display: flex;
+                align-items: center;
+                border-radius: 50%;
+                padding: 5px;
+                border: none;
+                background: none;
+                cursor: pointer;
+  
+                div {
+                  height: 17px;
+                }
+              }
+            }
+          }
+
+          .Cut_Line {
+            position: absolute;
+            width: 100%;
+            left: 0%;
+            height: 2px;
+            display: flex;
+            justify-content: space-between;
+
+            div{
+              width: 88%;
+              height: 100%;
+              background-color: red;
+            }
+          }
+
+          .Extra_Content{
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+
+            td{
+              width: 300px;
+              display: flex; 
+              align-items: center;
+              justify-content: space-between;
+
+              div{
+                width: auto;
+              }
+            }
+
+            .Description{
+              width: 100%;
+              align-items: center;
+              justify-content: center;
+
+              button{
+                background: none;
+                border: none;
+                font-family: $font_family_poppins;
+                transition: 0.5s;
+                cursor: pointer;
+
+                &:hover{
+                  color: $orange;
+                }
+              }
+            }
+
+            .Date{
+              display: none !important;
+
+              div:nth-child(2) {
+                display: flex;
+                gap: 5px;
+              }
+            }
+
+            .Platform{
+              display: none !important;
+
+              .Content{
+                width: auto;
+                gap: 10px;
+              }
+            }
+
+            .Actions{
+              display: none;
+
+              div:nth-child(2) {
+                display: flex;
+              }
+            }
+          }
+        }
+        
+        tfoot{
+          position: relative;
+          width: 100%;
+          display: flex;
+  
+          tr{
+            width: 100%;
+            display: flex;
+  
+            td{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1150px){
+  .Savings_Transitions_History{
+
+    .Savings_Transitions_History_Table{
+
+      .Table_Wrapper{
+      
+        table{
+
+          thead{
+
+            tr{
+
+              .Actions{
+                display: none !important;
+              }
+            }
+          }
+
+          tbody{
+
+            tr{
+
+              .Actions{
+                display: none !important;
+              }
+            }         
+            
+            .Cut_Line {
+  
+              div{
+                width: 100%;
+              }
+            }
+
+            .Extra_Content{
+
+              .Actions{
+                display: flex !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px){
+  .Savings_Transitions_History{
+
+    .Savings_Transitions_History_Table{
+
+      .Table_Wrapper{
+      
+        table{
+
+          thead{
+
+            tr{
+
+              .Date{
+                display: none !important;
+              }
+            }
+          }
+
+          tbody{
+
+            tr{
+
+              .Date{
+                display: none !important;
+              }
+            }            
+
+            .Extra_Content{
+
+              .Date{
+                display: flex !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px){
+  .Savings_Transitions_History{
+
+    .Savings_Transitions_History_Table{
+
+      .Table_Wrapper{
+      
+        table{
+
+          thead{
+
+            tr{
+
+              .Platform{
+                display: none !important;
+              }
+            }
+          }
+
+          tbody{
+
+            tr{
+
+              .Platform{
+                display: none !important;
+              }
+            }            
+
+            .Extra_Content{
+
+              .Platform{
+                display: flex !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px){
+  .Savings_Transitions_History{
+
+    .Savings_Transitions_History_Table{
+
+      .Table_Wrapper{
+      
+        table{
+
+          thead{
+
+            tr{
+
+              th{
+
+                span{
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+
+          tbody{
+
+            tr{
+
+              td{
+    
+                span{
+                  font-size: 12px;
+                }
+              }
+
+              .Platform{
+  
+                .Content{
+                  width: 100px;
+                }
+              }
+            }            
+          }
+        }
+      }
+    }
+  }
+}
+
+.Dark_Mode{
+
+  .Savings_Transitions_History{
+
+    .Filters{
+      background-color: $secundary_color_dark;
+      box-shadow: $box_shadow_dark;
+
+      .Info{
+
+        span{
+          color: $gray;
+        }
+      }
+    }
+
+    .Table_Wrapper{ 
+      box-shadow: $box_shadow_dark;
+
+      thead{
+        background-color: $terciary_color_dark;
+
+        tr{
+
+          th{
+
+            span{
+              color: $gray;
+            }
+          }
+        }
+      }
+
+      tbody{
+        background-color: $secundary_color_dark;
+
+        tr{
+          border-bottom: 2px solid $fourth_color_Dark;
+          
+          td{
+            color: $gray;
+          }
+        }
+
+        .Extra_Content{
+
+          .Description{
+
+            button{
+              color: $gray;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.Light_Mode{
+
+  .Savings_Transitions_History{
+
+    .Filters{
+      background-color: $secundary_color_light;
+      box-shadow: $box_shadow_light;
+
+      .Info{
+
+        span{
+          color: $gray_darker;
+        }
+      }
+    }
+
+    .Table_Wrapper{ 
+      box-shadow: $box_shadow_light;
+
+      thead{
+        background-color: $terciary_color_light;
+
+        tr{
+
+          th{
+
+            span{
+              color: $gray_dark;
+            }
+          }
+        }
+      }
+
+      tbody{
+        background-color: $secundary_color_light;
+
+        tr{
+          border-bottom: 2px solid $fourth_color_light;
+          
+          td{
+            color: $gray_dark;
+          }
+        }
+
+        .Extra_Content{
+
+          .Description{
+
+            button{
+              color: $gray_dark;
+            }
+          }
+        }
+      }
+    }
+  }
+}
