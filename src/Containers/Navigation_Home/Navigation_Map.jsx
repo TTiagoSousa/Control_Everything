@@ -7,6 +7,7 @@ export const navItems = [
     text: 'Assets',
     icon: <Icon.Wallet />,
     dropdownItems: [
+      { to: '/CE/Crypto_Dashboard', text: 'Crypto' },
       { to: '/CE/Savings_Dashboard', text: 'Savings' },
     ],
   },

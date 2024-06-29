@@ -1,0 +1,8 @@
+@import '../../../../../Styles/Colors.scss';
+@import '../../../../../Styles/Fonts.scss';
+@import '../../../../../Styles/Formats.scss';
+
+.Crypto_Dashboard{
+  @include Pages_Configs;
+  min-height: 95vh;
+}
