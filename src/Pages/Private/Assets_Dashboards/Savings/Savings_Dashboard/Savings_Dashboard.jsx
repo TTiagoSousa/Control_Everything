@@ -8,11 +8,14 @@ import Mui_Alert from '../../../../../Components/Alerts/Mui_Alert/Mui_Alerts';
 import Loading_Balls from '../../../../../Components/Loading/Loading_Balls/Loading_Balls';
 import useFetchGetTotalPerCurrencyAndPlatform from '../../../../../Hooks/Saving_Transitions/useFetchGetTotalPerCurrencyAndPlatform';
 import SavingsPieChart from './Containers/SavingsChart';
+import useFetchGetTotalOnSavingsTransitionsConverted from '../../../../../Hooks/Saving_Transitions/useFetchGetTotalOnSavingsTransitionsConverted';
 
 const Savings_Dashboard = () => {
 
   const { t } = useTranslation();
 
+  const { totalOnSavings } = useFetchGetTotalOnSavingsTransitionsConverted();
+  
   const [selectSavingsForm, setSelectSavingsForm] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState('');
 
@@ -69,9 +72,21 @@ const Savings_Dashboard = () => {
           <div className="Header">
             <span>{t("Total on savings")}</span>
           </div>
-          <div className="Body">
-            <span>0000</span>
-            <span>$</span>
+          <div className='Body'>
+            {isLoading || totalOnSavings === null ? (
+              <div className='Loading'>
+                <Loading_Balls count={6}/>
+              </div>
+            ) : totalOnSavings === null ? ( 
+              <div className='Loading'>
+                <Loading_Balls count={6}/>
+              </div>
+            ) : (
+              <>
+                <span>{totalOnSavings.totalConverted}</span>
+                <span>{totalOnSavings.targetSymbol}</span>
+              </>
+            )}
           </div>
           <div className="Footer">
             <Link to="Savings_Transitions_History">{t("View history")}</Link>
