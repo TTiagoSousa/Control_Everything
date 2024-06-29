@@ -304,6 +304,25 @@
   }
 }
 
+@media (max-width: 500px){
+  .Add_Savings_Transition{
+    width: 95%;
+
+    .Search_Result{
+
+      ul{
+
+        li{
+
+          span{
+            font-size: 11px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
 .Dark_Mode{
 
   .Add_Savings_Transition{
